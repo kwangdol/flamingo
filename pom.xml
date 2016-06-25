@@ -126,7 +126,7 @@
                 <artifactId>maven-site-plugin</artifactId>
                 <configuration>
                     <skipDeploy>true</skipDeploy>
-                    <outputDirectory>${project.build.directory}/staging/site</outputDirectory>
+                    <outputDirectory>${scm-publish.siteDocOutputDirectory}</outputDirectory>
                 </configuration>
                 <dependencies>
                     <dependency>
