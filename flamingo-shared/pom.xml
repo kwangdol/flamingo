@@ -13,7 +13,7 @@
     <artifactId>flamingo-shared</artifactId>
     <packaging>jar</packaging>
     <name>Flamingo Shared Library</name>
-    <description>Flaminog Shared Library</description>
+    <description>Flamingo Shared Library</description>
 
     <dependencies>
         <!-- ================== -->

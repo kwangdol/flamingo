@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Flamingo">
+    <custom>
+        <reflowSkin>
+            <theme>bootswatch-spacelab</theme>
+        </reflowSkin>
+    </custom>
+
+    <skin>
+        <groupId>lt.velykis.maven.skins</groupId>
+        <artifactId>reflow-maven-skin</artifactId>
+        <version>1.1.1</version>
+    </skin>
+</project>
