@@ -76,7 +76,6 @@
             <artifactId>oozie-client</artifactId>
         </dependency>
 
-
         <!-- ====== -->
         <!--  JSON  -->
         <!-- ====== -->
@@ -139,6 +138,30 @@
             <groupId>javax.servlet</groupId>
             <artifactId>jstl</artifactId>
             <version>${javax.jstl.version}</version>
+        </dependency>
+
+        <!-- ============= -->
+        <!--  Logging API  -->
+        <!-- ============= -->
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>log4j-over-slf4j</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jcl-over-slf4j</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>jul-to-slf4j</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
         </dependency>
     </dependencies>
 </project>

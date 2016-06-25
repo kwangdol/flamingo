@@ -408,6 +408,22 @@
                         <groupId>org.codehaus.jackson</groupId>
                         <artifactId>jackson-mapper-asl</artifactId>
                     </exclusion>
+                    <exclusion>
+                        <groupId>org.apache.activemq</groupId>
+                        <artifactId>activemq-client</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.apache.oozie</groupId>
+                        <artifactId>oozie-hadoop-auth</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>slf4j-simple</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>xerces:</groupId>
+                        <artifactId>xercesImpl</artifactId>
+                    </exclusion>
                 </exclusions>
             </dependency>
 
