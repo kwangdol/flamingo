@@ -144,7 +144,7 @@ public class ApplicationInformationDisplayContextListener implements javax.servl
         while (keys.hasMoreElements()) {
             String key = (String) keys.nextElement();
             String value = props.getProperty(key);
-            builder.append("  ").append(key).append(getCharacter(maxLength - key.getBytes().length, " ")).append(" : ").append(value).append("\n");
+            builder.append("  ").append(key).append(getFixedSizeString(maxLength - key.getBytes().length, " ")).append(" : ").append(value).append("\n");
         }
     }
 
@@ -162,14 +162,7 @@ public class ApplicationInformationDisplayContextListener implements javax.servl
         return maxLength;
     }
 
-    /**
-     * 지정한 크기 만큼 문자열을 구성한다.
-     *
-     * @param size      문자열을 구성할 반복수
-     * @param character 문자열을 구성하기 위한 단위 문자열. 반복수만큼 생성된다.
-     * @return 문자열
-     */
-    private static String getCharacter(int size, String character) {
+    private static String getFixedSizeString(int size, String character) {
         StringBuilder builder = new StringBuilder();
         for (int i = 0; i < size; i++) {
             builder.append(character);
