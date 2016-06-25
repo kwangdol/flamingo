@@ -765,9 +765,9 @@
 
     <distributionManagement>
         <site>
-            <id>flamingo</id>
+            <id>Flamingo</id>
             <name>Flamingo Site</name>
-            <url>ftp://server.example.com/htdocs/site/</url>
+            <url>${site.path}</url>
         </site>
     </distributionManagement>
 
