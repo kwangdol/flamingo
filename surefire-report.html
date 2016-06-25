@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Flamingo - About</title>
+    <title>Flamingo - Surefire Report</title>
     <style type="text/css" media="all">
       @import url("./css/maven-base.css");
       @import url("./css/maven-theme.css");
@@ -56,44 +56,26 @@
           </ul>
                        <h5>Project Documentation</h5>
                   <ul>
-                                                                                                                                                                                                                                                <li class="expanded">
+                                                                                                                                                                                                                                      <li class="collapsed">
                           <a href="project-info.html" title="Project Information">Project Information</a>
+                  </li>
+                                                                                                                                    <li class="expanded">
+                          <a href="project-reports.html" title="Project Reports">Project Reports</a>
                     <ul>
                       <li class="none">
-                          <a href="dependency-convergence.html" title="Dependency Convergence">Dependency Convergence</a>
-            </li>
-                      <li class="none">
-                          <a href="dependency-info.html" title="Dependency Information">Dependency Information</a>
-            </li>
-                      <li class="none">
-                          <a href="dependency-management.html" title="Dependency Management">Dependency Management</a>
-            </li>
-                      <li class="none">
-                          <a href="distribution-management.html" title="Distribution Management">Distribution Management</a>
-            </li>
-                      <li class="none">
-            <strong>About</strong>
+            <strong>Surefire Report</strong>
           </li>
                       <li class="none">
-                          <a href="modules.html" title="Project Modules">Project Modules</a>
+                          <a href="xref/index.html" title="Source Xref">Source Xref</a>
             </li>
                       <li class="none">
-                          <a href="plugin-management.html" title="Plugin Management">Plugin Management</a>
+                          <a href="apidocs/index.html" title="JavaDocs">JavaDocs</a>
             </li>
                       <li class="none">
-                          <a href="plugins.html" title="Plugins">Plugins</a>
-            </li>
-                      <li class="none">
-                          <a href="team-list.html" title="Team">Team</a>
-            </li>
-                      <li class="none">
-                          <a href="project-summary.html" title="Summary">Summary</a>
+                          <a href="testapidocs/index.html" title="Test JavaDocs">Test JavaDocs</a>
             </li>
               </ul>
         </li>
-                                                                                                                          <li class="collapsed">
-                          <a href="project-reports.html" title="Project Reports">Project Reports</a>
-                  </li>
           </ul>
                              <a href="http://maven.apache.org/" title="Built by Maven" class="poweredBy">
         <img class="poweredBy" alt="Built by Maven" src="./images/logos/maven-feather.png" />
@@ -104,26 +86,43 @@
     </div>
     <div id="bodyColumn">
       <div id="contentBox">
-        <div class="section">
-<h2>About Flamingo<a name="About_Flamingo"></a></h2><a name="About_Flamingo"></a>
-<p>Flamingo is a web application for managing Apache Oozie. Flamingo drastically simplifies management of
-        Apache Oozie through the following features.</p>
+        <script type="text/javascript">
+//<![CDATA[
+function toggleDisplay(elementId) {
+ var elm = document.getElementById(elementId + 'error');
+ if (elm && typeof elm.style != "undefined") {
+ if (elm.style.display == "none") {
+ elm.style.display = "";
+ document.getElementById(elementId + 'off').style.display = "none";
+ document.getElementById(elementId + 'on').style.display = "inline";
+ } else if (elm.style.display == "") { elm.style.display = "none";
+ document.getElementById(elementId + 'off').style.display = "inline";
+ document.getElementById(elementId + 'on').style.display = "none";
+ } 
+ } 
+ }
+//]]>
+</script>
 <div class="section">
-<h3>Project Modules<a name="Project_Modules"></a></h3><a name="Project_Modules"></a>
-<p>This project has declared the following modules:</p>
-<table border="0" class="bodyTable">
+<h2>Surefire Report<a name="Surefire_Report"></a></h2></div>
+<div class="section">
+<h2>Summary<a name="Summary"></a></h2><a name="Summary"></a><br />
+<table border="1" class="bodyTable">
 <tr class="a">
-<th>Name</th>
-<th>Description</th></tr>
+<th>Tests</th>
+<th>Errors </th>
+<th>Failures</th>
+<th>Skipped</th>
+<th>Success Rate</th>
+<th>Time</th></tr>
 <tr class="b">
-<td><a href="flamingo-shared/index.html">Flamingo Shared Library</a></td>
-<td>Flaminog Shared Library</td></tr>
-<tr class="a">
-<td><a href="flamingo-collector/index.html">Flamingo Metrics Collector</a></td>
-<td>Flamingo Metrics Collector for Oozie Monitoring</td></tr>
-<tr class="b">
-<td><a href="flamingo-web/index.html">Flamingo Web Application</a></td>
-<td>Flamingo Web Application</td></tr></table></div></div>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+<td>0</td></tr></table><br />
+<p>Note: failures are anticipated and checked for with assertions while errors are unanticipated.</p><br /></div>
       </div>
     </div>
     <div class="clear">

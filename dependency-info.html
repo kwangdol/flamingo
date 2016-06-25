@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Flamingo - About</title>
+    <title>Flamingo - Dependency Information</title>
     <style type="text/css" media="all">
       @import url("./css/maven-base.css");
       @import url("./css/maven-theme.css");
@@ -63,8 +63,8 @@
                           <a href="dependency-convergence.html" title="Dependency Convergence">Dependency Convergence</a>
             </li>
                       <li class="none">
-                          <a href="dependency-info.html" title="Dependency Information">Dependency Information</a>
-            </li>
+            <strong>Dependency Information</strong>
+          </li>
                       <li class="none">
                           <a href="dependency-management.html" title="Dependency Management">Dependency Management</a>
             </li>
@@ -72,8 +72,8 @@
                           <a href="distribution-management.html" title="Distribution Management">Distribution Management</a>
             </li>
                       <li class="none">
-            <strong>About</strong>
-          </li>
+                          <a href="index.html" title="About">About</a>
+            </li>
                       <li class="none">
                           <a href="modules.html" title="Project Modules">Project Modules</a>
             </li>
@@ -105,25 +105,44 @@
     <div id="bodyColumn">
       <div id="contentBox">
         <div class="section">
-<h2>About Flamingo<a name="About_Flamingo"></a></h2><a name="About_Flamingo"></a>
-<p>Flamingo is a web application for managing Apache Oozie. Flamingo drastically simplifies management of
-        Apache Oozie through the following features.</p>
+<h2>Dependency Information<a name="Dependency_Information"></a></h2><a name="Dependency_Information"></a>
 <div class="section">
-<h3>Project Modules<a name="Project_Modules"></a></h3><a name="Project_Modules"></a>
-<p>This project has declared the following modules:</p>
-<table border="0" class="bodyTable">
-<tr class="a">
-<th>Name</th>
-<th>Description</th></tr>
-<tr class="b">
-<td><a href="flamingo-shared/index.html">Flamingo Shared Library</a></td>
-<td>Flaminog Shared Library</td></tr>
-<tr class="a">
-<td><a href="flamingo-collector/index.html">Flamingo Metrics Collector</a></td>
-<td>Flamingo Metrics Collector for Oozie Monitoring</td></tr>
-<tr class="b">
-<td><a href="flamingo-web/index.html">Flamingo Web Application</a></td>
-<td>Flamingo Web Application</td></tr></table></div></div>
+<h3>Apache Maven<a name="Apache_Maven"></a></h3><a name="Apache_Maven"></a>
+<div class="source">
+<pre>&lt;dependency&gt;
+  &lt;groupId&gt;org.exem.flamingo&lt;/groupId&gt;
+  &lt;artifactId&gt;flamingo&lt;/artifactId&gt;
+  &lt;version&gt;0.1-SNAPSHOT&lt;/version&gt;
+  &lt;type&gt;pom&lt;/type&gt;
+&lt;/dependency&gt;</pre></div></div>
+<div class="section">
+<h3>Apache Buildr<a name="Apache_Buildr"></a></h3><a name="Apache_Buildr"></a>
+<div class="source">
+<pre>'org.exem.flamingo:flamingo:pom:0.1-SNAPSHOT'</pre></div></div>
+<div class="section">
+<h3>Apache Ivy<a name="Apache_Ivy"></a></h3><a name="Apache_Ivy"></a>
+<div class="source">
+<pre>&lt;dependency org=&quot;org.exem.flamingo&quot; name=&quot;flamingo&quot; rev=&quot;0.1-SNAPSHOT&quot;&gt;
+  &lt;artifact name=&quot;flamingo&quot; type=&quot;pom&quot; /&gt;
+&lt;/dependency&gt;</pre></div></div>
+<div class="section">
+<h3>Groovy Grape<a name="Groovy_Grape"></a></h3><a name="Groovy_Grape"></a>
+<div class="source">
+<pre>@Grapes(
+@Grab(group='org.exem.flamingo', module='flamingo', version='0.1-SNAPSHOT')
+)</pre></div></div>
+<div class="section">
+<h3>Gradle/Grails<a name="GradleGrails"></a></h3><a name="GradleGrails"></a>
+<div class="source">
+<pre>compile 'org.exem.flamingo:flamingo:0.1-SNAPSHOT'</pre></div></div>
+<div class="section">
+<h3>Scala SBT<a name="Scala_SBT"></a></h3><a name="Scala_SBT"></a>
+<div class="source">
+<pre>libraryDependencies += &quot;org.exem.flamingo&quot; % &quot;flamingo&quot; % &quot;0.1-SNAPSHOT&quot;</pre></div></div>
+<div class="section">
+<h3>Leiningen<a name="Leiningen"></a></h3><a name="Leiningen"></a>
+<div class="source">
+<pre>[org.exem.flamingo/flamingo &quot;0.1-SNAPSHOT&quot;]</pre></div></div></div>
       </div>
     </div>
     <div class="clear">
