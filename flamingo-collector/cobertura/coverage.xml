@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
+
+<coverage line-rate="0.0" branch-rate="1.0" lines-covered="0" lines-valid="1" branches-covered="0" branches-valid="0" complexity="0.0" version="2.1.1" timestamp="1466848194444">
+	<sources>
+		<source>/Volumes/Data/projects/exem/flamingo-apache/flamingo-collector/src/main/java</source>
+		<source>--source</source>
+	</sources>
+	<packages>
+		<package name="org.exem.flamingo.collector" line-rate="0.0" branch-rate="1.0" complexity="0.0">
+			<classes>
+				<class name="org.exem.flamingo.collector.Dummy" filename="org/exem/flamingo/collector/Dummy.java" line-rate="0.0" branch-rate="1.0" complexity="0.0">
+					<methods>
+						<method name="&lt;init&gt;" signature="()V" line-rate="0.0" branch-rate="1.0" complexity="0">
+							<lines>
+								<line number="3" hits="0" branch="false"/>
+							</lines>
+						</method>
+					</methods>
+					<lines>
+						<line number="3" hits="0" branch="false"/>
+					</lines>
+				</class>
+			</classes>
+		</package>
+	</packages>
+</coverage>
