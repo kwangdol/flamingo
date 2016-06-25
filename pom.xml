@@ -193,7 +193,6 @@
                             <server>github</server>
                             <message>Building site for Flamingo</message>
                             <path>${site.path}</path>
-                            <merge>true</merge>
                         </configuration>
                     </execution>
                 </executions>
@@ -766,8 +765,7 @@
 
     <distributionManagement>
         <site>
-            <id>Flamingo</id>
-            <name>Flamingo Site</name>
+            <id>github</id>
             <url>${site.path}</url>
         </site>
     </distributionManagement>
