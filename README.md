@@ -64,7 +64,7 @@ Flamingo drastically simplifies management of Apache Oozie through the following
 -->
 ```
 
-## for Developer
+## For Developer
 
 ### Site Deployment
 
@@ -81,6 +81,8 @@ Open your Maven settings (~/.m2/settings.xml) and add the following server confi
     </servers>
 </settings>
 ```
+
+Use following command for deploying site :
 
 ```
 # mvn site:site
