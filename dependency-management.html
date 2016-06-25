@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>Flamingo - Project Dependency Management</title>
+    <title>Flamingo Shared Library - Project Dependency Management</title>
     <style type="text/css" media="all">
       @import url("./css/maven-base.css");
       @import url("./css/maven-theme.css");
@@ -17,7 +17,7 @@
   <body class="composite">
     <div id="banner">
                     <div id="bannerLeft">
-                Flamingo
+                Flamingo Shared Library
                 </div>
                     <div class="clear">
         <hr/>
@@ -30,7 +30,7 @@
         <span id="publishDate">Last Published: 2016-06-25</span>
                   &nbsp;| <span id="projectVersion">Version: 0.1-SNAPSHOT</span>
                       </div>
-            <div class="xright">                    <a href="./" title="Flamingo">Flamingo</a>
+            <div class="xright">                    <a href="./" title="Flamingo Shared Library">Flamingo Shared Library</a>
               
                     
       </div>
@@ -42,16 +42,10 @@
       <div id="navcolumn">
              
                     
-                                          <h5>Modules</h5>
+                                <h5>Parent Project</h5>
                   <ul>
                   <li class="none">
-                          <a href="flamingo-shared/index.html" title="Flamingo Shared Library">Flamingo Shared Library</a>
-            </li>
-                  <li class="none">
-                          <a href="flamingo-collector/index.html" title="Flamingo Metrics Collector">Flamingo Metrics Collector</a>
-            </li>
-                  <li class="none">
-                          <a href="flamingo-web/index.html" title="Flamingo Web Application">Flamingo Web Application</a>
+                          <a href="../index.html" title="Flamingo">Flamingo</a>
             </li>
           </ul>
                        <h5>Project Documentation</h5>
@@ -59,6 +53,9 @@
                                                                                                                                                                                                                                                 <li class="expanded">
                           <a href="project-info.html" title="Project Information">Project Information</a>
                     <ul>
+                      <li class="none">
+                          <a href="dependencies.html" title="Dependencies">Dependencies</a>
+            </li>
                       <li class="none">
                           <a href="dependency-convergence.html" title="Dependency Convergence">Dependency Convergence</a>
             </li>
@@ -75,9 +72,6 @@
                           <a href="index.html" title="About">About</a>
             </li>
                       <li class="none">
-                          <a href="modules.html" title="Project Modules">Project Modules</a>
-            </li>
-                      <li class="none">
                           <a href="plugin-management.html" title="Plugin Management">Plugin Management</a>
             </li>
                       <li class="none">
@@ -91,7 +85,7 @@
             </li>
               </ul>
         </li>
-                                                                                                                          <li class="collapsed">
+                                                                                                                                                                                                  <li class="collapsed">
                           <a href="project-reports.html" title="Project Reports">Project Reports</a>
                   </li>
           </ul>
@@ -159,137 +153,125 @@
 <td>jar</td>
 <td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a></td></tr>
 <tr class="a">
-<td>com.zaxxer</td>
-<td><a class="externalLink" href="https://github.com/brettwooldridge/HikariCP">HikariCP</a></td>
-<td>2.4.3</td>
-<td>jar</td>
-<td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a></td></tr>
-<tr class="b">
 <td>commons-io</td>
 <td><a class="externalLink" href="http://commons.apache.org/proper/commons-io/">commons-io</a></td>
 <td>2.5</td>
 <td>jar</td>
 <td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">Apache License, Version 2.0</a></td></tr>
-<tr class="a">
+<tr class="b">
 <td>javax.inject</td>
 <td><a class="externalLink" href="http://code.google.com/p/atinject/">javax.inject</a></td>
 <td>1</td>
 <td>jar</td>
 <td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a></td></tr>
-<tr class="b">
+<tr class="a">
 <td>javax.mail</td>
 <td><a class="externalLink" href="http://kenai.com/projects/javamail/mail">mail</a></td>
 <td>1.4.7</td>
 <td>jar</td>
 <td><a class="externalLink" href="http://www.sun.com/cddl">CDDL</a>, <a class="externalLink" href="https://glassfish.java.net/public/CDDL+GPL_1_1.html">GPLv2+CE</a></td></tr>
-<tr class="a">
+<tr class="b">
 <td>javax.servlet</td>
 <td>jstl</td>
 <td>1.1.2</td>
 <td>jar</td>
 <td>-</td></tr>
-<tr class="b">
+<tr class="a">
 <td>javax.transaction</td>
 <td><a class="externalLink" href="http://java.sun.com/products/jta">jta</a></td>
 <td>1.1</td>
 <td>jar</td>
 <td>-</td></tr>
-<tr class="a">
+<tr class="b">
 <td>javax.xml.ws</td>
 <td><a class="externalLink" href="https://jax-ws.dev.java.net/">jaxws-api</a></td>
 <td>2.1-1</td>
 <td>jar</td>
 <td><a class="externalLink" href="http://www.opensource.org/licenses/cddl1.php">COMMON DEVELOPMENT AND DISTRIBUTION LICENSE (CDDL) Version 1.0</a></td></tr>
-<tr class="b">
+<tr class="a">
 <td>org.apache.hadoop</td>
 <td>hadoop-common</td>
 <td>2.7.2</td>
 <td>jar</td>
 <td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">Apache License, Version 2.0</a></td></tr>
-<tr class="a">
+<tr class="b">
 <td>org.apache.hadoop</td>
 <td>hadoop-hdfs</td>
 <td>2.7.2</td>
 <td>jar</td>
 <td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">Apache License, Version 2.0</a></td></tr>
-<tr class="b">
+<tr class="a">
 <td>org.apache.hadoop</td>
 <td>hadoop-mapreduce-client-common</td>
 <td>2.7.2</td>
 <td>jar</td>
 <td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">Apache License, Version 2.0</a></td></tr>
-<tr class="a">
+<tr class="b">
 <td>org.apache.hadoop</td>
 <td>hadoop-yarn-api</td>
 <td>2.7.2</td>
 <td>jar</td>
 <td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">Apache License, Version 2.0</a></td></tr>
-<tr class="b">
+<tr class="a">
 <td>org.apache.hadoop</td>
 <td>hadoop-yarn-client</td>
 <td>2.7.2</td>
 <td>jar</td>
 <td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">Apache License, Version 2.0</a></td></tr>
-<tr class="a">
+<tr class="b">
 <td>org.apache.hadoop</td>
 <td>hadoop-yarn-server-common</td>
 <td>2.7.2</td>
 <td>jar</td>
 <td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">Apache License, Version 2.0</a></td></tr>
-<tr class="b">
+<tr class="a">
 <td>org.apache.hadoop</td>
 <td>hadoop-yarn-server-resourcemanager</td>
 <td>2.7.2</td>
 <td>jar</td>
 <td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">Apache License, Version 2.0</a></td></tr>
-<tr class="a">
+<tr class="b">
 <td>org.apache.oozie</td>
 <td><a class="externalLink" href="http://www.apache.org/oozie-main/oozie-client/">oozie-client</a></td>
 <td>4.2.0</td>
 <td>jar</td>
 <td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a></td></tr>
-<tr class="b">
+<tr class="a">
 <td>org.aspectj</td>
 <td><a class="externalLink" href="http://www.aspectj.org">aspectjrt</a></td>
 <td>1.8.4</td>
 <td>jar</td>
 <td><a class="externalLink" href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License - v 1.0</a></td></tr>
-<tr class="a">
+<tr class="b">
 <td>org.aspectj</td>
 <td><a class="externalLink" href="http://www.aspectj.org">aspectjweaver</a></td>
 <td>1.8.4</td>
 <td>jar</td>
 <td><a class="externalLink" href="http://www.eclipse.org/legal/epl-v10.html">Eclipse Public License - v 1.0</a></td></tr>
-<tr class="b">
+<tr class="a">
 <td>org.lazyluke</td>
 <td><a class="externalLink" href="http://code.google.com/p/log4jdbc-remix">log4jdbc-remix</a></td>
 <td>0.2.7</td>
 <td>jar</td>
 <td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">Apache 2</a></td></tr>
-<tr class="a">
+<tr class="b">
 <td>org.logback-extensions</td>
 <td><a class="externalLink" href="https://github.com/qos-ch/logback-extensions/logback-ext-spring/">logback-ext-spring</a></td>
 <td>0.1.4</td>
 <td>jar</td>
 <td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a></td></tr>
-<tr class="b">
+<tr class="a">
 <td>org.mybatis</td>
 <td><a class="externalLink" href="http://www.mybatis.org/mybatis-3">mybatis</a></td>
 <td>3.4.0</td>
 <td>jar</td>
 <td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a></td></tr>
-<tr class="a">
+<tr class="b">
 <td>org.mybatis</td>
 <td><a class="externalLink" href="http://www.mybatis.org/spring/">mybatis-spring</a></td>
 <td>1.3.0</td>
 <td>jar</td>
 <td><a class="externalLink" href="http://www.apache.org/licenses/LICENSE-2.0.txt">The Apache Software License, Version 2.0</a></td></tr>
-<tr class="b">
-<td>org.postgresql</td>
-<td><a class="externalLink" href="https://github.com/pgjdbc/pgjdbc">postgresql</a></td>
-<td>9.4.1208</td>
-<td>jar</td>
-<td><a class="externalLink" href="http://www.postgresql.org/about/licence/">The PostgreSQL License</a></td></tr>
 <tr class="a">
 <td>org.postgresql</td>
 <td><a class="externalLink" href="https://github.com/pgjdbc/pgjdbc">postgresql</a></td>

@@ -1,5 +1,2 @@
-org.exem.flamingo.collector
 org.exem.flamingo.shared
 org.exem.flamingo.shared.util
-org.exem.flamingo.web
-org.exem.flamingo.web.util
