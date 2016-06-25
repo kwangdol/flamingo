@@ -1,3 +1,7 @@
 language: java
 jdk:
   - oraclejdk7
+notifications:
+  slack:
+    rooms:
+      - flamingo-dev-team:OblYRO6lNDqHP7P5lgH9rDnB#general
