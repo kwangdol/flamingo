@@ -12,6 +12,7 @@
     <description>Flamingo is a web application for managing Apache Oozie. Flamingo drastically simplifies management of
         Apache Oozie through the following features.
     </description>
+    <url>${site.path}</url>
 
     <modules>
         <module>flamingo-shared</module>
