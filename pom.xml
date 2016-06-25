@@ -391,6 +391,22 @@
                 <version>${log4jdbc.remix.version}</version>
             </dependency>
 
+            <!-- =================== -->
+            <!--  JDBC Dependencies  -->
+            <!-- =================== -->
+
+            <dependency>
+                <groupId>org.postgresql</groupId>
+                <artifactId>postgresql</artifactId>
+                <version>${postgresql.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.zaxxer</groupId>
+                <artifactId>HikariCP</artifactId>
+                <version>${hikaricp.version}</version>
+            </dependency>
+
             <!-- ============== -->
             <!--  Apache Oozie  -->
             <!-- ============== -->

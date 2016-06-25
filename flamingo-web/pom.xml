@@ -110,6 +110,20 @@
             <artifactId>mybatis-spring</artifactId>
         </dependency>
 
+        <!-- =================== -->
+        <!--  JDBC Dependencies  -->
+        <!-- =================== -->
+
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+        </dependency>
+
         <!-- ============= -->
         <!--  Java EE API  -->
         <!-- ============= -->
