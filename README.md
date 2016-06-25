@@ -14,7 +14,15 @@ Flamingo drastically simplifies management of Apache Oozie through the following
 * Oozie Resource Monitoring
 * HDFS Browser
 
+## Build Status
+
+| Component | OS | Status |
+|---|:------:|:------:|
+|Flamingo | Ubuntu | [![Build Status](https://travis-ci.org/apache/reef.svg?branch=master)](https://travis-ci.org/apache/reef) |
+
 ## License
+
+[![Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-brightgreen.svg)](LICENSE)
 
 ### Java Header
 

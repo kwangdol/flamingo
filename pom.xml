@@ -9,7 +9,9 @@
     <packaging>pom</packaging>
     <version>0.1-SNAPSHOT</version>
     <name>Flamingo</name>
-    <description>Flamingo is a web application for managing Apache Oozie. Flamingo drastically simplifies management of Apache Oozie through the following features.</description>
+    <description>Flamingo is a web application for managing Apache Oozie. Flamingo drastically simplifies management of
+        Apache Oozie through the following features.
+    </description>
 
     <modules>
         <module>flamingo-shared</module>
@@ -25,6 +27,11 @@
         <output.encoding>UTF-8</output.encoding>
         <java.version>1.7</java.version>
         <flamingo.version>${pom.version}</flamingo.version>
+
+        <scm-publish.checkoutDirectory>${project.build.directory}/scmpublish</scm-publish.checkoutDirectory>
+        <scm-publish.scmBranch>gh-pages</scm-publish.scmBranch>
+        <scm-publish.pubScmUrl>scm:git:https://github.com/EXEM-OSS/flamingo</scm-publish.pubScmUrl>
+        <scm-publish.siteDocOutputDirectory>${project.reporting.outputDirectory}</scm-publish.siteDocOutputDirectory>
 
         <!-- Spring Framework -->
         <spring.version>4.2.6.RELEASE</spring.version>
@@ -98,13 +105,13 @@
                     <sourceEncoding>utf-8</sourceEncoding>
                     <minimumTokens>100</minimumTokens>
                     <targetJdk>${java.version}</targetJdk>
-<!--
-                    <rulesets>
-                        <ruleset>ecmascript-basic</ruleset>
-                        <ruleset>ecmascript-braces</ruleset>
-                        <ruleset>ecmascript-unnecessary</ruleset>
-                    </rulesets>
--->
+                    <!--
+                        <rulesets>
+                            <ruleset>ecmascript-basic</ruleset>
+                            <ruleset>ecmascript-braces</ruleset>
+                            <ruleset>ecmascript-unnecessary</ruleset>
+                        </rulesets>
+                    -->
                     <excludes>
                         <exclude>**/*Bean.java</exclude>
                         <exclude>**/generated/*.java</exclude>
@@ -112,6 +119,32 @@
                     <excludeRoots>
                         <excludeRoot>target/generated-sources/stubs</excludeRoot>
                     </excludeRoots>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <configuration>
+                    <skipDeploy>true</skipDeploy>
+                    <outputDirectory>${project.build.directory}/staging/site</outputDirectory>
+                </configuration>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.apache.maven.doxia</groupId>
+                        <artifactId>doxia-module-markdown</artifactId>
+                        <version>1.6</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+            <plugin>
+                <artifactId>maven-scm-publish-plugin</artifactId>
+                <configuration>
+                    <checkoutDirectory>${scm-publish.checkoutDirectory}</checkoutDirectory>
+                    <checkinComment>Publishing Site Docs for ${project.artifactId}:${project.version}.</checkinComment>
+                    <content>${scm-publish.siteDocOutputDirectory}</content>
+                    <skipDeletedFiles>true</skipDeletedFiles>
+                    <pubScmUrl>${scm-publish.pubScmUrl}</pubScmUrl>
+                    <scmBranch>${scm-publish.scmBranch}</scmBranch>
                 </configuration>
             </plugin>
         </plugins>
@@ -123,6 +156,38 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
                 <version>3.6</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>findbugs-maven-plugin</artifactId>
+                <configuration>
+                    <effort>Max</effort>
+                    <threshold>Medium</threshold>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jxr-plugin</artifactId>
+                <reportSets>
+                    <reportSet>
+                        <id>aggregate</id>
+                        <inherited>false</inherited>
+                        <reports>
+                            <report>aggregate</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
             </plugin>
         </plugins>
     </reporting>
