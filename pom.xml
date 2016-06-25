@@ -22,6 +22,7 @@
         <maven.build.timestamp.format>yyyyMMddHHmmss</maven.build.timestamp.format>
         <output.encoding>UTF-8</output.encoding>
         <java.version>1.7</java.version>
+        <flamingo.version>${pom.version}</flamingo.version>
 
         <!-- Spring Framework -->
         <spring.version>4.2.6.RELEASE</spring.version>
