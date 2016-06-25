@@ -16,6 +16,8 @@ Flamingo drastically simplifies management of Apache Oozie through the following
 
 ## License
 
+### Java Header
+
 ```java
 /*
  * Copyright 2012-2016 the Flamingo Community.
@@ -33,6 +35,8 @@ Flamingo drastically simplifies management of Apache Oozie through the following
  * limitations under the License.
  */
 ```
+
+### XML Header
 
 ```xml
 <!--
