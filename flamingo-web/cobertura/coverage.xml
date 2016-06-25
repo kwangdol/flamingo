@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!DOCTYPE coverage SYSTEM "http://cobertura.sourceforge.net/xml/coverage-04.dtd">
 
-<coverage line-rate="0.0" branch-rate="0.0" lines-covered="0" lines-valid="87" branches-covered="0" branches-valid="18" complexity="2.8333333333333335" version="2.1.1" timestamp="1466848200891">
+<coverage line-rate="0.0" branch-rate="0.0" lines-covered="0" lines-valid="87" branches-covered="0" branches-valid="18" complexity="2.8333333333333335" version="2.1.1" timestamp="1466850498737">
 	<sources>
 		<source>--source</source>
 		<source>/Volumes/Data/projects/exem/flamingo-apache/flamingo-web/src/main/java</source>
