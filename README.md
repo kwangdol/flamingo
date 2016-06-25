@@ -85,7 +85,7 @@ Open your Maven settings (~/.m2/settings.xml) and add the following server confi
 ```
 # mvn site:site
 # mvn site:stage
-# mvn site-deploy
+# mvn site:deploy
 ```
 
 ## Community
