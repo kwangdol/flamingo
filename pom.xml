@@ -31,6 +31,9 @@
         <aopalliance.version>1.0</aopalliance.version>
         <aspectj.version>1.8.4</aspectj.version>
 
+        <!-- Commons -->
+        <commons.io.version>2.5</commons.io.version>
+
         <!-- JSON -->
         <jackson.version>2.7.4</jackson.version>
 
@@ -53,6 +56,7 @@
         <commons.logging.version>1.2</commons.logging.version>
         <slf4j.version>1.7.21</slf4j.version>
         <logback.version>1.1.7</logback.version>
+        <logback.ext.spring.version>0.1.4</logback.ext.spring.version>
         <log4j.version>1.2.17</log4j.version>
         <log4jdbc.remix.version>0.2.7</log4jdbc.remix.version>
 
@@ -253,6 +257,16 @@
                 <version>${aopalliance.version}</version>
             </dependency>
 
+            <!-- ========= -->
+            <!--  Commons  -->
+            <!-- ========= -->
+
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons.io.version}</version>
+            </dependency>
+
             <!-- ====== -->
             <!--  JSON  -->
             <!-- ====== -->
@@ -395,6 +409,12 @@
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-classic</artifactId>
                 <version>${logback.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.logback-extensions</groupId>
+                <artifactId>logback-ext-spring</artifactId>
+                <version>${logback.ext.spring.version}</version>
             </dependency>
 
             <dependency>
