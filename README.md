@@ -71,13 +71,15 @@ Flamingo drastically simplifies management of Apache Oozie through the following
 Open your Maven settings (~/.m2/settings.xml) and add the following server configuration:
 
 ```xml
-<servers>
-    <server>
-        <id>github</id>
-        <username>YOUR_GITHUB_USERNAME</username>
-        <password>YOUR_PASSWORD</password>
-    </server>
-</servers>
+<settings>
+    <servers>
+        <server>
+            <id>github</id>
+            <username>YOUR_GITHUB_USERNAME</username>
+            <password>YOUR_PASSWORD</password>
+        </server>
+    </servers>
+</settings>
 ```
 
 ## Community
