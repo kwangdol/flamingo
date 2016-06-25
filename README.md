@@ -16,9 +16,7 @@ Flamingo drastically simplifies management of Apache Oozie through the following
 
 ## Build Status
 
-| Component | OS | Status |
-|---|:------:|:------:|
-|Flamingo | Debian | [![Build Status](https://api.travis-ci.org/EXEM-OSS/flamingo.svg?branch=master)](https://travis-ci.org/EXEM-OSS/flamingo) |
+[![Build Status](https://api.travis-ci.org/EXEM-OSS/flamingo.svg?branch=master)](https://travis-ci.org/EXEM-OSS/flamingo)
 
 ## License
 
