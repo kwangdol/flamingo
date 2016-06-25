@@ -66,6 +66,20 @@ Flamingo drastically simplifies management of Apache Oozie through the following
 -->
 ```
 
+## for Developer
+
+### Site Deployment
+
+Open your Maven settings (~/.m2/settings.xml) and add the following server configuration:
+
+```xml
+<server>
+    <id>github</id>
+    <username>YOUR_GITHUB_USERNAME</username>
+    <password>YOUR_PASSWORD</password>
+</server>
+```
+
 ## Community
 
 * Facebook : https://www.facebook.com/groups/flamingo.workflow

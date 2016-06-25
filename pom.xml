@@ -33,8 +33,10 @@
         <scm-publish.pubScmUrl>scm:git:https://github.com/EXEM-OSS/flamingo</scm-publish.pubScmUrl>
         <scm-publish.siteDocOutputDirectory>${project.reporting.outputDirectory}</scm-publish.siteDocOutputDirectory>
 
+        <site.path>http://exem-oss.github.io/flamingo</site.path>
+
         <!-- Spring Framework -->
-        <spring.version>4.2.6.RELEASE</spring.version>
+        <spring.version>4.3.0.RELEASE</spring.version>
         <spring.security.version>4.1.0.RELEASE</spring.security.version>
         <spring.boot.version>1.3.5.RELEASE</spring.boot.version>
         <aopalliance.version>1.0</aopalliance.version>
@@ -121,6 +123,7 @@
                     </excludeRoots>
                 </configuration>
             </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
@@ -136,6 +139,7 @@
                     </dependency>
                 </dependencies>
             </plugin>
+
             <plugin>
                 <artifactId>maven-scm-publish-plugin</artifactId>
                 <configuration>
@@ -147,6 +151,52 @@
                     <scmBranch>${scm-publish.scmBranch}</scmBranch>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>cobertura-maven-plugin</artifactId>
+                <version>2.7</version>
+                <configuration>
+                    <instrumentation>
+                        <!--
+                        <ignores>
+                            <ignore>com.example.boringcode.*</ignore>
+                        </ignores>
+                        <excludes>
+                            <exclude>com/example/dullcode/**/*.class</exclude>
+                            <exclude>com/example/**/*Test.class</exclude>
+                        </excludes>
+                        -->
+                    </instrumentation>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>clean</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>com.github.github</groupId>
+                <artifactId>site-maven-plugin</artifactId>
+                <version>0.9</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>site</goal>
+                        </goals>
+                        <phase>site-deploy</phase>
+                        <configuration>
+                            <server>github</server>
+                            <message>Building site for Flamingo</message>
+                            <path>${site.path}</path>
+                            <merge>true</merge>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
 
@@ -157,9 +207,11 @@
                 <artifactId>maven-pmd-plugin</artifactId>
                 <version>3.6</version>
             </plugin>
+
             <plugin>
                 <artifactId>maven-surefire-report-plugin</artifactId>
             </plugin>
+
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>findbugs-maven-plugin</artifactId>
@@ -168,10 +220,12 @@
                     <threshold>Medium</threshold>
                 </configuration>
             </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
             </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jxr-plugin</artifactId>
@@ -185,9 +239,30 @@
                     </reportSet>
                 </reportSets>
             </plugin>
+
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
+                <configuration>
+                    <links>
+                        <link>https://docs.oracle.com/javase/7/docs/api</link>
+                        <link>http://docs.spring.io/spring/docs/${spring.version}/javadoc-api</link>
+                        <link>https://commons.apache.org/proper/commons-io/javadocs/api-${commons.io.version}/</link>
+                    </links>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>cobertura-maven-plugin</artifactId>
+                <version>2.7</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>cobertura</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
             </plugin>
         </plugins>
     </reporting>
@@ -688,6 +763,14 @@
         </dependencies>
     </dependencyManagement>
 
+    <distributionManagement>
+        <site>
+            <id>flamingo</id>
+            <name>Flamingo Site</name>
+            <url>ftp://server.example.com/htdocs/site/</url>
+        </site>
+    </distributionManagement>
+
     <developers>
         <developer>
             <id>fharenheit</id>
@@ -753,7 +836,7 @@
 
     <organization>
         <name>Flamingo Community</name>
-        <url>https://www.facebook.com/groups/flamingo.workflow</url>
+        <url>http://exem-oss.github.io/flamingo</url>
     </organization>
 
     <repositories>
