@@ -11,6 +11,7 @@
     </parent>
 
     <artifactId>flamingo-web</artifactId>
+    <packaging>war</packaging>
 
     <dependencies>
         <!-- ================== -->
