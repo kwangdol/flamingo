@@ -82,6 +82,12 @@ Open your Maven settings (~/.m2/settings.xml) and add the following server confi
 </settings>
 ```
 
+```
+# mvn site:site
+# mvn site:stage
+# mvn site-deploy
+```
+
 ## Community
 
 * Facebook : https://www.facebook.com/groups/flamingo.workflow

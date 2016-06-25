@@ -12,13 +12,13 @@
     <description>Flamingo is a web application for managing Apache Oozie. Flamingo drastically simplifies management of
         Apache Oozie through the following features.
     </description>
-    <url>http://www.github.com/EXEM-OSS/flamingo</url>
+    <url>https://www.github.com/EXEM-OSS/flamingo</url>
 
     <modules>
         <module>flamingo-shared</module>
-<!--
-        <module>flamingo-opengraph</module>
--->
+        <!--
+                <module>flamingo-opengraph</module>
+        -->
         <module>flamingo-collector</module>
         <module>flamingo-web</module>
     </modules>
@@ -31,7 +31,7 @@
         <java.version>1.7</java.version>
         <flamingo.version>${pom.version}</flamingo.version>
 
-        <site.path>http://exem-oss.github.io/flamingo</site.path>
+        <site.path>https://exem-oss.github.io/flamingo</site.path>
 
         <!-- Spring Framework -->
         <spring.version>4.3.0.RELEASE</spring.version>
@@ -86,6 +86,7 @@
 
     <build>
         <plugins>
+            <!-- Compiler -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -96,10 +97,10 @@
                 </configuration>
             </plugin>
 
+            <!-- PMD -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
-                <version>3.6</version>
                 <configuration>
                     <linkXref>true</linkXref>
                     <sourceEncoding>utf-8</sourceEncoding>
@@ -122,12 +123,13 @@
                 </configuration>
             </plugin>
 
+            <!-- Maven Site -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-site-plugin</artifactId>
                 <configuration>
-                    <skipDeploy>true</skipDeploy>
-                    <outputDirectory>${scm-publish.siteDocOutputDirectory}</outputDirectory>
+                    <skipDeploy>false</skipDeploy>
+                    <outputDirectory>${basedir}/target/staging</outputDirectory>
                 </configuration>
                 <dependencies>
                     <dependency>
@@ -135,9 +137,15 @@
                         <artifactId>doxia-module-markdown</artifactId>
                         <version>1.6</version>
                     </dependency>
+                    <dependency>
+                        <groupId>net.trajano.wagon</groupId>
+                        <artifactId>wagon-git</artifactId>
+                        <version>1.0.0</version>
+                    </dependency>
                 </dependencies>
             </plugin>
 
+            <!-- Cobertura for Code Coverage -->
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>cobertura-maven-plugin</artifactId>
@@ -168,16 +176,17 @@
             <plugin>
                 <groupId>com.github.github</groupId>
                 <artifactId>site-maven-plugin</artifactId>
-                <version>0.11</version>
+                <version>0.12</version>
                 <executions>
                     <execution>
-                        <goals>
-                            <goal>site</goal>
-                        </goals>
-                        <phase>site-deploy</phase>
                         <configuration>
                             <server>github</server>
                             <message>Creating site for Flamingo ${project.version}</message>
+                            <outputDirectory>${basedir}/target/staging</outputDirectory>
+                            <branch>refs/heads/gh-pages</branch>                       <!-- remote branch name -->
+                            <includes>
+                                <include>**/*</include>
+                            </includes>
                         </configuration>
                     </execution>
                 </executions>
@@ -190,11 +199,81 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
-                <version>3.6</version>
+                <reportSets>
+                    <reportSet>
+                        <id>pmd-report</id>
+                        <reports>
+                            <report>pmd</report>
+                        </reports>
+                        <configuration>
+                            <skipEmptyReport>false</skipEmptyReport>
+                        </configuration>
+                    </reportSet>
+
+                    <reportSet>
+                        <id>pmd-aggregate</id>
+                        <inherited>false</inherited>
+                        <reports>
+                            <report>pmd</report>
+                        </reports>
+                        <configuration>
+                            <aggregate>true</aggregate>
+                            <skipEmptyReport>false</skipEmptyReport>
+                        </configuration>
+                    </reportSet>
+
+                    <reportSet>
+                        <id>cpd-report</id>
+                        <reports>
+                            <report>cpd</report>
+                        </reports>
+                        <configuration>
+                            <skipEmptyReport>false</skipEmptyReport>
+                        </configuration>
+                    </reportSet>
+
+                    <reportSet>
+                        <id>cpd-aggregate</id>
+                        <inherited>false</inherited>
+                        <reports>
+                            <report>cpd</report>
+                        </reports>
+                        <configuration>
+                            <aggregate>true</aggregate>
+                            <skipEmptyReport>false</skipEmptyReport>
+                        </configuration>
+                    </reportSet>
+                </reportSets>
             </plugin>
 
             <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-report-plugin</artifactId>
+                <reportSets>
+                    <reportSet>
+                        <id>unit-tests</id>
+                        <reports>
+                            <report>report-only</report>
+                        </reports>
+                        <configuration>
+                            <linkXRef>true</linkXRef>
+                            <alwaysGenerateSurefireReport>true</alwaysGenerateSurefireReport>
+                        </configuration>
+                    </reportSet>
+
+                    <reportSet>
+                        <id>unit-tests-aggregate</id>
+                        <inherited>false</inherited>
+                        <reports>
+                            <report>report-only</report>
+                        </reports>
+                        <configuration>
+                            <aggregate>true</aggregate>
+                            <linkXRef>true</linkXRef>
+                            <alwaysGenerateSurefireReport>true</alwaysGenerateSurefireReport>
+                        </configuration>
+                    </reportSet>
+                </reportSets>
             </plugin>
 
             <plugin>
@@ -207,8 +286,82 @@
             </plugin>
 
             <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-pmd-plugin</artifactId>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>taglist-maven-plugin</artifactId>
+                <version>2.4</version>
+                <reportSets>
+                    <reportSet>
+                        <id>taglist-report</id>
+                        <reports>
+                            <report>taglist</report>
+                        </reports>
+                        <configuration>
+                            <tagListOptions>
+                                <tagClasses>
+                                    <tagClass>
+                                        <displayName>Todo Work</displayName>
+                                        <tags>
+                                            <tag>
+                                                <matchString>TODO</matchString>
+                                                <matchType>exact</matchType>
+                                            </tag>
+                                            <tag>
+                                                <matchString>FIXME</matchString>
+                                                <matchType>exact</matchType>
+                                            </tag>
+                                        </tags>
+                                    </tagClass>
+                                    <tagClass>
+                                        <displayName>Architecture Review Needed</displayName>
+                                        <tags>
+                                            <tag>
+                                                <matchString>ARCH-REV</matchString>
+                                                <matchType>exact</matchType>
+                                            </tag>
+                                        </tags>
+                                    </tagClass>
+                                </tagClasses>
+                            </tagListOptions>
+                        </configuration>
+                    </reportSet>
+
+                    <reportSet>
+                        <id>taglist-aggregate</id>
+                        <inherited>false</inherited>
+                        <reports>
+                            <report>taglist</report>
+                        </reports>
+                        <configuration>
+                            <aggregate>true</aggregate>
+                            <tagListOptions>
+                                <tagClasses>
+                                    <tagClass>
+                                        <displayName>Todo Work</displayName>
+                                        <tags>
+                                            <tag>
+                                                <matchString>TODO</matchString>
+                                                <matchType>exact</matchType>
+                                            </tag>
+                                            <tag>
+                                                <matchString>FIXME</matchString>
+                                                <matchType>exact</matchType>
+                                            </tag>
+                                        </tags>
+                                    </tagClass>
+                                    <tagClass>
+                                        <displayName>Architecture Review Needed</displayName>
+                                        <tags>
+                                            <tag>
+                                                <matchString>ARCH-REV</matchString>
+                                                <matchType>exact</matchType>
+                                            </tag>
+                                        </tags>
+                                    </tagClass>
+                                </tagClasses>
+                            </tagListOptions>
+                        </configuration>
+                    </reportSet>
+                </reportSets>
             </plugin>
 
             <plugin>
@@ -241,10 +394,31 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>cobertura-maven-plugin</artifactId>
                 <version>2.7</version>
+                <configuration>
+                    <aggregate>true</aggregate>
+                    <formats>
+                        <format>html</format>
+                        <format>xml</format>
+                    </formats>
+                </configuration>
                 <reportSets>
                     <reportSet>
                         <reports>
                             <report>cobertura</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
+
+            <!--  Changes  -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-changes-plugin</artifactId>
+                <version>2.4</version>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>changes-report</report>
                         </reports>
                     </reportSet>
                 </reportSets>
@@ -748,10 +922,17 @@
         </dependencies>
     </dependencyManagement>
 
+    <scm>
+        <connection>scm:git:https://github.com/EXEM-OSS/flamingo</connection>
+        <developerConnection>scm:git:ssh://git@github.com/EXEM-OSS/flamingo.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+
     <distributionManagement>
         <site>
             <id>github</id>
-            <url>${site.path}</url>
+            <name>Flamingo Maven Site Deployment</name>
+            <url>git:https://github.com/EXEM-OSS/flamingo.git?gh-pages#</url>
         </site>
     </distributionManagement>
 
