@@ -11,5 +11,7 @@
     </parent>
 
     <artifactId>flamingo-collector</artifactId>
-    <description>Flamingo Metrics Collector</description>
+    <packaging>jar</packaging>
+    <name>Flamingo Metrics Collector</name>
+    <description>Flamingo Metrics Collector for Oozie Monitoring</description>
 </project>

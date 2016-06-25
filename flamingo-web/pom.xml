@@ -12,6 +12,7 @@
 
     <artifactId>flamingo-web</artifactId>
     <packaging>war</packaging>
+    <name>Flamingo Web Application</name>
     <description>Flamingo Web Application</description>
 
     <dependencies>

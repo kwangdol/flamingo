@@ -8,6 +8,8 @@
     <artifactId>flamingo</artifactId>
     <packaging>pom</packaging>
     <version>0.1-SNAPSHOT</version>
+    <name>Flamingo</name>
+    <description>Flamingo is a web application for managing Apache Oozie. Flamingo drastically simplifies management of Apache Oozie through the following features.</description>
 
     <modules>
         <module>flamingo-shared</module>
@@ -445,6 +447,12 @@
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-classic</artifactId>
                 <version>${logback.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>slf4j-api</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
 
             <dependency>
@@ -457,6 +465,12 @@
                 <groupId>org.lazyluke</groupId>
                 <artifactId>log4jdbc-remix</artifactId>
                 <version>${log4jdbc.remix.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>slf4j-api</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
 
             <!-- =================== -->
@@ -473,6 +487,12 @@
                 <groupId>com.zaxxer</groupId>
                 <artifactId>HikariCP</artifactId>
                 <version>${hikaricp.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.slf4j</groupId>
+                        <artifactId>slf4j-api</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
 
             <!-- ============== -->
@@ -665,6 +685,11 @@
             <email>oopchoi@gmail.com</email>
         </developer>
     </developers>
+
+    <organization>
+        <name>Flamingo Community</name>
+        <url>https://www.facebook.com/groups/flamingo.workflow</url>
+    </organization>
 
     <repositories>
         <repository>

@@ -11,5 +11,7 @@
     </parent>
 
     <artifactId>flamingo-opengraph</artifactId>
-    <description>Reusable HTML 5 Graph Library</description>
+    <packaging>war</packaging>
+    <name>Flamingo HTML 5 Graph Library</name>
+    <description>Reusable HTML 5 Graph Library for Oozie Workflow Designer</description>
 </project>
