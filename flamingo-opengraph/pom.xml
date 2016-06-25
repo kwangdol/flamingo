@@ -11,4 +11,5 @@
     </parent>
 
     <artifactId>flamingo-opengraph</artifactId>
+    <description>Reusable HTML 5 Graph Library</description>
 </project>

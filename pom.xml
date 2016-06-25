@@ -86,8 +86,44 @@
                     <encoding>${output.encoding}</encoding>
                 </configuration>
             </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>3.6</version>
+                <configuration>
+                    <linkXref>true</linkXref>
+                    <sourceEncoding>utf-8</sourceEncoding>
+                    <minimumTokens>100</minimumTokens>
+                    <targetJdk>${java.version}</targetJdk>
+<!--
+                    <rulesets>
+                        <ruleset>ecmascript-basic</ruleset>
+                        <ruleset>ecmascript-braces</ruleset>
+                        <ruleset>ecmascript-unnecessary</ruleset>
+                    </rulesets>
+-->
+                    <excludes>
+                        <exclude>**/*Bean.java</exclude>
+                        <exclude>**/generated/*.java</exclude>
+                    </excludes>
+                    <excludeRoots>
+                        <excludeRoot>target/generated-sources/stubs</excludeRoot>
+                    </excludeRoots>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>3.6</version>
+            </plugin>
+        </plugins>
+    </reporting>
 
     <dependencyManagement>
         <dependencies>
@@ -566,6 +602,69 @@
             </dependency>
         </dependencies>
     </dependencyManagement>
+
+    <developers>
+        <developer>
+            <id>fharenheit</id>
+            <name>Byoung Gon, Kim</name>
+            <organization>EXEM, Inc.</organization>
+            <organizationUrl>http://www.ex-em.com</organizationUrl>
+            <roles>
+                <role>Committer</role>
+            </roles>
+            <timezone>Asia/Seoul</timezone>
+            <email>fharenheit@gmail.com</email>
+        </developer>
+        <developer>
+            <id>eunyoung</id>
+            <name>Eun Young, Kim</name>
+            <organization>EXEM, Inc.</organization>
+            <organizationUrl>http://www.ex-em.com</organizationUrl>
+            <roles>
+                <role>Committer</role>
+            </roles>
+            <timezone>Asia/Seoul</timezone>
+            <email>waihekedays@gmail.com</email>
+        </developer>
+        <developer>
+            <id>ersione</id>
+            <name>Kyoung Sik, Kim</name>
+            <organization>EXEM, Inc.</organization>
+            <organizationUrl>http://www.ex-em.com</organizationUrl>
+            <roles>
+                <role>Committer</role>
+            </roles>
+            <timezone>Asia/Seoul</timezone>
+            <email>ersione.companies@gmail.com</email>
+        </developer>
+        <developer>
+            <id>sppark</id>
+            <name>Seung Pil, Park</name>
+            <roles>
+                <role>Committer</role>
+            </roles>
+            <timezone>Asia/Seoul</timezone>
+            <email>darkgodarkgo@gmail.com</email>
+        </developer>
+        <developer>
+            <id>seungmin</id>
+            <name>Seung Min, Choi</name>
+            <roles>
+                <role>Committer</role>
+            </roles>
+            <timezone>Asia/Seoul</timezone>
+            <email>smsmsmsm.choi@gmail.com</email>
+        </developer>
+        <developer>
+            <id>oopchoi</id>
+            <name>Sung Hoon, Choi</name>
+            <roles>
+                <role>Committer</role>
+            </roles>
+            <timezone>Asia/Seoul</timezone>
+            <email>oopchoi@gmail.com</email>
+        </developer>
+    </developers>
 
     <repositories>
         <repository>

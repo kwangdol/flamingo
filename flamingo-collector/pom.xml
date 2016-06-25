@@ -11,4 +11,5 @@
     </parent>
 
     <artifactId>flamingo-collector</artifactId>
+    <description>Flamingo Metrics Collector</description>
 </project>
