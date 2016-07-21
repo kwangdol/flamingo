@@ -43,16 +43,16 @@
 
     <!-- ========================= MESSAGE SOURCE DEFINITION ========================= -->
 
-    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
-        <property name="basenames">
-            <list>
-                <value>classpath:locale/message</value>
-            </list>
-        </property>
-        <property name="fileEncodings" value="UTF-8"/>
-        <property name="defaultEncoding" value="UTF-8"/>
-        <property name="fallbackToSystemLocale" value="false"/>
-    </bean>
+    <!--<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">-->
+        <!--<property name="basenames">-->
+            <!--<list>-->
+                <!--<value>classpath:locale/message</value>-->
+            <!--</list>-->
+        <!--</property>-->
+        <!--<property name="fileEncodings" value="UTF-8"/>-->
+        <!--<property name="defaultEncoding" value="UTF-8"/>-->
+        <!--<property name="fallbackToSystemLocale" value="false"/>-->
+    <!--</bean>-->
 
     <!-- ========================= MVC DEFINITION ========================= -->
 
