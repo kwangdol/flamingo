@@ -1,0 +1,49 @@
+
+//            //디폴트 방위 테스트
+//            var createShapes = function (standardP, size, direction, distance, preGap) {
+//                var x = standardP[0];
+//                var y = standardP[1];
+//                var width = size[0];
+//                var height = size[1];
+//                var standard = canvas.drawShape([x, y], new OG.RectangleShape(), [width, height]);
+//
+//                for (var i = -4; i < 4; i++) {
+//                    var connectX, connectY, connectShape;
+//                    if (direction === 'upper') {
+//                        connectX = x + (preGap * i) + (preGap/2);
+//                        connectY = y - distance;
+//                    }
+//                    if (direction === 'low') {
+//                        connectX = x + (preGap * i) + + (preGap/2);
+//                        connectY = y + distance;
+//                    }
+//                    if (direction === 'left') {
+//                        connectX = x - distance;
+//                        connectY = y + (preGap * i);
+//                    }
+//                    if (direction === 'right') {
+//                        connectX = x + distance;
+//                        connectY = y + (preGap * i);
+//                    }
+//                    connectShape = canvas.drawShape([connectX, connectY], new OG.RectangleShape(), [width, height]);
+//                    canvas.connect(standard, connectShape);
+//                }
+//            };
+//            //createShapes([300, 200], [80, 60] , 'upper' , 120, 70);
+//            createShapes([450, 50], [80, 60] , 'low' , 120, 90);
+//            createShapes([350, 550], [80, 60] , 'left' , 120, 70);
+//            createShapes([550, 550], [80, 60] , 'right' , 120, 70);
+//            //디폴트 방위 테스트 End
+
+
+
+//var imageShape = new OG.ImageShape('http://static.naver.net/www/u/2010/0611/nmms_215646753.gif', 'label');
+//var textShape1 = new OG.TextShape("Text Here, Hello World!");
+//var htmlShape = new OG.HtmlShape("html", 'label');
+//            canvas.drawShape([100, 500], imageShape, [150, 50, 45], {'text-anchor': 'middle', 'vertical-align': 'top'});
+//            canvas.drawShape([300, 500], textShape1, [200, 100, 45], {
+//                'font-size': 10,
+//                'text-anchor': 'start',
+//                'vertical-align': 'middle'
+//            });
+//canvas.drawShape([200, 200], htmlShape, [150, 50], {'text-anchor': 'middle', 'vertical-align': 'top'});

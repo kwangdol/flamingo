@@ -14,9 +14,7 @@
 
     <modules>
         <module>flamingo-shared</module>
-        <!--
-                <module>flamingo-opengraph</module>
-        -->
+        <module>flamingo-opengraph</module>
         <module>flamingo-collector</module>
         <module>flamingo-web</module>
     </modules>
