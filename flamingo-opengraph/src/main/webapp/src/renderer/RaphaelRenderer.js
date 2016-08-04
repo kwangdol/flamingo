@@ -1954,7 +1954,7 @@ OG.renderer.RaphaelRenderer.prototype.connect = function (from, to, edge, style,
         return null;
     }
 
-    var me = this, _style = {}, fromShape, toShape, fromXY, toXY,
+    var me = this, _style = {}, fromShape, toShape, fromXY, toXY, fromAttr, toAttr,
         isSelf, beforeEvent,
         addAttrValues = function (element, name, value) {
             var attrValue = $(element).attr(name),
@@ -1973,7 +1973,6 @@ OG.renderer.RaphaelRenderer.prototype.connect = function (from, to, edge, style,
 
     OG.Util.apply(_style, (style instanceof OG.geometry.Style) ? style.map : style || {}, me._CONFIG.DEFAULT_STYLE.EDGE);
 
-
     if (!from) {
         from = $(edge).attr("_from");
     }
@@ -1989,6 +1988,17 @@ OG.renderer.RaphaelRenderer.prototype.connect = function (from, to, edge, style,
     if (to) {
         toShape = this._getShapeFromTerminal(to);
         toXY = this._getPositionFromTerminal(to);
+    }
+
+    //재연결 여부를 판단하여 이벤트 트리거 발생을 방지한다.
+    fromAttr = $(edge).attr("_from");
+    toAttr = $(edge).attr("_to");
+    if (fromShape && toShape && fromAttr && toAttr) {
+        var fromShapeId = fromAttr.substring(0, fromAttr.indexOf(OG.Constants.TERMINAL));
+        var toShapeId = toAttr.substring(0, toAttr.indexOf(OG.Constants.TERMINAL));
+        if ((fromShapeId == fromShape.id) && (toShapeId == toShape.id)) {
+            preventTrigger = true;
+        }
     }
 
     //셀프 커넥션 처리
@@ -2008,11 +2018,13 @@ OG.renderer.RaphaelRenderer.prototype.connect = function (from, to, edge, style,
             _style["arrow-end"] = "block-wide-long";
         }
 
-        beforeEvent = jQuery.Event("beforeConnectShape", {edge: edge, fromShape: fromShape, toShape: toShape});
-        $(this._PAPER.canvas).trigger(beforeEvent);
-        if (beforeEvent.isPropagationStopped()) {
-            this.remove(edge);
-            return null;
+        if (!preventTrigger) {
+            beforeEvent = jQuery.Event("beforeConnectShape", {edge: edge, fromShape: fromShape, toShape: toShape});
+            $(this._PAPER.canvas).trigger(beforeEvent);
+            if (beforeEvent.isPropagationStopped()) {
+                this.remove(edge);
+                return null;
+            }
         }
     }
 
