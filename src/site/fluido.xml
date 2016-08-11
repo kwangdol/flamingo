@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="Flamingo">
+    <custom>
+        <fluidoSkin>
+            <topBarEnabled>true</topBarEnabled>
+            <sideBarEnabled>false</sideBarEnabled>
+            <topBarContainerStyle>width: 90%;</topBarContainerStyle>
+            <navBarStyle>navbar-inverse</navBarStyle>
+            <sourceLineNumbersEnabled>true</sourceLineNumbersEnabled>
+            <copyrightClass>pull-right</copyrightClass>
+            <skipGenerationDate>true</skipGenerationDate>
+            <breadcrumbDivider>»</breadcrumbDivider>
+
+            <url>http://maven.apache.org/skins/maven-fluido-skin</url>
+
+            <topBarIcon>
+                <name>Maven Fluido Skin</name>
+                <alt>Maven Fluido Skin</alt>
+                <src>/images/topbar-logo.png</src>
+                <href>/index.html</href>
+            </topBarIcon>
+
+            <googleSearch>
+                <sitesearch/>
+            </googleSearch>
+
+            <gitHub>
+                <projectId>apache/maven-skins</projectId>
+                <ribbonOrientation>right</ribbonOrientation>
+                <ribbonColor>black</ribbonColor>
+            </gitHub>
+
+            <facebookLike/>
+        </fluidoSkin>
+    </custom>
+
+    <skin>
+        <groupId>org.apache.maven.skins</groupId>
+        <artifactId>maven-fluido-skin</artifactId>
+        <version>1.5</version>
+    </skin>
+</project>
