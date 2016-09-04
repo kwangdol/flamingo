@@ -67,7 +67,6 @@ Flamingo drastically simplifies management of Apache Oozie through the following
 
 ```xml
 <!--
-
     (C) Copyright 2012-2016 the Flamingo Community.
 
     Licensed to the Apache Software Foundation (ASF) under one or more

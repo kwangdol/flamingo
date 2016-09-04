@@ -124,8 +124,6 @@
                                 <include>shape/ImageShape.js</include>
                                 <include>shape/EdgeShape.js</include>
                                 <include>shape/*.js</include>
-                                <include>shape/essencia/Activity.js</include>
-                                <include>shape/essencia/*.js</include>
                                 <include>shape/bpmn/A_Task.js</include>
                                 <include>shape/bpmn/Event.js</include>
                                 <include>shape/bpmn/E_End.js</include>
@@ -166,8 +164,6 @@
                                 <include>shape/ImageShape-min.js</include>
                                 <include>shape/EdgeShape-min.js</include>
                                 <include>shape/*.js</include>
-                                <include>shape/essencia/Activity-min.js</include>
-                                <include>shape/essencia/*.js</include>
                                 <include>shape/bpmn/A_Task-min.js</include>
                                 <include>shape/bpmn/Event-min.js</include>
                                 <include>shape/bpmn/E_End-min.js</include>
@@ -214,8 +210,6 @@
                                 <include>shape/ImageShape-min.js</include>
                                 <include>shape/EdgeShape-min.js</include>
                                 <include>shape/*.js</include>
-                                <include>shape/essencia/Activity-min.js</include>
-                                <include>shape/essencia/*.js</include>
                                 <include>shape/bpmn/A_Task-min.js</include>
                                 <include>shape/bpmn/Event-min.js</include>
                                 <include>shape/bpmn/E_End-min.js</include>
@@ -299,32 +293,30 @@
         </dependency>
 
         <dependency>
-            <groupId>org.uengine.metaworks</groupId>
-            <artifactId>metaworks3</artifactId>
-            <version>1.2.1-SNAPSHOT</version>
-        </dependency>
-
-        <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <version>3.0.1</version>
         </dependency>
+
         <dependency>
             <groupId>javax.validation</groupId>
             <artifactId>validation-api</artifactId>
             <version>1.0.0.GA</version>
         </dependency>
+
         <dependency>
             <groupId>javax.persistence</groupId>
             <artifactId>persistence-api</artifactId>
             <version>1.0.2</version>
         </dependency>
+
         <!-- Spring -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-jdbc</artifactId>
             <version>${org.springframework-version}</version>
         </dependency>
+
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-web</artifactId>
@@ -342,31 +334,37 @@
             <artifactId>commons-dbcp</artifactId>
             <version>1.2.2</version>
         </dependency>
+
         <dependency>
             <groupId>commons-httpclient</groupId>
             <artifactId>commons-httpclient</artifactId>
             <version>3.1</version>
         </dependency>
+
         <dependency>
             <groupId>com.thoughtworks.xstream</groupId>
             <artifactId>xstream</artifactId>
             <version>1.3.1</version>
         </dependency>
+
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjrt</artifactId>
             <version>1.6.3</version>
         </dependency>
+
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjweaver</artifactId>
             <version>1.6.3</version>
         </dependency>
+
         <dependency>
             <groupId>org.aspectj</groupId>
             <artifactId>aspectjtools</artifactId>
             <version>1.6.3</version>
         </dependency>
+
         <dependency>
             <groupId>commons-logging</groupId>
             <artifactId>commons-logging</artifactId>
