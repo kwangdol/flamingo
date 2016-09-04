@@ -26,7 +26,7 @@ Flamingo drastically simplifies management of Apache Oozie through the following
 
 ```java
 /*
- * (C) Copyright 2012-2016 the Flamingo Community.
+ * Copyright (C) 2012-2016 the Flamingo Community.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,7 +46,7 @@ Flamingo drastically simplifies management of Apache Oozie through the following
 
 ```javascript
 /*
- * (C) Copyright 2012-2016 the Flamingo Community.
+ * Copyright (C) 2012-2016 the Flamingo Community.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -67,7 +67,7 @@ Flamingo drastically simplifies management of Apache Oozie through the following
 
 ```xml
 <!--
-    (C) Copyright 2012-2016 the Flamingo Community.
+    Copyright (C) 2012-2016 the Flamingo Community.
 
     Licensed to the Apache Software Foundation (ASF) under one or more
     contributor license agreements.  See the NOTICE file distributed with
