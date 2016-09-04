@@ -15,6 +15,7 @@
     <modules>
         <module>flamingo-shared</module>
         <module>flamingo-opengraph</module>
+        <module>flamingo-agent-nn</module>
         <module>flamingo-collector</module>
         <module>flamingo-web</module>
     </modules>
@@ -36,6 +37,10 @@
 
         <!-- Commons -->
         <commons.io.version>2.5</commons.io.version>
+
+        <!-- HttpClient -->
+        <httpcore.version>4.4.4</httpcore.version>
+        <httpclient.version>4.5.2</httpclient.version>
 
         <!-- JSON -->
         <jackson.version>2.7.4</jackson.version>
@@ -832,6 +837,7 @@
                 <artifactId>hadoop-hdfs</artifactId>
                 <version>${hadoop.version}</version>
             </dependency>
+
             <dependency>
                 <groupId>org.apache.hadoop</groupId>
                 <artifactId>hadoop-yarn-server-resourcemanager</artifactId>
@@ -862,6 +868,22 @@
                 <version>${hadoop.version}</version>
             </dependency>
 
+            <dependency>
+                <groupId>org.apache.hadoop</groupId>
+                <artifactId>hadoop-common</artifactId>
+                <version>${hadoop.version}</version>
+                <type>test-jar</type>
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.hadoop</groupId>
+                <artifactId>hadoop-hdfs</artifactId>
+                <version>${hadoop.version}</version>
+                <type>test-jar</type>
+                <scope>test</scope>
+            </dependency>
+
             <!-- =================== -->
             <!--  JDBC Dependencies  -->
             <!-- =================== -->
@@ -872,11 +894,32 @@
                 <version>${postgresql.version}</version>
             </dependency>
 
-
             <dependency>
                 <groupId>com.zaxxer</groupId>
                 <artifactId>HikariCP</artifactId>
                 <version>${hikaricp.version}</version>
+            </dependency>
+
+            <!-- ============= -->
+            <!--  HTTP Client  -->
+            <!-- ============= -->
+
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpcore</artifactId>
+                <version>${httpcore.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpclient</artifactId>
+                <version>${httpclient.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.httpcomponents</groupId>
+                <artifactId>httpmime</artifactId>
+                <version>${httpclient.version}</version>
             </dependency>
 
             <!-- ============== -->
