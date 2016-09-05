@@ -30,8 +30,6 @@ import org.apache.hadoop.util.Time;
 import org.exem.flamingo.agent.nn.Namenode2AgentService;
 import org.exem.flamingo.agent.nn.hdfs.HdfsFileInfo;
 import org.exem.flamingo.shared.model.rest.FileInfo;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.util.*;
@@ -45,11 +43,6 @@ import static org.apache.hadoop.hdfs.server.namenode.Namenode2Agent.MEGA_BYTES;
  * @since 0.1
  */
 public class Namenode2AgentServiceImpl extends FileSystemProvider implements Namenode2AgentService {
-
-    /**
-     * SLF4J Logging
-     */
-    private Logger logger = LoggerFactory.getLogger(Namenode2AgentServiceImpl.class);
 
     public List<Map> getTop5() throws IOException {
         FileSystem fs = FileSystem.get(Namenode2Agent.configuration);
