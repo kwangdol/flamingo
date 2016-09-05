@@ -9,7 +9,7 @@
 
     <bean name="namenode2Agent" class="org.springframework.remoting.httpinvoker.SimpleHttpInvokerServiceExporter">
         <property name="service" ref="namenode2AgentService"/>
-        <property name="serviceInterface" value="com.exem.flamingo.management.agent.nn.Namenode2AgentService"/>
+        <property name="serviceInterface" value="org.exem.flamingo.agent.nn.Namenode2AgentService"/>
     </bean>
 
     <!-- ================ Massive File Transfer Service ================ -->
