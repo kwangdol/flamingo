@@ -18,7 +18,7 @@ package org.exem.flamingo.shared.util;
 import java.lang.management.ManagementFactory;
 
 /**
- * System Utility.
+ * 시스템 유틸리티.
  *
  * @author Byoung Gon, Kim
  * @since 0.1
