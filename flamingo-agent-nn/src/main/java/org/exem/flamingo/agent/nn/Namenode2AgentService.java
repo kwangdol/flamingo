@@ -23,24 +23,78 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * HDFS 브라우저의 HDFS 관리 동작에 필요한 기능을 제공하는 서비스 인터페이스.
+ *
+ * @author Byoung Gon, Kim
+ * @since 0.1
+ */
 public interface Namenode2AgentService {
 
+    /**
+     * Namenode 정보를 반환한다.
+     *
+     * @return Namenode 정보
+     */
     Map getNamenodeInfo();
 
+    /**
+     * Namenode의 Hadoop Configuration을 반환한다.
+     *
+     * @return Namenode의 Hadoop Configuration
+     */
     Map<String, Object> getConfiguration();
 
+    /**
+     * Namenode의 전체 상황 정보를 반환한다.
+     *
+     * @return Namenode 상황 정보
+     */
     Map<String, Object> getMetrics();
 
+    /**
+     * 데이터 노드 목록을 반환한다.
+     *
+     * @return 데이터 노드 목록
+     * @throws IOException 데이터 노드 목록을 얻을 수 없는 경우
+     */
     List getDatanodes() throws IOException;
 
+    /**
+     * Live 데이터 노드를 반환한다.
+     *
+     * @return Live 데이터 노드
+     */
     List<Map<String, Object>> getLiveNodes();
 
+    /**
+     * Dead 데이터 노드를 반환한다.
+     *
+     * @return Dead 데이터 노드
+     */
     List<Map<String, Object>> getDeadNodes();
 
+    /**
+     * Decommission 데이터 노드를 반환한다.
+     *
+     * @return Decommission 데이터 노드
+     */
     List<Map<String, Object>> getDecommissioningNodes();
 
+    /**
+     * Namenode의 JVM Heap 정보를 반환한다.
+     *
+     * @return Namenode의 JVM Heap 정보
+     */
     Map<String, Long> getJVMHeap();
 
+    /**
+     * 지정한 경로의 파일 및 디렉토리 목록을 반환한다.
+     *
+     * @param path          HDFS 경로
+     * @param directoryOnly true인 경우 디렉토리만 추출
+     * @return 파일 및 디렉토리 목록
+     */
     List<FileInfo> list(String path, boolean directoryOnly);
 
     /**
