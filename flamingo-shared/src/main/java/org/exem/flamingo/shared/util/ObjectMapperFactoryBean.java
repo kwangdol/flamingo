@@ -21,7 +21,7 @@ import org.springframework.beans.factory.FactoryBean;
 import org.springframework.beans.factory.InitializingBean;
 
 /**
- * Object Mapper Factory.
+ * Jackson Object Mapper Factory.
  *
  * @author Byoung Gon, Kim
  * @since 0.1

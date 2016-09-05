@@ -61,21 +61,7 @@
     <script type="text/javascript" src="src/shape/VerticalPoolShape.js"></script>
     <script type="text/javascript" src="src/shape/Transformer.js"></script>
 
-
-    <!--Assensia-->
-    <script type="text/javascript" src="src/shape/essencia/Alpha.js"></script>
-    <script type="text/javascript" src="src/shape/essencia/State.js"></script>
-    <script type="text/javascript" src="src/shape/essencia/LevelOfDetail.js"></script>
-    <script type="text/javascript" src="src/shape/essencia/Competency.js"></script>
-    <script type="text/javascript" src="src/shape/essencia/Practice.js"></script>
-    <script type="text/javascript" src="src/shape/essencia/ActivitySpace.js"></script>
-    <script type="text/javascript" src="src/shape/essencia/Activity.js"></script>
-    <script type="text/javascript" src="src/shape/essencia/WorkProduct.js"></script>
-    <script type="text/javascript" src="src/shape/essencia/CompetencyLevel.js"></script>
-    <script type="text/javascript" src="src/shape/essencia/ActivityArrow.js"></script>
-
-
-    <!--Bpmn-->
+    <!-- BPMN -->
     <script type="text/javascript" src="src/shape/bpmn/A_Subprocess.js"></script>
     <script type="text/javascript" src="src/shape/bpmn/A_Task.js"></script>
     <script type="text/javascript" src="src/shape/bpmn/A_MapperTask.js"></script>
@@ -132,12 +118,10 @@
     <script type="text/javascript" src="src/shape/bpmn/M_Text.js"></script>
     <script type="text/javascript" src="src/shape/bpmn/ScopeActivity.js"></script>
 
-
     <script type="text/javascript" src="src/renderer/IRenderer.js"></script>
     <script type="text/javascript" src="src/renderer/RaphaelRenderer.js"></script>
     <script type="text/javascript" src="src/handler/EventHandler.js"></script>
     <script type="text/javascript" src="src/graph/Canvas.js"></script>
-
 
     <style type="text/css">
         .ui-layout-center {
@@ -248,52 +232,42 @@
             });
 
             canvas.onDivideLane(function (event, divideLane) {
-                // console.log(divideLane);
             });
 
             // Shape 이 처음 Draw 되었을 때의 이벤트 리스너
             canvas.onDrawShape(function (event, shapeElement) {
-//            console.log('onDrawShape', shapeElement);
             });
 
             // Undo 되었을 때의 이벤트 리스너
             canvas.onUndo(function (event) {
-//            console.log('undo');
             });
 
             // Redo 되었을 때의 이벤트 리스너
             canvas.onRedo(function (event) {
-//            console.log('redo');
             });
 
             // Shape 이 Redraw 되었을 때의 이벤트 리스너
             canvas.onRedrawShape(function (event, shapeElement) {
-//            console.log('onRedrawShape', shapeElement);
             });
 
             // Shape 이 Remove 될 때의 이벤트 리스너
             canvas.onRemoveShape(function (event, shapeElement) {
-//            console.log('onRemoveShape', shapeElement);
             });
 
             // Shape 이 Move 되었을 때의 이벤트 리스너
             canvas.onMoveShape(function (event, shapeElement, offset) {
-//            console.log('onMoveShape', shapeElement, offset);
             });
 
             // Shape 이 Resize 되었을 때의 이벤트 리스너
             canvas.onResizeShape(function (event, shapeElement, offset) {
-//            console.log('onResizeShape', shapeElement, offset);
             });
 
             // Shape 이 Connect 되었을 때의 이벤트 리스너
             canvas.onConnectShape(function (event, edgeElement, fromElement, toElement) {
-//            console.log('onConnectShape', edgeElement, fromElement, toElement);
             });
 
             // Shape 이 Disconnect 되었을 때의 이벤트 리스너
             canvas.onDisconnectShape(function (event, edgeElement, fromElement, toElement) {
-//            console.log('onDisconnectShape', edgeElement, fromElement, toElement);
             });
 
             //Simple example
@@ -472,10 +446,6 @@
         </div>
     </div>
 </div>
-<!--<div class="ui-layout-center" id="canvas_cover" style="overflow: hidden">-->
-<!--<div id="canvas" style="cursor: default;width:100%;height:100%;overflow: scroll"></div>-->
-<!--<div id="canvas_slider"></div>-->
-<!--</div>-->
 
 <div class="ui-layout-center" id="canvas" style="cursor: default;"/>
 <div id="canvas_slider"></div>
