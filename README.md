@@ -22,6 +22,8 @@ Flamingo drastically simplifies management of Apache Oozie through the following
 
 [![Apache 2.0](https://img.shields.io/badge/License-Apache%202.0-brightgreen.svg)](LICENSE)
 
+## License Headers
+
 ### Java Header
 
 ```java
