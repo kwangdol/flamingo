@@ -15,9 +15,9 @@
 */
 package org.exem.flamingo.agent.nn;
 
-import org.exem.flamingo.shared.model.rest.FileInfo;
 import org.apache.hadoop.fs.ContentSummary;
 import org.exem.flamingo.agent.nn.hdfs.HdfsFileInfo;
+import org.exem.flamingo.shared.model.rest.FileInfo;
 
 import java.io.IOException;
 import java.util.List;
@@ -41,15 +41,13 @@ public interface Namenode2AgentService {
 
     Map<String, Long> getJVMHeap();
 
-    List<Map> getTop5() throws IOException;
-
     List<FileInfo> list(String path, boolean directoryOnly);
 
     /**
      * 선택한 경로에 디렉토리를 생성한다.
      *
-     * @param srcPath   디렉토리 경로
-     * @param username  사용자명
+     * @param srcPath  디렉토리 경로
+     * @param username 사용자명
      * @return 정상적으로 생성한 경우 <tt>true</tt>
      */
     boolean mkdir(String srcPath, String username);
@@ -57,9 +55,9 @@ public interface Namenode2AgentService {
     /**
      * 지정한 디렉토리 또는 파일을 선택한 경로로 복사한다.
      *
-     * @param srcPath   복사할 디렉토리 또는 파일(멀티파일 포함)
-     * @param dstPath   복사될 경로
-     * @param username  Username
+     * @param srcPath  복사할 디렉토리 또는 파일(멀티파일 포함)
+     * @param dstPath  복사될 경로
+     * @param username Username
      * @return 정상적으로 복사한 경우 <tt>true</tt>
      */
     boolean copy(String srcPath, String dstPath, String username);
@@ -67,8 +65,8 @@ public interface Namenode2AgentService {
     /**
      * 지정한 디렉토리 또는 파일을 선택한 경로로 이동한다.
      *
-     * @param srcPath           이동할 디렉토리 또는 파일(멀티파일 포함)
-     * @param dstPath           이동될 경로
+     * @param srcPath 이동할 디렉토리 또는 파일(멀티파일 포함)
+     * @param dstPath 이동될 경로
      * @return 정상적으로 복사한 경우 <tt>true</tt>
      */
     boolean move(String srcPath, String dstPath);
@@ -76,8 +74,8 @@ public interface Namenode2AgentService {
     /**
      * 지정한 디렉토리 또는 파일명을 변경한다.
      *
-     * @param srcPath           원본 디렉토리 또는 파일의 전체 경로
-     * @param name              변경될 디렉토리명 또는 파일명
+     * @param srcPath 원본 디렉토리 또는 파일의 전체 경로
+     * @param name    변경될 디렉토리명 또는 파일명
      * @return 정상적으로 변경된 경우 <tt>true</tt>
      */
     boolean rename(String srcPath, String name);
@@ -93,9 +91,9 @@ public interface Namenode2AgentService {
     /**
      * 지정한 디렉토리에 존재하는 모든 파일들을 병합한다.
      *
-     * @param srcPath   병합할 파일이 존재하는 경로
-     * @param dstPath   병합할 파일이 저장될 경로
-     * @param username  사용자명
+     * @param srcPath  병합할 파일이 존재하는 경로
+     * @param dstPath  병합할 파일이 저장될 경로
+     * @param username 사용자명
      * @return 정상적으로 병합된 경우 <tt>true</tt>
      */
     boolean merge(String srcPath, String dstPath, String username);
@@ -162,10 +160,10 @@ public interface Namenode2AgentService {
     /**
      * HDFS 경로에 파일 목록을 페이징 처리 하여 가져온다..
      *
-     * @param path HDFS 렉토리 경로
-     * @param page 페이지 번호
-     * @param start 시작 번호
-     * @param limit 목록 제한 갯수
+     * @param path   HDFS 디렉토리 경로
+     * @param page   페이지 번호
+     * @param start  시작 번호
+     * @param limit  목록 제한 갯수
      * @param filter 필터링
      * @return 파일 목록 구조체
      */
@@ -174,9 +172,9 @@ public interface Namenode2AgentService {
     /**
      * HDFS 경로에 파일 목록을 상위 갯수대로 가져온다.
      *
-     * @param path HDFS 렉토리 경로
+     * @param path  HDFS 디렉토리 경로
      * @param limit 목록 제한 갯수
-     * @param sort 정렬 여부
+     * @param sort  정렬 여부
      * @return 파일 목록 구조체
      */
     Map getTopN(String path, int limit, boolean sort) throws IOException;
@@ -192,10 +190,10 @@ public interface Namenode2AgentService {
     /**
      * HDFS 경로의 파일을 리눅스 사용자 홈 디렉토리로 복사한다.
      *
-     * @param srcFullyQualifiedPath     복사할 파일의 전체 경로
-     * @param dstFullyQualifiedPath     파일이 복사될 전체 경로
-     * @param linuxUserHome             사용자 리눅스 홈 디렉토리
-     * @param username                  사용자명
+     * @param srcFullyQualifiedPath 복사할 파일의 전체 경로
+     * @param dstFullyQualifiedPath 파일이 복사될 전체 경로
+     * @param linuxUserHome         사용자 리눅스 홈 디렉토리
+     * @param username              사용자명
      * @return true or false
      */
     boolean copyToLocal(String srcFullyQualifiedPath, String dstFullyQualifiedPath, String linuxUserHome, String username);

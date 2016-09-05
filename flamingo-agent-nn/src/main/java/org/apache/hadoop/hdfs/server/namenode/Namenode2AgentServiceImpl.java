@@ -18,7 +18,6 @@ package org.apache.hadoop.hdfs.server.namenode;
 import org.apache.commons.codec.binary.Base64;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.*;
-import org.apache.hadoop.hdfs.DistributedFileSystem;
 import org.apache.hadoop.hdfs.protocol.DatanodeInfo;
 import org.apache.hadoop.hdfs.protocol.FSConstants;
 import org.apache.hadoop.hdfs.protocol.HdfsConstants;
@@ -43,34 +42,6 @@ import static org.apache.hadoop.hdfs.server.namenode.Namenode2Agent.MEGA_BYTES;
  * @since 0.1
  */
 public class Namenode2AgentServiceImpl extends FileSystemProvider implements Namenode2AgentService {
-
-    public List<Map> getTop5() throws IOException {
-        FileSystem fs = FileSystem.get(Namenode2Agent.configuration);
-        FileStatus[] fileStatuses = fs.listStatus(new Path("/"));
-        TreeSet set = new TreeSet();
-
-        for (FileStatus fileStatus : fileStatuses) {
-            ContentSummary contentSummary = fs.getContentSummary(fileStatus.getPath());
-            FileMetadata fileMetadata = new FileMetadata(fileStatus, contentSummary);
-            if (fileMetadata.getFileStatus().isDirectory()) {
-                set.add(fileMetadata);
-            }
-        }
-
-        List top5 = new LinkedList();
-        Object[] arrays = set.toArray();
-        int totalCount = 0;
-
-        for (Object array : arrays) {
-            top5.add(toMap(fs, (FileMetadata) array));
-            totalCount++;
-
-            if (totalCount == 5)
-                break;
-        }
-
-        return top5;
-    }
 
     @Override
     public Map getListPage(String path, int page, int start, int limit, String filter) throws IOException {
@@ -300,7 +271,6 @@ public class Namenode2AgentServiceImpl extends FileSystemProvider implements Nam
     @Override
     public ContentSummary getContentSummary(String path) throws IOException {
         FileSystem fs = FileSystem.get(Namenode2Agent.configuration);
-
         return fs.getContentSummary(new Path(path));
     }
 
@@ -361,17 +331,6 @@ public class Namenode2AgentServiceImpl extends FileSystemProvider implements Nam
             } else {
                 return 0;
             }
-        }
-    }
-
-    public void saveNamespace() throws IOException {
-        NameNode namenode = Namenode2Agent.namenode;
-        FileSystem fs = FileSystem.get(namenode.conf);
-        if (fs instanceof DistributedFileSystem) {
-            DistributedFileSystem dfs = (DistributedFileSystem) fs;
-            dfs.saveNamespace();
-        } else {
-            throw new UnsupportedOperationException("지원하지 않는 기능입니다.");
         }
     }
 
