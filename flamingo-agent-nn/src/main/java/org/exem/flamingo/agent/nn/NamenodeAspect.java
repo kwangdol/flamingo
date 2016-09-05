@@ -33,9 +33,9 @@ import org.slf4j.LoggerFactory;
  * @see org.apache.hadoop.hdfs.server.namenode.NameNode#initialize(Configuration)
  */
 @Aspect
-public class NameNodeAspectJ {
+public class NamenodeAspect {
 
-    private static final Logger LOG = LoggerFactory.getLogger(NameNodeAspectJ.class);
+    private static final Logger LOG = LoggerFactory.getLogger(NamenodeAspect.class);
 
     /**
      * {@link org.apache.hadoop.hdfs.server.namenode.NameNode#initialize(Configuration)}에 대한 pointcut
@@ -45,7 +45,7 @@ public class NameNodeAspectJ {
     }
 
     /*
-     * {@link NameNodeAspectJ#aspectTargetMethod()} 의 target이 완료 되었을때 method 실행
+     * {@link NamenodeAspect#aspectTargetMethod()} 의 target이 완료 되었을때 method 실행
      * @param joinPoint jointpoint
      */
     @After("com.exem.flamingo.management.agent.nn.NameNodeAspectJ.aspectTargetMethod()")
