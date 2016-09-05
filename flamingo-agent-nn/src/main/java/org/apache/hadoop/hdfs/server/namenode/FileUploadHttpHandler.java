@@ -15,18 +15,19 @@
  */
 package org.apache.hadoop.hdfs.server.namenode;
 
+import org.exem.flamingo.shared.core.exception.ServiceException;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import org.apache.commons.io.IOUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import org.apache.hadoop.fs.FSDataInputStream;
-import org.apache.hadoop.fs.FileStatus;
+import org.apache.hadoop.fs.FSDataOutputStream;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 import org.springframework.util.FileCopyUtils;
 
 import java.io.*;
+import java.net.URI;
 import java.net.URLDecoder;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -34,42 +35,61 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * Massive File Download Controller.
+ * Massive File Upload Controller.
  *
  * @author Byoung Gon, Kim
  * @author Hyo Kun, Park
+ * @author Myeong ha, Kim
  * @since 0.1
  */
-public class FileDownloadHttpHandler implements HttpHandler {
+public class FileUploadHttpHandler implements HttpHandler {
 
-    private static final Log LOG = LogFactory.getLog(FileDownloadHttpHandler.class);
+    private static final Log LOG = LogFactory.getLog(FileUploadHttpHandler.class);
 
     @Override
-    public void handle(HttpExchange httpExchange) throws IOException {
+    public void handle(HttpExchange httpExchange) throws IOException { // POST로 받아야 함.
         OutputStream outputStream = httpExchange.getResponseBody();
         String response = null;
-
         try {
-            Map<String, Object> parameters = splitQuery(httpExchange.getRequestURI().getQuery().toString());
+            InputStream is = httpExchange.getRequestBody();  // Body에 파일 내용이 있음.
+
+            Map<String, Object> parameters = splitQuery(httpExchange.getRequestURI().getQuery());
             String fullyQualifiedPath = (String) parameters.get("fullyQualifiedPath");
+            String username = (String) parameters.get("username");
 
+            LOG.debug("[Flamingo] [Upload] Upload Path: " + fullyQualifiedPath);
+
+            // 파일명을 포함하는 Path를 받아서 저장함. 그외 부가적인 처리는 별도로 하도록 함(파일 있는지 찾기).
             FileSystem fs = FileSystem.get(Namenode2Agent.configuration);
-            FSDataInputStream is = fs.open(new Path(fullyQualifiedPath));
-            FileStatus fileStatus = fs.getFileStatus(new Path(fullyQualifiedPath));
-            OutputStream os = httpExchange.getResponseBody(); // OutputStream
 
-            httpExchange.sendResponseHeaders(200, fileStatus.getLen());
+            if (fs.exists(new Path(fullyQualifiedPath))) {
+                response = "FAILURE";
+                httpExchange.sendResponseHeaders(500, response.length());
+                LOG.warn("동일한 파일명이 존재합니다.");
+                throw new ServiceException();
+            }
+
+            FSDataOutputStream os = fs.create(new Path(fullyQualifiedPath));
 
             FileCopyUtils.copy(is, os);
 
-            IOUtils.closeQuietly(is);
+            if (fullyQualifiedPath.equalsIgnoreCase("/")) {
+                response = "FAILURE";
+                httpExchange.sendResponseHeaders(600, response.length());
+                LOG.warn("루트(/)는 권한을 변경할 수 없습니다.");
+                throw new ServiceException();
+            }
+
+            fs.setOwner(new Path(fullyQualifiedPath), username, username);
 
             os.flush();
             IOUtils.closeQuietly(os);
+            IOUtils.closeQuietly(is);
 
             response = "SUCCESS";
-        } catch (IOException e) {
-            LOG.warn("[Flamingo] [Download] File Download failed", e);
+            httpExchange.sendResponseHeaders(200, response.length());
+        } catch (Exception e) {
+            LOG.warn("[Flamingo] [Upload] File Upload failed", e);
 
             response = "FAILURE";
             httpExchange.sendResponseHeaders(999, response.length());
@@ -78,14 +98,22 @@ public class FileDownloadHttpHandler implements HttpHandler {
                 outputStream.write(response.getBytes());
                 IOUtils.closeQuietly(outputStream);
             } else {
-                LOG.warn("[Flamingo] [Download] Response is null");
+                LOG.warn("[Flamingo] [Upload] Response is null");
             }
         }
     }
 
+    private void parseGetParameters(HttpExchange exchange) throws UnsupportedEncodingException {
+        Map<String, Object> parameters = new HashMap<String, Object>();
+        URI requestedUri = exchange.getRequestURI();
+        String query = requestedUri.getRawQuery();
+        parseQuery(query, parameters);
+        exchange.setAttribute("parameters", parameters);
+    }
+
     private Map<String, Object> parsePostParameters(HttpExchange exchange) throws IOException {
         if ("post".equalsIgnoreCase(exchange.getRequestMethod())) {
-            Map<String, Object> parameters = (Map<String, Object>) exchange.getAttribute("parameters"); // TODO 여기 주의
+            Map<String, Object> parameters = new HashMap<>();
             InputStreamReader isr = new InputStreamReader(exchange.getRequestBody(), "utf-8");
             BufferedReader br = new BufferedReader(isr);
             String query = br.readLine();

@@ -30,6 +30,12 @@ import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+/**
+ * Namenode가 구동할 때 Aspect를 통해서 같이 동작하는 Agent.
+ *
+ * @author Byoung Gon, Kim
+ * @since 0.1
+ */
 public class Namenode2Agent {
 
     /**

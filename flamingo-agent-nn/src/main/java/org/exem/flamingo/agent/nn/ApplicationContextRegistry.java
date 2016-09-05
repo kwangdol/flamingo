@@ -1,4 +1,4 @@
- /*
+/*
  * Copyright (C) 2012-2016 the Flamingo Community.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,6 +19,12 @@ import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 
+/**
+ * Spring Framework Application Context를 Namenode Agent에서 접근하기 위해서 필요한 Registry.
+ *
+ * @author Byoung Gon, Kim
+ * @since 0.1
+ */
 public class ApplicationContextRegistry implements ApplicationContextAware {
 
     /**
