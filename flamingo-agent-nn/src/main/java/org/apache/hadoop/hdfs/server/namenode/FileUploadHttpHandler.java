@@ -47,11 +47,11 @@ public class FileUploadHttpHandler implements HttpHandler {
     private static final Log LOG = LogFactory.getLog(FileUploadHttpHandler.class);
 
     @Override
-    public void handle(HttpExchange httpExchange) throws IOException { // POST로 받아야 함.
+    public void handle(HttpExchange httpExchange) throws IOException {
         OutputStream outputStream = httpExchange.getResponseBody();
         String response = null;
         try {
-            InputStream is = httpExchange.getRequestBody();  // Body에 파일 내용이 있음.
+            InputStream is = httpExchange.getRequestBody();
 
             Map<String, Object> parameters = splitQuery(httpExchange.getRequestURI().getQuery());
             String fullyQualifiedPath = (String) parameters.get("fullyQualifiedPath");
@@ -73,6 +73,7 @@ public class FileUploadHttpHandler implements HttpHandler {
 
             FileCopyUtils.copy(is, os);
 
+            // FIXME : 파일 업로드 후 왜 /를 찾아서 처리를 할까?
             if (fullyQualifiedPath.equalsIgnoreCase("/")) {
                 response = "FAILURE";
                 httpExchange.sendResponseHeaders(600, response.length());
