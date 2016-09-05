@@ -37,6 +37,7 @@
 
         <!-- Commons -->
         <commons.io.version>2.5</commons.io.version>
+        <commons.lang.version>2.6</commons.lang.version>
 
         <!-- HttpClient -->
         <httpcore.version>4.4.4</httpcore.version>
@@ -598,6 +599,12 @@
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
                 <version>${commons.io.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>commons-lang</groupId>
+                <artifactId>commons-lang</artifactId>
+                <version>${commons.lang.version}</version>
             </dependency>
 
             <!-- ====== -->

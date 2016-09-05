@@ -19,7 +19,7 @@ import org.exem.flamingo.shared.util.DateUtils;
 import org.apache.commons.lang.math.RandomUtils;
 
 /**
- * Default Service Exception.
+ * 기본 서비스 요청의 에러 발생시 던지는 예외.
  *
  * @author Byoung Gon, Kim
  * @since 0.1
@@ -31,14 +31,29 @@ public class ServiceException extends RuntimeException {
      */
     private static final long serialVersionUID = 1;
 
+    /**
+     * Exception ID
+     */
     private String exceptionId = DateUtils.getCurrentDateTime() + "_" + RandomUtils.nextLong();
 
+    /**
+     * 예외 메시지
+     */
     private String message = null;
 
+    /**
+     * 종료 코드 (FIXME 필요한지 확인)
+     */
     private int exitCode;
 
+    /**
+     * 예외 코드
+     */
     private int code;
 
+    /**
+     * 가장 최근 로그 (FIXME 필요한지 확인)
+     */
     private String recentLog;
 
     /**
