@@ -9,6 +9,7 @@
 
     <title>Flamingo</title>
 
+    <link type="text/css" rel="stylesheet" href="/resources/css/common.css"/>
     <link type="text/css" rel="stylesheet" href="/resources/ext/theme-triton-all_1.css"/>
     <link type="text/css" rel="stylesheet" href="/resources/ext/theme-triton-all_2.css"/>
 
