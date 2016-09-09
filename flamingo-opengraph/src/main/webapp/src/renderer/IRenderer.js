@@ -1067,14 +1067,18 @@ OG.renderer.IRenderer.prototype = {
      * @return {boolean} true false
      */
     isTopGroup: function (element) {
-        if (!element || !element.parentElement) {
+        var parent = element.parentElement;
+        if(!parent){
+            parent = element.parentNode;
+        }
+        if (!element || !parent) {
             return false;
         }
         if (!element.shape instanceof OG.shape.GroupShape) {
             return false;
         }
 
-        if (element.parentElement.id === this.getRootGroup().id) {
+        if (parent.id === this.getRootGroup().id) {
             return true;
         }
         return false;
@@ -1087,13 +1091,17 @@ OG.renderer.IRenderer.prototype = {
      * @return {Element} Element  엘리먼트
      */
     getParent: function (element) {
-        if (!element || !element.parentElement) {
+        var parent = element.parentElement;
+        if(!parent){
+            parent = element.parentNode;
+        }
+        if (!element || !parent) {
             return null;
         }
-        if (element.parentElement.id === this.getRootGroup().id) {
+        if (parent.id === this.getRootGroup().id) {
             return null;
         }
-        return element.parentElement;
+        return parent;
     },
 
     /**
@@ -1104,10 +1112,10 @@ OG.renderer.IRenderer.prototype = {
      */
     getChilds: function (element) {
         var childShapes = [];
-        if (!element || !element.children) {
+        if (!element || OG.Util.isIE() ? !element.childNodes : !element.children) {
             return childShapes;
         }
-        $.each(element.children, function (index, child) {
+        $.each(OG.Util.isIE() ? element.childNodes : element.children, function (index, child) {
             if ($(child).attr("_type") === OG.Constants.NODE_TYPE.SHAPE) {
                 childShapes.push(child);
             }
@@ -1122,7 +1130,11 @@ OG.renderer.IRenderer.prototype = {
      * @return {boolean} true false
      */
     isGroup: function (element) {
-        if (!element || !element.parentElement) {
+        var parent = element.parentElement;
+        if(!parent){
+            parent = element.parentNode;
+        }
+        if (!element || !parent) {
             return false;
         }
         if (element.id === this.getRootGroup().id) {
