@@ -9,7 +9,10 @@ Ext.application({
     extend: 'Flamingo.Application',
 
     requires: [
-        'Flamingo.view.main.Main'
+        'Flamingo.view.main.Main',
+        'Flamingo.view.hdfsbrowser.Browser',
+        'Flamingo.view.ooziemonitoring.Oozie',
+        'Flamingo.view.workflowdesigner.Designer'
     ],
 
     // The name of the initial view to create. With the classic toolkit this class

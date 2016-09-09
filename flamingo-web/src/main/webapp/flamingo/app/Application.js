@@ -16,15 +16,5 @@ Ext.define('Flamingo.Application', {
         // TODO - Launch the application
     },
 
-    defaultToken : 'designer',
-
-    onAppUpdate: function () {
-        Ext.Msg.confirm('Application Update', 'This application has an update, reload?',
-            function (choice) {
-                if (choice === 'yes') {
-                    window.location.reload();
-                }
-            }
-        );
-    }
+    defaultToken : 'designer'
 });

@@ -39,8 +39,10 @@ Ext.define('Flamingo.view.main.Main', {
         }
     },{
         xtype: 'container',
+        reference: 'mainContainer',
         region: 'center',
-        flex: 1
+        flex: 1,
+        layout: 'fit'
     }]
 
 });

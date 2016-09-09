@@ -5,16 +5,19 @@ Ext.define('Flamingo.view.main.MainModel', {
 
     stores: {
         menu: {
-            fields: ['text', 'icon'],
+            fields: ['text', 'icon', 'view'],
             data: [{
                 text: 'Workflow Designer',
-                icon: 'fa fa-pencil-square-o'
+                icon: 'fa fa-pencil-square-o',
+                view: 'designer'
             },{
                 text: 'Ooozi Monitoring',
-                icon: 'fa fa-area-chart'
+                icon: 'fa fa-area-chart',
+                view: 'monitoring'
             },{
                 text: 'HDFS Browser',
-                icon: 'fa fa-file-text-o'
+                icon: 'fa fa-file-text-o',
+                view: 'hdfsbrowser'
             }]
         }
     }
