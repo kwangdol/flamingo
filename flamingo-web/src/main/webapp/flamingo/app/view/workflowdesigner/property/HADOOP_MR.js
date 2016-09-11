@@ -19,7 +19,6 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_MR', {
     alias: 'widget.HADOOP_MR',
 
     requires: [
-        'Flamingo.view.workflowdesigner.property.browser.hdfs.BrowserPanel',
         'Flamingo.view.workflowdesigner.property._JarBrowserField',
         'Flamingo.view.workflowdesigner.property._JarGrid',
         'Flamingo.view.workflowdesigner.property._InputGrid',

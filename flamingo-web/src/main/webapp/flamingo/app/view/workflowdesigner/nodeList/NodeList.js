@@ -20,7 +20,8 @@ Ext.define('Flamingo.view.workflowdesigner.nodeList.NodeList', {
 
     requires: [
         'Flamingo.view.workflowdesigner.nodeList.NodeListController',
-        'Flamingo.view.workflowdesigner.nodeList.NodeListModel'
+        'Flamingo.view.workflowdesigner.nodeList.NodeListModel',
+        'Flamingo.model.workflowdesigner.NodeMeta'
     ],
 
     controller: 'nodeListController',

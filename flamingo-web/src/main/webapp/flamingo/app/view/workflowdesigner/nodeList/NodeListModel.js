@@ -20,7 +20,7 @@ Ext.define('Flamingo.view.workflowdesigner.nodeList.NodeListModel', {
 
     stores: {
         nodemeta: {
-            model: 'Flamingo2.model.designer.NodeMeta',
+            model: 'Flamingo.model.workflowdesigner.NodeMeta',
 
             data: [ // TODO description 다국어 처리
                 {

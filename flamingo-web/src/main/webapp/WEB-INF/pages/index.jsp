@@ -13,6 +13,15 @@
     <link type="text/css" rel="stylesheet" href="/resources/ext/theme-triton-all_1.css"/>
     <link type="text/css" rel="stylesheet" href="/resources/ext/theme-triton-all_2.css"/>
 
+    <script type="text/javascript" src="/resources/js/jquery/jquery-3.1.0.min.js"></script>
+    <script type="text/javascript" src="/resources/js/jquery-ui/jquery-ui.js"></script>
+    <script type="text/javascript" src="/resources/js/jquery-contextMenu/jquery.contextMenu.min.js"></script>
+
+    <script type="text/javascript" src="/resources/js/opengraph/flamingo-opengraph-0.1-SNAPSHOT.js"></script>
+
+    <script type="text/javascript" src="/resources/js/const.js"></script>
+    <script type="text/javascript" src="/resources/js/rest.js"></script>
+
     <script type="text/javascript" src="/resources/ext/ext-all.js"></script>
     <script type="text/javascript" src="/resources/ext/theme-triton.js"></script>
 

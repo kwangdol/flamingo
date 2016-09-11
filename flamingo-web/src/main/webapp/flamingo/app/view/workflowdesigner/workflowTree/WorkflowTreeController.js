@@ -85,7 +85,7 @@ Ext.define('Flamingo.view.workflowdesigner.workflowTree.WorkflowTreeController',
         }
 
         if (record.data.cls != 'folder' && record.data.id != '/') {
-            var canvas = query('canvas');
+            var canvas = Ext.ComponentQuery.query('canvas')[0];
             Ext.MessageBox.show({
                 title: 'Load workflow',
                 message: Ext.String.format('Do you want to load "{0}"?', record.data.text),
@@ -98,7 +98,8 @@ Ext.define('Flamingo.view.workflowdesigner.workflowTree.WorkflowTreeController',
 
                         // 폴더인 경우에는 경로 메시지를 띄우고 노드의 경우에는 정상 처리한다.
                         if (node.leaf) {
-                            var mask = new Ext.LoadMask(query('canvas'), {
+                            var mask = new Ext.LoadMask(
+                                Ext.ComponentQuery.query('canvas')[0], {
                                 msg: 'Please Wait.'
                             });
                             mask.show();
@@ -339,7 +340,7 @@ Ext.define('Flamingo.view.workflowdesigner.workflowTree.WorkflowTreeController',
                                 // 현재 로딩한 화면과 삭제할 트리 노드가 동일하다면 캔버스도 초기화한다.
                                 /////////////////////////////////////////////////////////
 
-                                var canvas = query('canvas');
+                                var canvas = Ext.ComponentQuery.query('canvas')[0];
                                 var variableGrid = Ext.ComponentQuery.query('variableGrid')[0];
                                 var form = canvas.getForm();
                                 var treeId = form.getValues()['tree_id'];

@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-Ext.define('Flamingo.view.designer.DesignerModel', {
+Ext.define('Flamingo.view.workflowdesigner.DesignerModel', {
     extend: 'Ext.app.ViewModel',
     alias: 'viewmodel.designer',
 

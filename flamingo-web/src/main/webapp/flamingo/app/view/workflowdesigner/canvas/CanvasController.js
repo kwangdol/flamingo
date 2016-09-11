@@ -30,7 +30,7 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.CanvasController', {
     },
     setwireEvent: function (shapeElement) {
         var me = this;
-        var canvas = query('canvas');
+        var canvas = Ext.ComponentQuery.query('canvas')[0];
         $("#" + shapeElement.id).hover(function () {
             var nodeData = Ext.clone(canvas.graph.getCustomData(shapeElement));
             if (nodeData && nodeData.metadata) {
@@ -52,7 +52,7 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.CanvasController', {
         });
     },
     setwireEventAll: function () {
-        var canvas = query('canvas');
+        var canvas = Ext.ComponentQuery.query('canvas')[0];
         var allNodes = canvas.graph.getElementsByType();
         for (var i = 0; i < allNodes.length; i++) {
             this.setwireEvent(allNodes[i]);

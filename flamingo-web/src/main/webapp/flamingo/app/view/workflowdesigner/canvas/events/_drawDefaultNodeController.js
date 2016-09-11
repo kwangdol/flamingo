@@ -22,7 +22,7 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.events._drawDefaultNodeControl
      * @private
      */
     run: function () {
-        var canvas = query('canvas');
+        var canvas = Ext.ComponentQuery.query('canvas')[0];
         var startNode, endNode;
 
         if (canvas.graph) {

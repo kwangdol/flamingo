@@ -91,7 +91,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._NODE', {
                 'NOVA_START_VM',
                 'SHELL_NODE'
             ];
-            var canvas = query('canvas'),
+            var canvas = Ext.ComponentQuery.query('canvas')[0],
                 allNodes = canvas.graph.getElementsByType();
             for (var i = 0; i < allNodes.length; i++) {
                 nodeData = Ext.clone(canvas.graph.getCustomData(allNodes[i]));
@@ -130,7 +130,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._NODE', {
      * wire 관계의 노드들의 provider 의존성을 재설정한다.
      */
     resetProvide: function () {
-        var canvas = query('canvas');
+        var canvas = Ext.ComponentQuery.query('canvas')[0];
         var nodes = this.getFollowableNode();
         for (var i = 0; i < nodes.length; i++) {
             var nodeid = nodes[i].id;

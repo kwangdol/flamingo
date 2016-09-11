@@ -27,7 +27,7 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.events.onCanvasRender', {
      * @param {Object} eOpts The options object passed to Ext.util.Observable.addListener.
      */
     onCanvasRender: function (component, eOpts) {
-        var canvas = query('canvas')
+        var canvas = Ext.ComponentQuery.query('canvas')[0]
         var getPropertyWindow =
             Ext.create('Flamingo.view.workflowdesigner.canvas.events.onCanvasActionController')._getPropertyWindow;
 
@@ -94,7 +94,7 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.events.onCanvasRender', {
                     nodeMeta.name = 'CHEF NODE : ' + nodeMeta.name;
                     isValidated = true;
                 }
-                var shape = Ext.create('Flamingo2.' + identifier, nodeMeta.icon, nodeMeta.name);
+                var shape = Ext.create('Flamingo.' + identifier, nodeMeta.icon, nodeMeta.name);
                 shapeElement = canvas.graph.drawShape([event.browserEvent.layerX, event.browserEvent.layerY], shape, [60, 60]);
                 canvas.graph.getRenderer().drawLabel(shapeElement, nodeMeta.name);
 

@@ -120,7 +120,7 @@ function makeShape(ref, alias, text) {
     var refArr = ref.split('.');
     if (refArr.length == 1) {
         Flamingo.view.workflowdesigner.shape[ref] = function (image, label) {
-            Flamingo2[alias].superclass.call(this, image, label);
+            Flamingo[alias].superclass.call(this, image, label);
             this.SHAPE_ID = text;
         };
 
@@ -129,10 +129,10 @@ function makeShape(ref, alias, text) {
         Flamingo.view.workflowdesigner.shape[ref].prototype.constructor = text;
         Flamingo.view.workflowdesigner.shape[ref].className = text;
 
-        Flamingo2[alias] = Flamingo.view.workflowdesigner.shape[ref];
+        Flamingo[alias] = Flamingo.view.workflowdesigner.shape[ref];
     } else if (refArr.length == 2) {
         Flamingo.view.workflowdesigner.shape[refArr[0]][refArr[1]] = function (image, label) {
-            Flamingo2[alias].superclass.call(this, image, label);
+            Flamingo[alias].superclass.call(this, image, label);
             this.SHAPE_ID = text;
         };
 

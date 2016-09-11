@@ -119,19 +119,19 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_PARALLEL_F
                 {
                     xtype: 'textfield',
                     name: 'regex',
-                    fieldLabel: MSG.DESIGNER_LABEL_REGULAR_EXPRESSION,
+                    fieldLabel: 'REGEX',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'minNumber',
-                    fieldLabel: MSG.DESIGNER_LABEL_MIN_NUMBER_DATA_SET,
+                    fieldLabel: 'Min Number',
                     allowBlank: true
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: MSG.DESIGNER_LABEL_COLUMN_DELIMITER,
-                    tooltip: MSG.DESIGNER_TIP_COLUMN_DELIMITER,
+                    fieldLabel: 'Delimiter',
+                    tooltip: 'Delimiter',
                     layout: 'hbox',
                     items: [
                         {

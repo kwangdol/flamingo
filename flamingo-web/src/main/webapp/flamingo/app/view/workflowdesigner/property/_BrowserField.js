@@ -63,7 +63,8 @@ Ext.define('Flamingo.view.workflowdesigner.property._BrowserField', {
                             layout: 'fit',
                             items: [
                                 {
-                                    xtype: 'hdfsBrowserPanelForDesigner'
+                                    //TODO HDFS Browser 소스코드 이관
+                                    xtype: 'panel'
                                 }
                             ],
                             buttonAlign: 'center',

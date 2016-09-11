@@ -15,7 +15,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
 Ext.define('Flamingo.view.workflowdesigner.property._NodeValueGrid', {
-    extend: 'Flamingo2.view.component.LiveSearchGridPanel',
+    extend: 'Ext.grid.Panel',
     alias: 'widget._nodeValueGrid',
 
     stripeRows: true,

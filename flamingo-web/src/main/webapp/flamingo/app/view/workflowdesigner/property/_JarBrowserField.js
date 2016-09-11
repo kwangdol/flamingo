@@ -57,7 +57,8 @@ Ext.define('Flamingo.view.workflowdesigner.property._JarBrowserField', {
                     constrain: true,
                     items: [
                         {
-                            xtype: 'hdfsBrowserPanelForDesigner'
+                            //TODO HDFS Browser 소스코드 이관
+                            xtype: 'panel'
                         }
                     ],
                     buttonAlign: 'center',

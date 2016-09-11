@@ -108,7 +108,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._ParallelGridController', {
         //등록된 shapeElement 가 있다면 shapeElement에 연결된 라벨에 시퀀스 정보를 넣어준다.
         var shapeElement = me.getView().shapeElement;
         if (shapeElement) {
-            var canvas = query('canvas');
+            var canvas = Ext.ComponentQuery.query('canvas')[0];
             var edges = canvas.graph.getNextEdges(shapeElement);
             for (var e = 0; e < edges.length; e++) {
                 var _connectInfo = canvas.graph.getRelatedElementsFromEdge(edges[e]);

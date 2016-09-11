@@ -20,7 +20,7 @@ Ext.define('Flamingo.view.workflowdesigner.variableGrid.VariableGridModel', {
 
     stores: {
         variable: {
-            model: 'Flamingo2.model.designer.Variable',
+            model: 'Flamingo.model.workflowdesigner.Variable',
 
             data: []
         }

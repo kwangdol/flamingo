@@ -57,7 +57,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._ShapesGrid', {
             var me = this;
             var mydata = [];
             var list = query('BASE_NODE').getSelectableNode();
-            var canvas = query('canvas');
+            var canvas = Ext.ComponentQuery.query('canvas')[0];
             for (var i = 0; i < list.length; i++) {
                 nodeData = Ext.clone(canvas.graph.getCustomData(list[i]));
                 if (nodeData && nodeData.metadata) {

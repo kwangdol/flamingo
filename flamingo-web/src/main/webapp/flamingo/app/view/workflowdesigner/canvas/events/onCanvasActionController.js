@@ -29,7 +29,7 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.events.onCanvasActionControlle
             icon: Ext.MessageBox.WARNING,
             fn: function handler(btn) {
                 if (btn == 'yes') {
-                    var canvas = query('canvas');
+                    var canvas = Ext.ComponentQuery.query('canvas')[0];
                     var variableGrid = Ext.ComponentQuery.query('variableGrid')[0];
                     var form = canvas.getForm();
 
@@ -63,7 +63,7 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.events.onCanvasActionControlle
      * 저장 버튼 클릭 핸들러 : 워크플로우를 저장한다.
      */
     onSaveClick: function () {
-        var canvas = query('canvas');
+        var canvas = Ext.ComponentQuery.query('canvas')[0];
         var form = canvas.getForm();
         var id = form.getValues()['id'];
         var isValid = form.isValid() && this._isValidWorkflow();
@@ -82,7 +82,7 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.events.onCanvasActionControlle
             scope: this,
             fn: function (btn, text, eOpts) {
                 if (btn === 'yes') {
-                    var canvas = query('canvas');
+                    var canvas = Ext.ComponentQuery.query('canvas')[0];
                     var form = canvas.getForm();
 
                     if (form.getValues()['tree_id']) {
@@ -187,7 +187,7 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.events.onCanvasActionControlle
      * 실행 버튼 Click 핸들러 : 워크플로우를 실행한다.
      */
     onRunClick: function () {
-        var canvas = query('canvas');
+        var canvas = Ext.ComponentQuery.query('canvas')[0];
         var form = canvas.getForm();
         var isValid = form.isValid() && this._isValidWorkflow();
 
@@ -242,7 +242,7 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.events.onCanvasActionControlle
     },
 
     onWorkflowCopyClick: function () {
-        var canvas = query('canvas');
+        var canvas = Ext.ComponentQuery.query('canvas')[0];
         var form = canvas.getForm();
         var id = form.getValues()['id'];
         var isValid = form.isValid() && this._isValidWorkflow();
@@ -313,7 +313,7 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.events.onCanvasActionControlle
      * XML보기 버튼 Click 핸들러 : 워크플로우 XML 을 팝업으로 보여준다.
      */
     onWorkflowXMLClick: function () {
-        var canvas = query('canvas');
+        var canvas = Ext.ComponentQuery.query('canvas')[0];
         var form = canvas.getForm();
         var id = form.getValues()['id'];
 
@@ -371,7 +371,7 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.events.onCanvasActionControlle
      * @private
      */
     _isValidWorkflow: function () {
-        var canvas = query('canvas'),
+        var canvas = Ext.ComponentQuery.query('canvas')[0],
             getPropertyWindow = this._getPropertyWindow,
             allNodes = canvas.graph.getElementsByType(),
             nodeData, nodeMeta, nodeProperties,
@@ -479,7 +479,7 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.events.onCanvasActionControlle
      * @private
      */
     _getPropertyWindow: function (graphElement) {
-        var canvas = query('canvas'),
+        var canvas = Ext.ComponentQuery.query('canvas')[0],
             nodeData = Ext.clone(canvas.graph.getCustomData(graphElement)),
             nodeMeta = nodeData ? nodeData.metadata : null,
             nodeProperty = nodeData ? nodeData.properties : null,
@@ -589,7 +589,7 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.events.onCanvasActionControlle
      * @private
      */
     _makeGraphXML: function () {
-        var canvas = query('canvas');
+        var canvas = Ext.ComponentQuery.query('canvas')[0];
         var form = canvas.getForm(),
             variableGrid = query('variableGrid'),
             variableArray = [];
@@ -615,7 +615,7 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.events.onCanvasActionControlle
      * @private
      */
     _applyPrevColumnInfo: function (element) {
-        var canvas = query('canvas'),
+        var canvas = Ext.ComponentQuery.query('canvas')[0],
             nodeData = Ext.clone(canvas.graph.getCustomData(element)),
             nodeMeta = nodeData ? nodeData.metadata : {},
             nodeProperties = nodeData ? nodeData.properties : {},
@@ -783,7 +783,7 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.events.onCanvasActionControlle
      * @private
      */
     _disconnect: function (prevShape, nextShape) {
-        var canvas = query('canvas'),
+        var canvas = Ext.ComponentQuery.query('canvas')[0],
             edges = canvas.graph.getNextEdges(prevShape),
             _fromedge = nextShape.getAttribute("_fromedge").split(",");
 
