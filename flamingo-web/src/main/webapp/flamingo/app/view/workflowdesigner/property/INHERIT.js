@@ -41,7 +41,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.INHERIT', {
 
     items: [
         {
-            title: message.msg('workflow.common.inherit.title'),
+            title: 'Input Form',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -59,13 +59,13 @@ Ext.define('Flamingo.view.workflowdesigner.property.INHERIT', {
                     items: [
                         {
                             xtype: 'textfield',
-                            fieldLabel: message.msg('common.value'),
+                            fieldLabel: 'Value',
                             flex: 1,
                             name: 'value'
                         },
                         {
                             xtype: 'checkbox',
-                            fieldLabel: message.msg('common.inherit'),
+                            fieldLabel: 'Inherit',
                             labelWidth: 30,
                             name: 'value_INHERIT'
                         }

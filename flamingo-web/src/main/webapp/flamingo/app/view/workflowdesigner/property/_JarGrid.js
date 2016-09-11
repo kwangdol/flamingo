@@ -40,7 +40,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._JarGrid', {
     fileBrowser: true,
     columns: [
         {
-            text: message.msg('common.path'),
+            text: 'Path',
             dataIndex: 'path',
             editor: {
                 xtype: 'textfield',

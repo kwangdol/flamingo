@@ -35,7 +35,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_QUALCLUSTE
 
     items: [
         {
-            title: message.msg('workflow.common.parameter'),
+            title: 'Parameter',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -49,7 +49,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_QUALCLUSTE
             items: [
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.am.qualcluster.test.input'),
+                    fieldLabel: 'Test Input',
                     defaults: {
                         hideLabel: true
                     },
@@ -67,18 +67,18 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_QUALCLUSTE
                 {
                     xtype: '_browserField',
                     name: 'centroids',
-                    fieldLabel: message.msg('workflow.am.qualcluster.centroids'),
+                    fieldLabel: 'Centroid',
                     allowBlank: false
                 },
                 {
                     xtype: '_browserField',
                     name: 'centroidsCompare',
-                    fieldLabel: message.msg('workflow.am.qualcluster.compare.centroids'),
+                    fieldLabel: 'Compare Centroid',
                     allowBlank: true
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.am.qualcluster.kmeans.format'),
+                    fieldLabel: 'KMeans Format',
                     defaultType: 'checkboxfield',
                     items: [
                         {
@@ -88,7 +88,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_QUALCLUSTE
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.am.qualcluster.compare.kmeans.format'),
+                    fieldLabel: 'Compare KMeans Format',
                     defaultType: 'checkboxfield',
                     items: [
                         {
@@ -99,7 +99,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_QUALCLUSTE
             ]
         },
         {
-            title: message.msg('workflow.common.mapreduce'),
+            title: 'MapReduce',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -114,7 +114,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_QUALCLUSTE
                 {
                     xtype: 'textfield',
                     name: 'jar',
-                    fieldLabel: message.msg('workflow.common.mahaut.jar'),
+                    fieldLabel: 'Mahout JAR',
                     value: MAHOUT.JAR,
                     disabledCls: 'disabled-plain',
                     readOnly: true
@@ -122,20 +122,20 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_QUALCLUSTE
                 {
                     xtype: 'textfield',
                     name: 'driver',
-                    fieldLabel: message.msg('workflow.common.mapreduce.driver'),
+                    fieldLabel: 'Driver',
                     value: 'org.apache.mahout.clustering.streaming.tools.ClusterQualitySummarizer',
                     disabledCls: 'disabled-plain',
                     readOnly: true
                 },
                 {
                     xtype: '_dependencyGrid',
-                    title: message.msg('workflow.common.mapreduce.jar.title'),
+                    title: 'Dependency JAR',
                     flex: 1
                 }
             ]
         },
         {
-            title: message.msg('workflow.common.inout.path'),
+            title: 'I/O Path',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -149,7 +149,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_QUALCLUSTE
             items: [
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.common.input.path'),
+                    fieldLabel: 'Input Path',
                     defaults: {
                         hideLabel: true,
                         margin: "5 0 0 0"  // Same as CSS ordering (top, right, bottom, left)
@@ -167,7 +167,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_QUALCLUSTE
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.common.output.path'),
+                    fieldLabel: 'Output path',
                     defaults: {
                         hideLabel: true
                     },
@@ -185,7 +185,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_QUALCLUSTE
             ]
         },
         {
-            title: message.msg('workflow.common.hadoop.conf'),
+            title: 'Hadoop Configuration',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -200,7 +200,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_QUALCLUSTE
                 {
                     xtype: 'displayfield',
                     height: 20,
-                    value: message.msg('workflow.common.hadoop.conf.guide')
+                    value: 'Enter a key and a value of Configuration.set () method used in Hadoop Mapreduce.'
                 },
                 {
                     xtype: '_keyValueGrid',
@@ -209,7 +209,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_QUALCLUSTE
             ]
         },
         {
-            title: message.msg('common.references'),
+            title: 'References',
             xtype: 'form',
             border: false,
             autoScroll: true,

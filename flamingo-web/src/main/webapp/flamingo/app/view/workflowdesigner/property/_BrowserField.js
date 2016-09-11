@@ -50,12 +50,12 @@ Ext.define('Flamingo.view.workflowdesigner.property._BrowserField', {
                 },
                 {
                     xtype: 'button',
-                    text: message.msg('workflow.common.find'),
-                    tooltip: message.msg('workflow.common.hdfsbrowser.tooltip'),
+                    text: 'Find',
+                    tooltip: 'Show file system browser.',
                     margin: '0 0 0 3',
                     handler: function () {
                         var popWindow = Ext.create('Ext.Window', {
-                            title: message.msg('workflow.common.hdfsbrowser'),
+                            title: 'HDFS Browser',
                             width: 800,
                             height: 400,
                             modal: true,
@@ -69,7 +69,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._BrowserField', {
                             buttonAlign: 'center',
                             buttons: [
                                 {
-                                    text: message.msg('workflow.common.confirm'),
+                                    text: 'Confirm',
 
                                     handler: function () {
                                         var dirSelection = Ext.ComponentQuery.query('hdfsDirectoryPanelForDesigner')[0].getSelectionModel().getSelection();
@@ -90,12 +90,12 @@ Ext.define('Flamingo.view.workflowdesigner.property._BrowserField', {
                                             }
                                             popWindow.close();
                                         } else {
-                                            error(message.msg('workflow.common.warn'), message.msg('workflow.common.hdfsbrowser.filedir.warn'));
+                                            error('Warning', 'Select a file or directory.');
                                         }
                                     }
                                 },
                                 {
-                                    text: message.msg('workflow.common.cancel'),
+                                    text: 'Cancel',
 
                                     handler: function () {
                                         popWindow.close();

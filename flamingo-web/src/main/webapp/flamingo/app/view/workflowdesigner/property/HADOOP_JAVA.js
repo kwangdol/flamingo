@@ -37,7 +37,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_JAVA', {
 
     items: [
         {
-            title: message.msg('workflow.common.java'),
+            title: 'Java',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -51,28 +51,28 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_JAVA', {
             items: [
                 {
                     xtype: '_jarBrowserField',
-                    fieldLabel: message.msg('workflow.common.mapreduce.jar'),
-                    emptyText: message.msg('workflow.common.mapreduce.jar.title'),
+                    fieldLabel: 'JAR Path',
+                    emptyText: 'Dependency JAR',
                     allowBlank: false
                 },
                 {
                     xtype: 'textfield',
                     name: 'driver',
-                    fieldLabel: message.msg('workflow.common.mapreduce.driver'),
-                    emptyText: message.msg('workflow.common.mapreduce.driver.empty.text'),
+                    fieldLabel: 'Driver',
+                    emptyText: 'Please specify the driver class.',
                     allowBlank: false
                 },
                 {
                     xtype: 'textfield',
                     name: 'javaOpts',
-                    fieldLabel: message.msg('workflow.he.java.java.jvm'),
-                    emptyText: message.msg('workflow.he.java.java.jvmempty'),
+                    fieldLabel: 'JVM Options',
+                    emptyText: '-Xmx300m -Xms300m',
                     allowBlank: true
                 }
             ]
         },
         {
-            title: message.msg('workflow.common.classpath'),
+            title: 'Classpath',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -86,13 +86,13 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_JAVA', {
             items: [
                 {
                     xtype: '_jarGrid',
-                    title: message.msg('workflow.common.dependency.jar'),
+                    title: 'Dependency (JAR)',
                     flex: 1
                 }
             ]
         },
         {
-            title: message.msg('workflow.common.command'),
+            title: 'Command Parameter',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -107,7 +107,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_JAVA', {
                 {
                     xtype: 'displayfield',
                     height: 50,
-                    value: message.msg('workflow.common.command.guide')
+                    value: 'Please enter command line parameters in separate lines.<br>For example, if you want to enter "hadoop jar <JAR> <DRIVER> -input /INPUT -output /OUTPUT," enter -input, /INPUT, -output, and /OUTPUT in different lines.'
                 },
                 {
                     xtype: '_valueGrid',

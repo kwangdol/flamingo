@@ -35,7 +35,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_NAIVE_MATR
 
     items: [
         {
-            title: message.msg('workflow.common.parameter'),
+            title: 'Parameter',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -50,26 +50,26 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_NAIVE_MATR
                 {
                     xtype: '_browserField',
                     name: 'vectorFile',
-                    fieldLabel: message.msg('workflow.label_vector_path'),
+                    fieldLabel: 'Vector Path',
                     allowBlank: true
                 },
                 {
                     xtype: '_browserField',
                     name: 'outputFile',
-                    fieldLabel: message.msg('workflow.label_working_path'),
+                    fieldLabel: 'Working Path',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'distanceMeasure',
-                    fieldLabel: message.msg('workflow.label_class_name_of_instance'),
+                    fieldLabel: 'A Distance Measuring Instance Class Name',
                     tooltip: '',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'thresholdT1',
-                    fieldLabel: message.msg('workflow.label_t1_threshold'),
+                    fieldLabel: 'T1 Threshold Distance (clustering)',
                     tooltip: '',
                     vtype: 'numeric',
                     allowBlank: true
@@ -77,7 +77,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_NAIVE_MATR
                 {
                     xtype: 'textfield',
                     name: 'thresholdT2',
-                    fieldLabel: message.msg('workflow.label_t2_threshold'),
+                    fieldLabel: 'T2 Threshold Distance (clustering)',
                     tooltip: '',
                     vtype: 'numeric',
                     allowBlank: true
@@ -85,7 +85,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_NAIVE_MATR
                 {
                     xtype: 'textfield',
                     name: 'reducerT1',
-                    fieldLabel: message.msg('workflow.label_t1_reducer'),
+                    fieldLabel: 'T1 Threshold Distance (Reducer)',
                     tooltip: '',
                     vtype: 'numeric',
                     allowBlank: true
@@ -93,7 +93,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_NAIVE_MATR
                 {
                     xtype: 'textfield',
                     name: 'reducerT2',
-                    fieldLabel: message.msg('workflow.label_t2_reducer'),
+                    fieldLabel: 'T2 Threshold Distance (Reducer)',
                     tooltip: '',
                     vtype: 'numeric',
                     value: 2,
@@ -102,7 +102,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_NAIVE_MATR
                 {
                     xtype: 'textfield',
                     name: 'clusterFilterSize',
-                    fieldLabel: message.msg('workflow.label_min_filter_size'),
+                    fieldLabel: 'Minimum Cluster Filter Size',
                     tooltip: '',
                     vtype: 'numeric',
                     value: 0,
@@ -111,12 +111,12 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_NAIVE_MATR
                 {
                     xtype: '_browserField',
                     name: 'overwrite',
-                    fieldLabel: message.msg('workflow.label_modify_directory_path'),
+                    fieldLabel: 'Change Directory Path',
                     allowBlank: true
                 },
                 {
                     xtype: 'radiogroup',
-                    fieldLabel: message.msg('workflow.label_choose_vector_clustring'),
+                    fieldLabel: 'Vector Clustering Existence',
                     columns: 2,
                     itemId: 'runCluster',
                     items: [
@@ -138,7 +138,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_NAIVE_MATR
                 },
                 {
                     xtype: 'radiogroup',
-                    fieldLabel: message.msg('workflow.mahaut.mem_use'),
+                    fieldLabel: 'Mem use',
                     columns: 2,
                     itemId: 'runSequential',
                     items: [
@@ -160,7 +160,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_NAIVE_MATR
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.mahaut.exec_type'),
+                    fieldLabel: 'Exec type',
                     layout: 'hbox',
                     items: [
                         {
@@ -189,8 +189,8 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_NAIVE_MATR
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.common.delimiter'),
-                    tooltip: message.msg('workflow.mahaut.tooltip.column_delimiter_fail'),
+                    fieldLabel: 'Delimiter',
+                    tooltip: 'Column Delimiter',
                     layout: 'hbox',
                     items: [
                         {
@@ -216,34 +216,34 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_NAIVE_MATR
                                         fields: ['name', 'value', 'description'],
                                         data: [
                                             {
-                                                name: message.msg('workflow.common.delimiter.double.colon'),
+                                                name: 'Double Colon',
                                                 value: '::',
                                                 description: '::'
                                             },
                                             {
-                                                name: message.msg('workflow.common.delimiter.comma'),
+                                                name: 'Comma',
                                                 value: ',',
                                                 description: ','
                                             },
                                             {
-                                                name: message.msg('workflow.common.delimiter.pipe'),
+                                                name: 'Pipe',
                                                 value: '|',
                                                 description: '|'
                                             },
                                             {
-                                                name: message.msg('workflow.common.delimiter.tab'),
+                                                name: 'Tab',
                                                 value: '\'\\t\'',
                                                 description: '\'\\t\''
                                             },
                                             {
-                                                name: message.msg('workflow.common.delimiter.blank'),
+                                                name: 'Blank',
                                                 value: '\'\\s\'',
                                                 description: '\'\\s\''
                                             },
                                             {
-                                                name: message.msg('workflow.common.delimiter.user.def'),
+                                                name: 'User Defined',
                                                 value: 'CUSTOM',
-                                                description: message.msg('workflow.common.delimiter.user.def')
+                                                description: 'User Defined'
                                             }
                                         ]
                                     }),
@@ -282,7 +282,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_NAIVE_MATR
             ]
         },
         {
-            title: message.msg('workflow.common.mapreduce'),
+            title: 'MapReduce',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -297,7 +297,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_NAIVE_MATR
                 {
                     xtype: 'textfield',
                     name: 'jar',
-                    fieldLabel: message.msg('workflow.common.mahaut.jar'),
+                    fieldLabel: 'Mahout JAR',
                     value: 'org.apache.mahout:mahout-core:0.5',
                     disabledCls: 'disabled-plain',
                     allowBlank: false
@@ -312,13 +312,13 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_NAIVE_MATR
                 },
                 {
                     xtype: '_dependencyGrid',
-                    title: message.msg('workflow.common.mapreduce.jar.title'),
+                    title: 'Dependency JAR',
                     flex: 1
                 }
             ]
         },
         {
-            title: message.msg('workflow.title_input_col'),
+            title: 'Input column',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -338,7 +338,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_NAIVE_MATR
             ]
         },
         {
-            title: message.msg('workflow.title_output_col'),
+            title: 'Output column',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -366,7 +366,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_NAIVE_MATR
             ]
         },
         {
-            title: message.msg('workflow.common.hadoop.conf'),
+            title: 'Hadoop Configuration',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -381,7 +381,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_NAIVE_MATR
                 {
                     xtype: 'displayfield',
                     height: 20,
-                    value: message.msg('workflow.common.hadoop.conf.guide')
+                    value: 'Enter a key and a value of Configuration.set () method used in Hadoop Mapreduce.'
                 },
                 {
                     xtype: '_keyValueGrid',
@@ -390,7 +390,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_NAIVE_MATR
             ]
         },
         {
-            title: message.msg('common.references'),
+            title: 'References',
             xtype: 'form',
             border: false,
             autoScroll: true,

@@ -33,8 +33,8 @@ Ext.define('Flamingo.view.workflowdesigner.property._InclusiveGrid', {
     }),
 
     columns: [
-        {text: message.msg('common.node'), flex: 1, sortable: true, dataIndex: 'node', align: 'center'},
-        {text: message.msg('common.node') + ' ID', flex: 1, sortable: true, dataIndex: 'id', align: 'center'},
+        {text: 'Node', flex: 1, sortable: true, dataIndex: 'node', align: 'center'},
+        {text: 'Node' + ' ID', flex: 1, sortable: true, dataIndex: 'id', align: 'center'},
         {text: "Provider", hidden: true, flex: 1, sortable: true, dataIndex: 'provider', align: 'center'}
     ],
 

@@ -40,7 +40,7 @@ Ext.define('Flamingo.view.workflowdesigner.variableGrid.VariableGrid', {
     columnLines: true,
     columns: [
         {
-            text: message.msg('common.key'),
+            text: 'Key',
             dataIndex: 'name',
             editor: {
                 vtype: 'alphanum',
@@ -53,7 +53,7 @@ Ext.define('Flamingo.view.workflowdesigner.variableGrid.VariableGrid', {
             }
         },
         {
-            text: message.msg('common.value'),
+            text: 'Value',
             dataIndex: 'value',
             editor: {
                 vtype: 'exceptcomma',
@@ -90,17 +90,17 @@ Ext.define('Flamingo.view.workflowdesigner.variableGrid.VariableGrid', {
     tools: [
         {
             type: 'plus',
-            tooltip: message.msg('common.add'),
+            tooltip: 'Add',
             handler: 'rowplus'
         },
         {
             type: 'minus',
-            tooltip: message.msg('common.remove'),
+            tooltip: 'Remove',
             handler: 'rowminus'
         },
         {
             type: 'close',
-            tooltip: message.msg('common.remove_all'),
+            tooltip: 'Remove All',
             handler: 'rowclose'
         }
     ]

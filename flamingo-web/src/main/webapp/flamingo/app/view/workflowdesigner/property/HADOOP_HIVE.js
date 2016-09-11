@@ -29,7 +29,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_HIVE', {
     items: [
         {
             xtype: 'form',
-            title: message.msg('workflow.common.hive'),
+            title: 'Hive Query',
             autoScroll: true,
             defaults: {
                 labelWidth: 100
@@ -79,7 +79,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_HIVE', {
         },
         {
             xtype: 'form',
-            title: message.msg('workflow.common.script.variable'),
+            title: 'Script Variable',
             defaults: {
                 labelWidth: 100
             },
@@ -91,7 +91,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_HIVE', {
                 {
                     xtype: 'displayfield',
                     height: 40,
-                    value: message.msg('workflow.common.script.variable.example')
+                    value: 'For variables, use the `${VAR}` format, and variables will be mapped to their own values. Variables are interpreted when scripts are executed. You cannot use a comma (,) with variables and values.'
                 },
                 {
                     xtype: '_nameValueGrid',
@@ -101,7 +101,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_HIVE', {
         },
         {
             xtype: 'form',
-            title: message.msg('workflow.common.hadoop.conf'),
+            title: 'Hadoop Configuration',
             defaults: {
                 labelWidth: 100
             },
@@ -113,7 +113,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_HIVE', {
                 {
                     xtype: 'displayfield',
                     height: 20,
-                    value: message.msg('workflow.common.hadoop.conf.guide')
+                    value: 'Enter a key and a value of Configuration.set () method used in Hadoop Mapreduce.'
                 },
                 {
                     xtype: '_keyValueGrid',
@@ -122,7 +122,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_HIVE', {
             ]
         },
         {
-            title: message.msg('common.references'),
+            title: 'References',
             xtype: 'form',
             border: false,
             autoScroll: true,

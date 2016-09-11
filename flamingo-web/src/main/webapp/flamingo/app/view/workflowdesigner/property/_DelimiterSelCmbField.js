@@ -18,7 +18,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._DelimiterSelCmbField', {
     extend: 'Ext.form.FieldContainer',
     alias: 'widget._delimiterSelCmbField',
 
-    fieldLabel: message.msg('workflow.common.delimiter'),
+    fieldLabel: 'Delimiter',
     defaults: {
         hideLabel: true
     },
@@ -49,19 +49,19 @@ Ext.define('Flamingo.view.workflowdesigner.property._DelimiterSelCmbField', {
                 store: Ext.create('Ext.data.Store', {
                     fields: ['name', 'value', 'description'],
                     data: [
-                        {name: message.msg('workflow.common.delimiter.double.colon'), value: '::', description: '::'},
-                        {name: message.msg('workflow.common.delimiter.comma'), value: ',', description: ','},
-                        {name: message.msg('workflow.common.delimiter.pipe'), value: '|', description: '|'},
-                        {name: message.msg('workflow.common.delimiter.tab'), value: '\'\\t\'', description: '\'\\t\''},
+                        {name: 'Double Colon', value: '::', description: '::'},
+                        {name: 'Comma', value: ',', description: ','},
+                        {name: 'Pipe', value: '|', description: '|'},
+                        {name: 'Tab', value: '\'\\t\'', description: '\'\\t\''},
                         {
-                            name: message.msg('workflow.common.delimiter.blank'),
+                            name: 'Blank',
                             value: '\'\\s\'',
                             description: '\'\\s\''
                         },
                         {
-                            name: message.msg('workflow.common.delimiter.user.def'),
+                            name: 'User Defined',
                             value: 'CUSTOM',
-                            description: message.msg('workflow.common.delimiter.user.def')
+                            description: 'User Defined'
                         }
                     ]
                 }),

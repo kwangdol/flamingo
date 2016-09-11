@@ -34,7 +34,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.rules.ESPER_EDITOR', {
 
     items: [
         {
-            title: message.msg('workflow.common.parameter'),
+            title: 'Parameter',
             xtype: 'form',
             border: false,
             layout: {
@@ -44,7 +44,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.rules.ESPER_EDITOR', {
             items: [
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.common.logDelimiter'),
+                    fieldLabel: 'Log Delimiter',
                     layout: 'hbox',
                     items: [
                         {
@@ -61,34 +61,34 @@ Ext.define('Flamingo.view.workflowdesigner.property.rules.ESPER_EDITOR', {
                                 fields: ['name', 'value', 'description'],
                                 data: [
                                     {
-                                        name: message.msg('workflow.common.delimiter.double.colon'),
+                                        name: 'Double Colon',
                                         value: '::',
                                         description: '::'
                                     },
                                     {
-                                        name: message.msg('workflow.common.delimiter.comma'),
+                                        name: 'Comma',
                                         value: ',',
                                         description: ','
                                     },
                                     {
-                                        name: message.msg('workflow.common.delimiter.pipe'),
+                                        name: 'Pipe',
                                         value: '|',
                                         description: '|'
                                     },
                                     {
-                                        name: message.msg('workflow.common.delimiter.tab'),
+                                        name: 'Tab',
                                         value: '\u0009',
                                         description: '\\t'
                                     },
                                     {
-                                        name: message.msg('workflow.common.delimiter.blank'),
+                                        name: 'Blank',
                                         value: '\u0020',
                                         description: ' '
                                     },
                                     {
-                                        name: message.msg('workflow.common.delimiter.user.def'),
+                                        name: 'User Defined',
                                         value: 'CUSTOM',
-                                        description: message.msg('workflow.common.delimiter.user.def')
+                                        description: 'User Defined'
                                     }
                                 ]
                             }),
@@ -123,23 +123,23 @@ Ext.define('Flamingo.view.workflowdesigner.property.rules.ESPER_EDITOR', {
                 },
                 {
                     xtype: 'textfield',
-                    fieldLabel: message.msg('workflow.common.logColumnNames'),
+                    fieldLabel: 'Log Column Names',
                     name: 'columnNames',
-                    emptyText: message.msg('workflow.common.logColumnNamesEmpty'),
+                    emptyText: 'Separated by \',\'',
                     allowBlank: false
                 },
                 {
                     xtype: 'textfield',
-                    fieldLabel: message.msg('workflow.rules.esper.columnTypes'),
+                    fieldLabel: 'Column Types',
                     name: 'columnTypes',
-                    emptyText: message.msg('workflow.rules.esper.columnTypesEmpty'),
+                    emptyText: 'Possible multi input string, int, integer, long, boolean, byte, float, double. Separated by \',\'',
                     regex: /^(string|int|integer|long|boolean|byte|float|double)+(,(string|int|integer|long|boolean|byte|float|double)+)*$/,
-                    regexText: message.msg('workflow.rules.esper.columnTypesRegex'),
+                    regexText: 'Possible input string, int, integer, long, boolean, byte, float, double.',
                     allowBlank: false
                 },
                 {
                     xtype: 'textareafield',
-                    fieldLabel: message.msg('workflow.rules.esper.script'),
+                    fieldLabel: 'Esper Script',
                     name: 'script',
                     flex: 1,
                     allowBlank: false,
@@ -173,7 +173,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.rules.ESPER_EDITOR', {
             ]
         },
         {
-            title: message.msg('workflow.common.mapreduce'),
+            title: 'MapReduce',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -188,7 +188,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.rules.ESPER_EDITOR', {
                 {
                     xtype: 'textfield',
                     name: 'jar',
-                    fieldLabel: message.msg('workflow.common.mapreduce.jar'),
+                    fieldLabel: 'JAR Path',
                     value: ETL.JAR,
                     disabledCls: 'disabled-plain',
                     readOnly: true
@@ -196,7 +196,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.rules.ESPER_EDITOR', {
                 {
                     xtype: 'textfield',
                     name: 'driver',
-                    fieldLabel: message.msg('workflow.common.mapreduce.driver'),
+                    fieldLabel: 'Driver',
                     value: 'esper',
                     disabledCls: 'disabled-plain',
                     readOnly: true
@@ -204,7 +204,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.rules.ESPER_EDITOR', {
             ]
         },
         {
-            title: message.msg('workflow.common.inout.path'),
+            title: 'I/O Path',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -218,12 +218,12 @@ Ext.define('Flamingo.view.workflowdesigner.property.rules.ESPER_EDITOR', {
             items: [
                 {
                     xtype: '_inputGrid',
-                    title: message.msg('workflow.common.input.path'),
+                    title: 'Input Path',
                     flex: 1
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.common.output.path'),
+                    fieldLabel: 'Output path',
                     defaults: {
                         hideLabel: true,
                         margin: "5 0 0 0"  // Same as CSS ordering (top, right, bottom, left)
@@ -242,7 +242,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.rules.ESPER_EDITOR', {
             ]
         },
         {
-            title: message.msg('workflow.common.hadoop.conf'),
+            title: 'Hadoop Configuration',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -257,7 +257,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.rules.ESPER_EDITOR', {
                 {
                     xtype: 'displayfield',
                     height: 20,
-                    value: message.msg('workflow.common.hadoop.conf.guide')
+                    value: 'Enter a key and a value of Configuration.set () method used in Hadoop Mapreduce.'
                 },
                 {
                     xtype: '_keyValueGrid',
@@ -266,7 +266,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.rules.ESPER_EDITOR', {
             ]
         },
         {
-            title: message.msg('common.references'),
+            title: 'References',
             xtype: 'form',
             border: false,
             autoScroll: true,

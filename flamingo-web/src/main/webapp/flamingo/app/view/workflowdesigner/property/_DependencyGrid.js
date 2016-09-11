@@ -39,7 +39,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._DependencyGrid', {
     columnLines: true,
     columns: [
         {
-            text: message.msg('workflow.common.group.id'),
+            text: 'Group ID',
             dataIndex: 'groupId',
             width: 150,
             editor: {
@@ -53,7 +53,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._DependencyGrid', {
             }
         },
         {
-            text: message.msg('workflow.common.artifact.id'),
+            text: 'Artifact ID',
             dataIndex: 'artifactId',
             width: 150,
             editor: {
@@ -62,7 +62,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._DependencyGrid', {
             }
         },
         {
-            text: message.msg('workflow.common.version'),
+            text: 'Version',
             dataIndex: 'version',
             width: 50,
             editor: {

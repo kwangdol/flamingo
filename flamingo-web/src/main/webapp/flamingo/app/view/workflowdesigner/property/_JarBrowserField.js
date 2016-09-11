@@ -28,7 +28,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._JarBrowserField', {
 
     layout: 'hbox',
 
-    fieldLabel: message.msg('common.path'),
+    fieldLabel: 'Path',
 
     items: [
         {
@@ -36,7 +36,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._JarBrowserField', {
             name: 'jar',
             allowBlank: false,
             flex: 1,
-            emptyText: message.msg('workflow.common.mapreduce.jar.empty.text'),
+            emptyText: 'Set a JAR file path.',
             listeners: {
                 errorchange: function (comp, error, eopts) {
                     comp.focus(false, 50);
@@ -45,12 +45,12 @@ Ext.define('Flamingo.view.workflowdesigner.property._JarBrowserField', {
         },
         {
             xtype: 'button',
-            text: message.msg('workflow.common.find'),
+            text: 'Find',
             margin: '0 0 0 3',
             handler: function () {
                 var popWindow = Ext.create('Ext.Window', {
                     layout: 'fit',
-                    title: message.msg('workflow.common.hdfsbrowser'),
+                    title: 'HDFS Browser',
                     width: 800,
                     height: 400,
                     modal: true,
@@ -63,7 +63,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._JarBrowserField', {
                     buttonAlign: 'center',
                     buttons: [
                         {
-                            text: message.msg('workflow.common.confirm'),
+                            text: 'Confirm',
 
                             handler: function () {
                                 var selection = Ext.ComponentQuery.query('hdfsFilePanelForDesigner')[0].getSelectionModel().getSelection();
@@ -74,13 +74,13 @@ Ext.define('Flamingo.view.workflowdesigner.property._JarBrowserField', {
                                         textfield.setValue(path);
                                         popWindow.close();
                                     } else {
-                                        error(message.msg('workflow.common.warn'), message.msg('workflow.common.hdfsbrowser.jar.warn'));
+                                        error('Warning', 'Select a jar file');
                                     }
                                 }
                             }
                         },
                         {
-                            text: message.msg('workflow.common.cancel'),
+                            text: 'Cancel',
 
                             handler: function () {
                                 popWindow.close();

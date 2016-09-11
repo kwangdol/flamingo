@@ -44,14 +44,14 @@ Ext.define('Flamingo.view.workflowdesigner.property._ParallelGrid', {
 
     columns: [
         {
-            text: message.msg('workflow.etc.flows.column.node'),
+            text: 'Node',
             flex: 1,
             sortable: true,
             dataIndex: 'node',
             align: 'center'
         },
         {
-            text: message.msg('workflow.etc.flows.column.id'),
+            text: 'Node ID',
             flex: 1,
             sortable: true,
             dataIndex: 'id',
@@ -66,7 +66,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._ParallelGrid', {
             align: 'center'
         },
         {
-            text: message.msg('workflow.etc.flows.column.sequence'),
+            text: 'Flow',
             flex: 1,
             sortable: true,
             dataIndex: 'sequence',
@@ -79,16 +79,16 @@ Ext.define('Flamingo.view.workflowdesigner.property._ParallelGrid', {
             }
         },
         {
-            text: message.msg('workflow.etc.flows.column.parallel'),
+            text: 'Proceeding',
             flex: 1,
             sortable: true,
             dataIndex: 'parallel',
             align: 'center',
             renderer: function (value) {
                 if (value) {
-                    return message.msg('workflow.etc.flows.column.parallel.sync');
+                    return 'Simultaneous';
                 }
-                return message.msg('workflow.etc.flows.column.parallel.async');
+                return 'Sequential';
             }
         }
     ],
@@ -104,7 +104,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._ParallelGrid', {
             items: [
                 {
                     reference: 'flowUp',
-                    text: message.msg('workflow.etc.flows.dock.flowUp'),
+                    text: 'Post flow',
                     disabled: true,
                     listeners: {
                         click: 'onFlowUpClick'
@@ -112,7 +112,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._ParallelGrid', {
                 },
                 {
                     reference: 'flowDown',
-                    text: message.msg('workflow.etc.flows.dock.flowDown'),
+                    text: 'Lower flow',
                     disabled: true,
                     listeners: {
                         click: 'onFlowDownClick'

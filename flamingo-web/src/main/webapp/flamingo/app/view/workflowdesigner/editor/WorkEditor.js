@@ -23,7 +23,7 @@ Ext.define('Flamingo.view.workflowdesigner.editor.WorkEditor', {
     initComponent: function () {
         var me = this, toolbar = [
             {
-                text: message.msg('common.save'),
+                text: 'Save',
                 itemId: 'saveButton',
                 handler: me.save,
                 iconCls: 'common-save',
@@ -31,14 +31,14 @@ Ext.define('Flamingo.view.workflowdesigner.editor.WorkEditor', {
             },
             '-',
             {
-                text: message.msg('common.undo'),
+                text: 'Undo',
                 itemId: 'undoButton',
                 iconCls: 'common-undo',
                 handler: me.undo,
                 scope: me
             },
             {
-                text: message.msg('common.redo'),
+                text: 'Redo',
                 itemId: 'redoButton',
                 iconCls: 'common-redo',
                 handler: me.redo,
@@ -46,14 +46,14 @@ Ext.define('Flamingo.view.workflowdesigner.editor.WorkEditor', {
             },
             '->',
             {
-                text: message.msg('common.setting'),
+                text: 'Setting',
                 iconCls: 'common-setting',
                 menu: {
                     xtype: 'menu',
                     plain: true,
                     items: [
                         {
-                            text: message.msg('common.aceEditor.menu.invisible'),
+                            text: 'Display hidden characters',
                             handler: function () {
                                 me.showInvisible = (me.showInvisible) ? false : true;
                                 me.editor.setShowInvisibles(me.showInvisible);
@@ -62,7 +62,7 @@ Ext.define('Flamingo.view.workflowdesigner.editor.WorkEditor', {
                             scope: me
                         },
                         {
-                            text: message.msg('common.aceEditor.menu.wrap'),
+                            text: 'Line breaks',
                             handler: function () {
                                 me.useWrapMode = (me.useWrapMode) ? false : true;
                                 me.editor.getSession().setUseWrapMode(me.useWrapMode);
@@ -71,7 +71,7 @@ Ext.define('Flamingo.view.workflowdesigner.editor.WorkEditor', {
                             scope: me
                         },
                         {
-                            text: message.msg('common.aceEditor.menu.folding'),
+                            text: 'Folding',
                             handler: function () {
                                 me.codeFolding = (me.codeFolding) ? false : true;
                                 me.editor.setShowFoldWidgets(me.codeFolding);
@@ -80,7 +80,7 @@ Ext.define('Flamingo.view.workflowdesigner.editor.WorkEditor', {
                             scope: me
                         },
                         {
-                            text: message.msg('common.aceEditor.menu.highlightLine'),
+                            text: 'Highlights the current line',
                             handler: function () {
                                 me.highlightActiveLine = (me.highlightActiveLine) ? false : true;
                                 me.editor.setHighlightActiveLine(me.highlightActiveLine);
@@ -89,7 +89,7 @@ Ext.define('Flamingo.view.workflowdesigner.editor.WorkEditor', {
                             scope: me
                         },
                         {
-                            text: message.msg('common.aceEditor.menu.gutter'),
+                            text: 'Display line numbers',
                             handler: function () {
                                 me.showGutter = (me.showGutter) ? false : true;
                                 me.editor.renderer.setShowGutter(me.showGutter);
@@ -98,7 +98,7 @@ Ext.define('Flamingo.view.workflowdesigner.editor.WorkEditor', {
                             scope: me
                         },
                         {
-                            text: message.msg('common.aceEditor.menu.highlightWord'),
+                            text: 'Highlights selected text',
                             handler: function () {
                                 me.highlightSelectedWord = (me.highlightSelectedWord) ? false : true;
                                 me.editor.setHighlightSelectedWord(me.highlightSelectedWord);
@@ -116,7 +116,7 @@ Ext.define('Flamingo.view.workflowdesigner.editor.WorkEditor', {
                             items: [
                                 {
                                     xtype: 'menuitem',
-                                    text: message.msg('common.aceEditor.menu.fontSize'),
+                                    text: 'Font Size',
                                     handler: function () {
                                     },
                                     flex: 1,
@@ -150,7 +150,7 @@ Ext.define('Flamingo.view.workflowdesigner.editor.WorkEditor', {
                             items: [
                                 {
                                     xtype: 'menuitem',
-                                    text: message.msg('common.aceEditor.menu.printMargin'),
+                                    text: 'Margin display language',
                                     handler: function () {
                                     },
                                     flex: 1,
@@ -188,7 +188,7 @@ Ext.define('Flamingo.view.workflowdesigner.editor.WorkEditor', {
                             items: [
                                 {
                                     xtype: 'menuitem',
-                                    text: message.msg('common.aceEditor.menu.theme')
+                                    text: 'Theme'
                                 },
                                 {
                                     xtype: 'combo',
@@ -324,8 +324,8 @@ Ext.define('Flamingo.view.workflowdesigner.editor.WorkEditor', {
             }
         ];
 
-        var wordCount = Ext.create('Ext.toolbar.TextItem', {text: message.msg('common.position') + ': 0'}),
-            lineCount = Ext.create('Ext.toolbar.TextItem', {text: message.msg('common.lines') + ': 0'});
+        var wordCount = Ext.create('Ext.toolbar.TextItem', {text: 'Position' + ': 0'}),
+            lineCount = Ext.create('Ext.toolbar.TextItem', {text: 'Lines' + ': 0'});
 
         Ext.apply(me, {
             tbar: toolbar,
@@ -348,8 +348,8 @@ Ext.define('Flamingo.view.workflowdesigner.editor.WorkEditor', {
                 var c = me.editor.selection.getCursor(),
                     l = c.row + 1;
 
-                wordCount.update(message.msg('common.position') + ': ' + c.column);
-                lineCount.update(message.msg('common.lines') + ': ' + l);
+                wordCount.update('Position' + ': ' + c.column);
+                lineCount.update('Lines' + ': ' + l);
 
             }, me);
         });

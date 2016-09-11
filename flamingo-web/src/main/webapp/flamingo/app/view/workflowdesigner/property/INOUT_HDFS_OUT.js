@@ -36,14 +36,14 @@ Ext.define('Flamingo.view.workflowdesigner.property.INOUT_HDFS_OUT', {
 
     items: [
         {
-            title: message.msg('workflow.title_path_information'),
+            title: 'Path Information',
             xtype: 'form',
             border: false,
             autoScroll: true,
             items: [
                 {
                     xtype: 'fieldset',
-                    title: message.msg('workflow.title_ouput_path_info'),
+                    title: 'Output Path',
                     defaultType: 'textfield',
                     defaults: {
                         anchor: '100%',
@@ -52,7 +52,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.INOUT_HDFS_OUT', {
                     items: [
                         {
                             name: 'outputPathQualifier',
-                            fieldLabel: message.msg('common.identifier'),
+                            fieldLabel: 'Identifier',
                             readOnly: true
                         },
                         {
@@ -85,7 +85,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.INOUT_HDFS_OUT', {
             ]
         },
         {
-            title: message.msg('workflow.title_col_info'),
+            title: 'Column information',
             xtype: 'form',
             border: false,
             autoScroll: true,

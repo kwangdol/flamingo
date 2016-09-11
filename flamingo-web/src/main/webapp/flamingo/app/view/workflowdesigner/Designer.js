@@ -65,7 +65,7 @@ Ext.define('Flamingo.view.workflowdesigner.Designer', {
                     }
                 },
                 {
-                    title: message.msg('workflow.common.workflow.variable'),
+                    title: 'Workflow Variable',
                     region: 'east',
                     layout: 'fit',
                     width: 250,
@@ -80,7 +80,7 @@ Ext.define('Flamingo.view.workflowdesigner.Designer', {
                     }
                 },
                 {
-                    title: message.msg('common.workflow'),
+                    title: 'Workflow',
                     region: 'west',
                     layout: 'fit',
                     width: 250,

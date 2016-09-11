@@ -34,7 +34,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_STREAMING_
     height: 320,
     items: [
         {
-            title: message.msg('workflow.common.parameter'),
+            title: 'Parameter',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -48,7 +48,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_STREAMING_
             items: [
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.am.kmeans.overwrite.output.directory'),
+                    fieldLabel: 'Overwrite output directory',
                     defaultType: 'checkboxfield',
                     items: [
                         {
@@ -59,25 +59,25 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_STREAMING_
                 {
                     xtype: 'textfield',
                     name: 'numClusters',
-                    fieldLabel: message.msg('workflow.am.fuzzy.num_cluster'),
+                    fieldLabel: 'Num of Clusters',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'estimatedNumMapClusters',
-                    fieldLabel: message.msg('workflow.am.kmeans.estimate.use.mapper'),
+                    fieldLabel: 'Use Mapper',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'estimatedDistanceCutoff',
-                    fieldLabel: message.msg('workflow.am.kmeans.estimate.cutoff.distance'),
+                    fieldLabel: 'Estimate Cutoff Distance',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'maxNumIterations',
-                    fieldLabel: message.msg('workflow.am.spectral.max_iteration'),
+                    fieldLabel: 'Max. Number of Iteration',
                     value: '10',
                     vtype: 'numeric',
                     allowBlank: true
@@ -85,13 +85,13 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_STREAMING_
                 {
                     xtype: 'textfield',
                     name: 'trimFraction',
-                    fieldLabel: message.msg('workflow.am.kmeans.trim.fraction'),
+                    fieldLabel: 'Fractions normalization',
                     value: '0.9',
                     allowBlank: true
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.am.kmeans.random.init'),
+                    fieldLabel: 'Init Random Number',
                     defaultType: 'checkboxfield',
                     items: [
                         {
@@ -101,7 +101,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_STREAMING_
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.am.kmeans.ignore.weights'),
+                    fieldLabel: 'Ignore Weights',
                     defaultType: 'checkboxfield',
                     items: [
                         {
@@ -112,14 +112,14 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_STREAMING_
                 {
                     xtype: 'textfield',
                     name: 'testProbability',
-                    fieldLabel: message.msg('workflow.am.kmeans.test.probability'),
+                    fieldLabel: 'Test Probability',
                     value: '0.1',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'numBallKMeansRuns',
-                    fieldLabel: message.msg('workflow.am.kmeans.run.ballkmeans.num'),
+                    fieldLabel: 'Run BallKMeans Num',
                     vtype: 'numeric',
                     value: '4',
                     allowBlank: true
@@ -127,7 +127,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_STREAMING_
                 {  //Distance Measure
                     xtype: 'textfield',
                     name: 'distanceMeasure',
-                    fieldLabel: message.msg('workflow.am.streamk.class_name_of_instance'),
+                    fieldLabel: 'A Distance Measuring Instance Class Name',
                     tooltip: '',
                     value: 'org.apache.mahout.common.distance.SquaredEuclideanDistanceMeasure',
                     allowBlank: true
@@ -135,14 +135,14 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_STREAMING_
                 {
                     xtype: 'textfield',
                     name: 'searcherClass',
-                    fieldLabel: message.msg('workflow.am.kmeans.searcher.class'),
+                    fieldLabel: 'Search Class',
                     value: 'org.apache.mahout.math.neighborhood.ProjectionSearch',
                     allowBlank: true
                 },
                 { //TODO:enabled when searcherClass is ProjectionSearch or  FastProjectionSearch
                     xtype: 'textfield',
                     name: 'numProjections',
-                    fieldLabel: message.msg('workflow.am.kmeans.projections.num'),
+                    fieldLabel: 'Projection Num',
                     vtype: 'numeric',
                     value: '3',
                     allowBlank: true
@@ -150,12 +150,12 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_STREAMING_
                 {
                     xtype: 'textfield',
                     name: 'searchSize',
-                    fieldLabel: message.msg('workflow.am.kmeans.search.num'),
+                    fieldLabel: 'Search Num',
                     allowBlank: true
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.am.kmeans.reduce.streaming.kmeans'),
+                    fieldLabel: 'Reduce KMeans Streaming',
                     defaultType: 'checkboxfield',
                     items: [
                         {
@@ -165,7 +165,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_STREAMING_
                 },
                 {
                     xtype: 'radiogroup',
-                    fieldLabel: message.msg('workflow.am.seqdirectory.exe_method'),
+                    fieldLabel: 'Execution Method',
                     columns: 2,
                     items: [
                         {
@@ -185,25 +185,25 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_STREAMING_
                 {
                     xtype: 'textfield',
                     name: 'tempDir',
-                    fieldLabel: message.msg('workflow.am.testnb.tempdirectory'),
+                    fieldLabel: 'Temp. Directory',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'startPhase',
-                    fieldLabel: message.msg('workflow.am.testnb.startphase'),
+                    fieldLabel: 'Start Phase',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'endPhase',
-                    fieldLabel: message.msg('workflow.am.testnb.endphase'),
+                    fieldLabel: 'End Phase',
                     allowBlank: true
                 }
             ]
         },
         {
-            title: message.msg('workflow.common.mapreduce'),
+            title: 'MapReduce',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -218,7 +218,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_STREAMING_
                 {
                     xtype: 'textfield',
                     name: 'jar',
-                    fieldLabel: message.msg('workflow.common.mahaut.jar'),
+                    fieldLabel: 'Mahout JAR',
                     value: MAHOUT.JAR,
                     disabledCls: 'disabled-plain',
                     readOnly: true
@@ -226,20 +226,20 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_STREAMING_
                 {
                     xtype: 'textfield',
                     name: 'driver',
-                    fieldLabel: message.msg('workflow.common.mapreduce.driver'),
+                    fieldLabel: 'Driver',
                     value: 'org.apache.mahout.clustering.streaming.mapreduce.StreamingKMeansDriver',
                     disabledCls: 'disabled-plain',
                     readOnly: true
                 },
                 {
                     xtype: '_dependencyGrid',
-                    title: message.msg('workflow.common.mapreduce.jar.title'),
+                    title: 'Dependency JAR',
                     flex: 1
                 }
             ]
         },
         {
-            title: message.msg('workflow.common.inout.path'),
+            title: 'I/O Path',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -253,7 +253,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_STREAMING_
             items: [
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.common.input.path'),
+                    fieldLabel: 'Input Path',
                     defaults: {
                         hideLabel: true
                     },
@@ -270,7 +270,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_STREAMING_
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.common.output.path'),
+                    fieldLabel: 'Output path',
                     defaults: {
                         hideLabel: true
                     },
@@ -288,7 +288,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_STREAMING_
             ]
         },
         {
-            title: message.msg('workflow.common.hadoop.conf'),
+            title: 'Hadoop Configuration',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -303,7 +303,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_STREAMING_
                 {
                     xtype: 'displayfield',
                     height: 20,
-                    value: message.msg('workflow.common.hadoop.conf.guide')
+                    value: 'Enter a key and a value of Configuration.set () method used in Hadoop Mapreduce.'
                 },
                 {
                     xtype: '_keyValueGrid',
@@ -312,7 +312,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_STREAMING_
             ]
         },
         {
-            title: message.msg('common.references'),
+            title: 'References',
             xtype: 'form',
             border: false,
             autoScroll: true,

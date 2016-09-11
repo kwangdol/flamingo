@@ -44,7 +44,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_CF_ITEM', 
 
     items: [
         {
-            title: message.msg('workflow.common.parameter'),
+            title: 'Parameter',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -59,12 +59,12 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_CF_ITEM', 
                 {
                     xtype: 'textfield',
                     name: 'numrecommendation',
-                    fieldLabel: message.msg('workflow.am.num.recommend'),
+                    fieldLabel: 'Num of recommendations',
                     allowBlank: true
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.am.users.file'),
+                    fieldLabel: 'Users File',
                     defaults: {
                         hideLabel: true,
                         margin: "5 0 0 0"
@@ -82,7 +82,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_CF_ITEM', 
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.am.items.file'),
+                    fieldLabel: 'Items File',
                     defaults: {
                         hideLabel: true,
                         margin: "5 0 0 0"
@@ -100,7 +100,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_CF_ITEM', 
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.am.filter.file'),
+                    fieldLabel: 'Filter File',
                     defaults: {
                         hideLabel: true,
                         margin: "5 0 0 0"
@@ -118,7 +118,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_CF_ITEM', 
                 },
                 {
                     xtype: 'radiogroup',
-                    fieldLabel: message.msg('workflow.am.bool.data'),
+                    fieldLabel: 'Boolean Data',
                     columns: 2,
                     itemId: 'itemSimBooleanData',
                     items: [
@@ -139,30 +139,30 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_CF_ITEM', 
                 {
                     xtype: 'textfield',
                     name: 'maxPrefsPerUser',
-                    fieldLabel: message.msg('workflow.am.max.prefer.value'),
+                    fieldLabel: 'Max. preference value per user',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'minPrefsPerUser',
-                    fieldLabel: message.msg('workflow.am.min.prefer.value'),
+                    fieldLabel: 'Min. preference value per user',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'maxSimilaritiesPerItem',
-                    fieldLabel: message.msg('workflow.am.sim.item.num'),
+                    fieldLabel: 'Similarity Item Num.',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'maxPrefsInItemSimilarity',
-                    fieldLabel: message.msg('workflow.am.max.prefer.sim.item'),
+                    fieldLabel: 'Max. Prefs. in Item Similarity',
                     allowBlank: true
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.am.sim.cal.method'),
+                    fieldLabel: 'Similarity Calculation Method',
                     layout: 'hbox',
                     items: [
                         {
@@ -226,13 +226,13 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_CF_ITEM', 
                 {
                     xtype: 'textfield',
                     name: 'threshold',
-                    fieldLabel: message.msg('workflow.am.threshold'),
+                    fieldLabel: 'Threshold',
                     allowBlank: true
 
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.am.sim.matrix.output.path'),
+                    fieldLabel: 'Output Path for Similarity Matrix',
                     defaults: {
                         hideLabel: true,
                         margin: "5 0 0 0"
@@ -251,12 +251,12 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_CF_ITEM', 
                 {
                     xtype: 'textfield',
                     name: 'randomSeed',
-                    fieldLabel: message.msg('workflow.am.random.seed'),
+                    fieldLabel: 'Random Seed',
                     allowBlank: true
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.am.seq.output.path'),
+                    fieldLabel: 'Sequence File Output Path',
                     defaults: {
                         hideLabel: true,
                         margin: "5 0 0 0"
@@ -274,7 +274,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_CF_ITEM', 
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.am.temp.dir'),
+                    fieldLabel: 'Temp Directory',
                     defaults: {
                         hideLabel: true,
                         margin: "5 0 0 0"
@@ -293,19 +293,19 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_CF_ITEM', 
                 {
                     xtype: 'textfield',
                     name: 'startPhase',
-                    fieldLabel: message.msg('workflow.am.start.phase'),
+                    fieldLabel: 'Start Phase',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'endPhase',
-                    fieldLabel: message.msg('workflow.am.end.phase'),
+                    fieldLabel: 'End Phase',
                     allowBlank: true
                 }
             ]
         },
         {
-            title: message.msg('workflow.common.mapreduce'),
+            title: 'MapReduce',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -320,7 +320,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_CF_ITEM', 
                 {
                     xtype: 'textfield',
                     name: 'jar',
-                    fieldLabel: message.msg('workflow.common.mahaut.jar'),
+                    fieldLabel: 'Mahout JAR',
                     value: MAHOUT.JAR,
                     disabledCls: 'disabled-plain',
                     readOnly: true
@@ -328,20 +328,20 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_CF_ITEM', 
                 {
                     xtype: 'textfield',
                     name: 'driver',
-                    fieldLabel: message.msg('workflow.common.mapreduce.driver'),
+                    fieldLabel: 'Driver',
                     value: 'org.apache.mahout.cf.taste.hadoop.item.RecommenderJob',
                     disabledCls: 'disabled-plain',
                     readOnly: true
                 },
                 {
                     xtype: '_dependencyGrid',
-                    title: message.msg('workflow.common.mapreduce.jar.title'),
+                    title: 'Dependency JAR',
                     flex: 1
                 }
             ]
         },
         {
-            title: message.msg('workflow.common.inout.path'),
+            title: 'I/O Path',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -355,7 +355,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_CF_ITEM', 
             items: [
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.common.input.path'),
+                    fieldLabel: 'Input Path',
                     defaults: {
                         hideLabel: true,
                         margin: "5 0 0 0"
@@ -373,7 +373,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_CF_ITEM', 
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.common.output.path'),
+                    fieldLabel: 'Output path',
                     defaults: {
                         hideLabel: true,
                         margin: "5 0 0 0"  // Same as CSS ordering (top, right, bottom, left)
@@ -392,7 +392,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_CF_ITEM', 
             ]
         },
         {
-            title: message.msg('workflow.common.hadoop.conf'),
+            title: 'Hadoop Configuration',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -411,7 +411,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_CF_ITEM', 
             ]
         },
         {
-            title: message.msg('common.references'),
+            title: 'References',
             xtype: 'form',
             border: false,
             autoScroll: true,

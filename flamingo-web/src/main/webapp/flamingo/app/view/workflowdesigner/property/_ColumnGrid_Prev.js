@@ -33,7 +33,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._ColumnGrid_Prev', {
     columnLines: true,
     columns: [
         {
-            text: message.msg('workflow.common.prev_qualifier'),
+            text: 'Previous qualifier',
             dataIndex: 'prevQualifier',
             width: 50,
             hidden: true,
@@ -41,7 +41,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._ColumnGrid_Prev', {
             menuDisabled: true
         },
         {
-            text: message.msg('workflow.common.column_names'),
+            text: 'Column name (English)',
             dataIndex: 'prevColumnNames',
             width: 100,
             sortable: false,
@@ -56,7 +56,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._ColumnGrid_Prev', {
             }
         },
         {
-            text: message.msg('workflow.common.column_kor_names'),
+            text: 'Column name (Korea)',
             dataIndex: 'prevColumnKorNames',
             width: 100,
             sortable: false,
@@ -66,7 +66,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._ColumnGrid_Prev', {
             }
         },
         {
-            text: message.msg('workflow.common.datatype'),
+            text: 'Data type',
             dataIndex: 'prevColumnTypes',
             width: 80,
             sortable: false,
@@ -93,7 +93,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._ColumnGrid_Prev', {
             }
         },
         {
-            text: message.msg('common.comment'),
+            text: 'Comment',
             dataIndex: 'prevColumnDescriptions',
             width: 150,
             sortable: false,

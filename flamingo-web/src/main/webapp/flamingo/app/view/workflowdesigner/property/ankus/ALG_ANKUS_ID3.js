@@ -35,7 +35,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.ankus.ALG_ANKUS_ID3', {
 
     items: [
         {
-            title: message.msg('workflow.common.parameter'),
+            title: 'Parameter',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -50,29 +50,29 @@ Ext.define('Flamingo.view.workflowdesigner.property.ankus.ALG_ANKUS_ID3', {
                 {
                     xtype: 'textfield',
                     name: 'indexList',
-                    fieldLabel: message.msg('workflow.common.index.target.label'),
-                    tooltip: message.msg('workflow.dm.id3Class.tab.parameter.index.target.tip'),
+                    fieldLabel: 'Analysis Target Attribute List',
+                    tooltip: 'Cluster Properties List (For multiple, use a comma to distinguish. For all, use "-1.")',
                     vtype: 'commaseperatednum',
                     allowBlank: false
                 },
                 {
                     xtype: 'textfield',
                     name: 'exceptionIndexList',
-                    fieldLabel: message.msg('workflow.common.index.exception.label'),
+                    fieldLabel: 'Analysis Exemption Identifier List',
                     vtype: 'commaseperatednum',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'classIndex',
-                    fieldLabel: message.msg('workflow.dm.id3Class.tab.parameter.classIdx.label'),
+                    fieldLabel: 'Class attribute(Index)',
                     vtype: 'numeric',
                     allowBlank: false
                 },
                 {
                     xtype: 'textfield',
                     name: 'minLeafData',
-                    fieldLabel: message.msg('workflow.dm.id3Class.tab.parameter.minLeafData.label'),
+                    fieldLabel: 'Pruning - Minimum Data Count',
                     value: 2,
                     vtype: 'numeric',
                     allowBlank: false
@@ -80,13 +80,13 @@ Ext.define('Flamingo.view.workflowdesigner.property.ankus.ALG_ANKUS_ID3', {
                 {
                     xtype: 'textfield',
                     name: 'purity',
-                    fieldLabel: message.msg('workflow.dm.id3Class.tab.parameter.purity.label'),
+                    fieldLabel: 'Pruning - Leaf Node Purity',
                     value: 0.75,
                     allowBlank: false
                 },
                 {
                     xtype: 'radiogroup',
-                    fieldLabel: message.msg('workflow.dm.id3Class.tab.parameter.resultGeneration.label'),
+                    fieldLabel: 'Training Result Generation',
                     allowBlank: false,
                     columns: 2,
                     itemId: 'myRadio',
@@ -109,8 +109,8 @@ Ext.define('Flamingo.view.workflowdesigner.property.ankus.ALG_ANKUS_ID3', {
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.common.delimiter'),
-                    tooltip: message.msg('workflow.common.delimiter.message'),
+                    fieldLabel: 'Delimiter',
+                    tooltip: 'Wrong delimiter can cause failure.',
                     layout: 'hbox',
                     items: [
                         {
@@ -136,34 +136,34 @@ Ext.define('Flamingo.view.workflowdesigner.property.ankus.ALG_ANKUS_ID3', {
                                         fields: ['name', 'value', 'description'],
                                         data: [
                                             {
-                                                name: message.msg('workflow.common.delimiter.double.colon'),
+                                                name: 'Double Colon',
                                                 value: '::',
                                                 description: '::'
                                             },
                                             {
-                                                name: message.msg('workflow.common.delimiter.comma'),
+                                                name: 'Comma',
                                                 value: ',',
                                                 description: ','
                                             },
                                             {
-                                                name: message.msg('workflow.common.delimiter.pipe'),
+                                                name: 'Pipe',
                                                 value: '|',
                                                 description: '|'
                                             },
                                             {
-                                                name: message.msg('workflow.common.delimiter.tab'),
+                                                name: 'Tab',
                                                 value: '\'\\t\'',
                                                 description: '\'\\t\''
                                             },
                                             {
-                                                name: message.msg('workflow.common.delimiter.blank'),
+                                                name: 'Blank',
                                                 value: '\'\\s\'',
                                                 description: '\'\\s\''
                                             },
                                             {
-                                                name: message.msg('workflow.common.delimiter.user.def'),
+                                                name: 'User Defined',
                                                 value: 'CUSTOM',
-                                                description: message.msg('workflow.common.delimiter.user.def')
+                                                description: 'User Defined'
                                             }
                                         ]
                                     }),
@@ -202,7 +202,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.ankus.ALG_ANKUS_ID3', {
             ]
         },
         {
-            title: message.msg('workflow.common.mapreduce'),
+            title: 'MapReduce',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -217,7 +217,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.ankus.ALG_ANKUS_ID3', {
                 {
                     xtype: 'textfield',
                     name: 'jar',
-                    fieldLabel: message.msg('workflow.common.mapreduce.jar'),
+                    fieldLabel: 'JAR Path',
                     value: ANKUS.JAR,
                     disabledCls: 'disabled-plain',
                     readOnly: true
@@ -225,7 +225,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.ankus.ALG_ANKUS_ID3', {
                 {
                     xtype: 'textfield',
                     name: 'driver',
-                    fieldLabel: message.msg('workflow.common.mapreduce.driver'),
+                    fieldLabel: 'Driver',
                     value: 'ID3',
                     disabledCls: 'disabled-plain',
                     readOnly: true
@@ -233,7 +233,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.ankus.ALG_ANKUS_ID3', {
             ]
         },
         {
-            title: message.msg('workflow.common.inout.path'),
+            title: 'I/O Path',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -248,13 +248,13 @@ Ext.define('Flamingo.view.workflowdesigner.property.ankus.ALG_ANKUS_ID3', {
                 // Ankus MapReduce가 동작하는데 필요한 입력 경로를 지정한다.  이 경로는 N개 지정가능하다.
                 {
                     xtype: '_inputGrid',
-                    title: message.msg('workflow.common.input.path'),
+                    title: 'Input Path',
                     flex: 1
                 },
                 // Ankus MapReduce가 동작하는데 필요한 출력 경로를 지정한다. 이 경로는 오직 1개만 지정가능하다.
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.common.output.path'),
+                    fieldLabel: 'Output path',
                     defaults: {
                         hideLabel: true,
                         margin: "5 0 0 0"  // Same as CSS ordering (top, right, bottom, left)
@@ -273,7 +273,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.ankus.ALG_ANKUS_ID3', {
             ]
         },
         {
-            title: message.msg('workflow.common.hadoop.conf'),
+            title: 'Hadoop Configuration',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -288,7 +288,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.ankus.ALG_ANKUS_ID3', {
                 {
                     xtype: 'displayfield',
                     height: 20,
-                    value: message.msg('workflow.common.hadoop.conf.guide')
+                    value: 'Enter a key and a value of Configuration.set () method used in Hadoop Mapreduce.'
                 },
                 {
                     xtype: '_keyValueGrid',
@@ -297,7 +297,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.ankus.ALG_ANKUS_ID3', {
             ]
         },
         {
-            title: message.msg('common.references'),
+            title: 'References',
             xtype: 'form',
             border: false,
             autoScroll: true,

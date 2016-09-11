@@ -48,9 +48,9 @@ Ext.define('Flamingo.view.workflowdesigner.property._NodeValueGrid', {
             });
 
             me.columns = [
-                {text: message.msg('common.node'), flex: 1, sortable: true, dataIndex: 'name'},
+                {text: 'Node', flex: 1, sortable: true, dataIndex: 'name'},
                 {
-                    text: message.msg('common.value'),
+                    text: 'Value',
                     flex: 1,
                     dataIndex: 'expression',
                     renderer: function (val, meta, rec) {
@@ -58,7 +58,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._NodeValueGrid', {
                     }
                 },
                 {
-                    text: message.msg('common.use'),
+                    text: 'Use',
                     width: 80,
                     align: 'center',
                     renderer: function (val, meta, rec) {
@@ -67,7 +67,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._NodeValueGrid', {
                             Ext.create('Ext.button.Button', {
                                 itemId: rec.data.recid + 'button',
                                 renderTo: id,
-                                text: message.msg('common.use'),
+                                text: 'Use',
                                 iconCls: 'common-view',
                                 usage: 'vmproperty-apply',
                                 scale: 'small',

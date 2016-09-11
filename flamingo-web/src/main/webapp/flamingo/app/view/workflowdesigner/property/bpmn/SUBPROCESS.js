@@ -25,7 +25,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.bpmn.SUBPROCESS', {
 
     items: [
         {
-            title: message.msg('workflow.etc.subflow.workflow.title'),
+            title: 'Workflow Information',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -39,7 +39,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.bpmn.SUBPROCESS', {
             items: [
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.etc.subflow.workflow.label'),
+                    fieldLabel: 'Workflow to run',
                     layout: 'hbox',
                     items: [
                         {
@@ -55,17 +55,17 @@ Ext.define('Flamingo.view.workflowdesigner.property.bpmn.SUBPROCESS', {
                             itemId: 'name',
                             allowBlank: false,
                             value: '',
-                            emptyText: message.msg('workflow.etc.subflow.workflow.nameempty')
+                            emptyText: 'Please click the Select button to choose a workflow.'
                         },
                         {
                             xtype: 'button',
                             itemId: 'selectBtn',
                             margin: '0 0 0 5',
-                            text: message.msg('workflow.etc.subflow.workflow.selectbtn'),
+                            text: 'Select Workflow',
                             width: 120,
                             handler: function () {
                                 var popWindow = Ext.create('Ext.Window', {
-                                    title: message.msg('common.workflow'),
+                                    title: 'Workflow',
                                     width: 400,
                                     height: 400,
                                     modal: true,
@@ -78,7 +78,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.bpmn.SUBPROCESS', {
                                     buttonAlign: 'center',
                                     buttons: [
                                         {
-                                            text: message.msg('common.confirm'),
+                                            text: 'Confirm',
                                             handler: function () {
                                                 var tree = popWindow.query('folderTree #folderTreeTreePanel')[0];
                                                 var node = tree.getSelectionModel().getSelection()[0].data;
@@ -114,7 +114,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.bpmn.SUBPROCESS', {
                                             }
                                         },
                                         {
-                                            text: message.msg('common.cancel'),
+                                            text: 'Cancel',
                                             handler: function () {
                                                 popWindow.close();
                                             }
@@ -128,7 +128,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.bpmn.SUBPROCESS', {
                 {
                     itemId: 'keyValueProtectGrid',
                     xtype: '_keyValueProtectGrid',
-                    title: message.msg('workflow.common.workflow.variable'),
+                    title: 'Workflow Variable',
                     margin: '0 0 0 5',
                     border: 1,
                     flex: 1

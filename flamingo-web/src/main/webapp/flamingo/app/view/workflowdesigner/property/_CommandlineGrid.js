@@ -29,7 +29,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._CommandlineGrid', {
     columnLines: true,
     columns: [
         {
-            text: message.msg('workflow.common.parameter'),
+            text: 'Parameter',
             dataIndex: 'commandlineValues',
             width: 100,
             editor: {

@@ -49,21 +49,21 @@ Ext.define('Flamingo.view.workflowdesigner.workflowTree.WorkflowTree', {
                     items: [
                         {
                             iconCls: 'common-expand',
-                            text: message.msg('common.tree.elapse'),
-                            tooltip: message.msg('common.tree.elapsedesc'),
+                            text: 'Elapse all',
+                            tooltip: 'Elapse the tree.',
                             handler: 'onWorkflowTreeExpand'
                         },
                         {
                             iconCls: 'common-collapse',
-                            text: message.msg('common.tree.collapse'),
-                            tooltip: message.msg('common.tree.collapsedesc'),
+                            text: 'Collapse all',
+                            tooltip: 'Collapse the tree.',
                             handler: 'onWorkflowTreeCollapse'
                         },
                         '->',
                         {
                             itemId: 'refreshButton',
-                            text: message.msg('common.refresh'),
-                            tooltip: message.msg('common.tree.refreshdesc'),
+                            text: 'Refresh',
+                            tooltip: 'Refresh the tree.',
                             iconCls: 'common-refresh',
                             reference: 'refreshButton',
                             handler: 'onWorkflowTreeRefresh'

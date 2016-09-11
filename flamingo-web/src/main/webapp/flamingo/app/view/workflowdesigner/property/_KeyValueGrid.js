@@ -30,7 +30,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._KeyValueGrid', {
     columnLines: true,
     columns: [
         {
-            text: message.msg('workflow.common.key'),
+            text: 'Key',
             dataIndex: 'hadoopKeys',
             width: 110,
             editor: {
@@ -44,7 +44,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._KeyValueGrid', {
             }
         },
         {
-            text: message.msg('workflow.common.value'),
+            text: 'Value',
             dataIndex: 'hadoopValues',
             width: 90,
             editor: {

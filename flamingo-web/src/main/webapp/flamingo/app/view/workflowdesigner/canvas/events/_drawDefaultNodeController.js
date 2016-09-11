@@ -26,15 +26,15 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.events._drawDefaultNodeControl
         var startNode, endNode;
 
         if (canvas.graph) {
-            startNode = canvas.graph.drawShape([100, 100], new OG.E_Start(message.msg('common.start')), [30, 30]);
-            endNode = canvas.graph.drawShape([500, 100], new OG.E_End(message.msg('common.end')), [30, 30]);
+            startNode = canvas.graph.drawShape([100, 100], new OG.E_Start('Start'), [30, 30]);
+            endNode = canvas.graph.drawShape([500, 100], new OG.E_End('End'), [30, 30]);
 
             canvas.graph.setCustomData(startNode, {
                 metadata: {
                     "type": "START",
                     "icon": "/resources/image/app/designer/others/btn_start.png",
                     "identifier": "START",
-                    "name": message.msg('common.start'),
+                    "name": 'Start',
                     "minPrevNodeCounts": 0,
                     "maxPrevNodeCounts": 0,
                     "minNextNodeCounts": 1,
@@ -51,7 +51,7 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.events._drawDefaultNodeControl
                     "type": "END",
                     "identifier": "END",
                     "icon": "/resources/image/app/designer/others/btn_end.png",
-                    "name": message.msg('common.end'),
+                    "name": 'End',
                     "minPrevNodeCounts": 1,
                     "maxPrevNodeCounts": -1,
                     "minNextNodeCounts": 0,

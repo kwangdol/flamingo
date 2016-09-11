@@ -18,7 +18,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._FileSelCmbField', {
     extend: 'Ext.form.FieldContainer',
     alias: 'widget._fileSelCmbField',
 
-    fieldLabel: message.msg('common.browse'),
+    fieldLabel: 'Browse',
     defaults: {
         hideLabel: true
     },
@@ -41,10 +41,10 @@ Ext.define('Flamingo.view.workflowdesigner.property._FileSelCmbField', {
             store: Ext.create('Ext.data.Store', {
                 fields: ['name', 'value', 'description'],
                 data: [
-                    {name: message.msg('workflow.type_same_path'), value: 'NO', description: ''},
-                    {name: message.msg('workflow.type_latest_file'), value: 'RECENT', description: ''},
-                    {name: message.msg('workflow.type_string_pattern'), value: 'PATTERN', description: ''},
-                    {name: message.msg('workflow.type_a_few_days_ago'), value: 'DAY', description: ''}
+                    {name: 'As the path', value: 'NO', description: ''},
+                    {name: 'Recent File', value: 'RECENT', description: ''},
+                    {name: 'String Pattern', value: 'PATTERN', description: ''},
+                    {name: 'A few days ago', value: 'DAY', description: ''}
                 ]
             }),
             listeners: {

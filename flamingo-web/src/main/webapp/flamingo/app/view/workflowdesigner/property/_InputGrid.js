@@ -39,7 +39,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._InputGrid', {
     fileBrowser: true,
     columns: [
         {
-            text: message.msg('common.path'),
+            text: 'Path',
             dataIndex: 'input',
             editor: {
                 allowBlank: false,

@@ -26,7 +26,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._CompressSelCmbField', {
     extend: 'Ext.form.FieldContainer',
     alias: 'widget._compressSelCmbField',
 
-    fieldLabel: message.msg('workflow.label_compression_type'),
+    fieldLabel: 'Compression Method',
 
     defaults: {
         hideLabel: true
@@ -51,24 +51,24 @@ Ext.define('Flamingo.view.workflowdesigner.property._CompressSelCmbField', {
                 fields: ['name', 'value', 'description'],
                 data: [
                     {
-                        name: message.msg('workflow.common.compress.no.name'),
+                        name: 'Not Compressed',
                         value: 'NO',
-                        description: message.msg('workflow.common.compress.no.desc')
+                        description: 'Not Compressed'
                     },
                     {
-                        name: message.msg('workflow.common.compress.snappy.name'),
+                        name: 'Snappy',
                         value: 'SNAPPY',
-                        description: message.msg('workflow.common.compress.snappy.desc')
+                        description: 'Snappy compression'
                     },
                     {
-                        name: message.msg('workflow.common.compress.lzo.name'),
+                        name: 'LZO',
                         value: 'LZO',
-                        description: message.msg('workflow.common.compress.lzo.desc')
+                        description: 'LZO compression'
                     },
                     {
-                        name: message.msg('workflow.common.compress.bzip.name'),
+                        name: 'BZIP',
                         value: 'BZIP',
-                        description: message.msg('workflow.common.compress.bzip.desc')
+                        description: 'BZIP compression'
                     }
                 ]
             })

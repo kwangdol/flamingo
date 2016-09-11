@@ -35,7 +35,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_MATRIX_FAC
 
     items: [
         {
-            title: message.msg('workflow.common.parameter'),
+            title: 'Parameter',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -49,7 +49,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_MATRIX_FAC
             items: [
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.am.user.features'),
+                    fieldLabel: 'User Features',
                     defaults: {
                         hideLabel: true,
                         margin: "5 0 0 0"
@@ -67,7 +67,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_MATRIX_FAC
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.am.item.features'),
+                    fieldLabel: 'Item Features',
                     defaults: {
                         hideLabel: true,
                         margin: "5 0 0 0"
@@ -86,24 +86,24 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_MATRIX_FAC
                 {
                     xtype: 'textfield',
                     name: 'numRecommendations',
-                    fieldLabel: message.msg('workflow.am.num.recommend'),
+                    fieldLabel: 'Num of recommendations',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'maxRating',
-                    fieldLabel: message.msg('workflow.am.max.rating'),
+                    fieldLabel: 'Max. Rating',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'numThreads',
-                    fieldLabel: message.msg('workflow.am.num.thread'),
+                    fieldLabel: 'Num of Threads per Mapper',
                     allowBlank: true
                 },
                 {
                     xtype: 'radiogroup',
-                    fieldLabel: message.msg('workflow.am.use.long.id'),
+                    fieldLabel: 'Uses Long IDs',
                     columns: 2,
                     items: [
                         {
@@ -123,18 +123,18 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_MATRIX_FAC
                 {
                     xtype: 'textfield',
                     name: 'userIDIndex',
-                    fieldLabel: message.msg('workflow.am.use.id.index'),
+                    fieldLabel: 'User ID Index',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'itemIDIndex',
-                    fieldLabel: message.msg('workflow.am.item.id.index'),
+                    fieldLabel: 'Item ID Index',
                     allowBlank: true
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.am.temp.dir'),
+                    fieldLabel: 'Temp Directory',
                     defaults: {
                         hideLabel: true,
                         margin: "5 0 0 0"
@@ -153,19 +153,19 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_MATRIX_FAC
                 {
                     xtype: 'textfield',
                     name: 'startPhase',
-                    fieldLabel: message.msg('workflow.am.start.phase'),
+                    fieldLabel: 'Start Phase',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'endPhase',
-                    fieldLabel: message.msg('workflow.am.end.phase'),
+                    fieldLabel: 'End Phase',
                     allowBlank: true
                 }
             ]
         },
         {
-            title: message.msg('workflow.common.mapreduce'),
+            title: 'MapReduce',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -180,7 +180,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_MATRIX_FAC
                 {
                     xtype: 'textfield',
                     name: 'jar',
-                    fieldLabel: message.msg('workflow.common.mahaut.jar'),
+                    fieldLabel: 'Mahout JAR',
                     value: MAHOUT.JAR,
                     disabledCls: 'disabled-plain',
                     readOnly: true
@@ -188,20 +188,20 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_MATRIX_FAC
                 {
                     xtype: 'textfield',
                     name: 'driver',
-                    fieldLabel: message.msg('workflow.common.mapreduce.driver'),
+                    fieldLabel: 'Driver',
                     value: 'org.apache.mahout.cf.taste.hadoop.als.RecommenderJob',
                     disabledCls: 'disabled-plain',
                     readOnly: true
                 },
                 {
                     xtype: '_dependencyGrid',
-                    title: message.msg('workflow.common.mapreduce.jar.title'),
+                    title: 'Dependency JAR',
                     flex: 1
                 }
             ]
         },
         {
-            title: message.msg('workflow.common.inout.path'),
+            title: 'I/O Path',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -215,7 +215,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_MATRIX_FAC
             items: [
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.common.input.path'),
+                    fieldLabel: 'Input Path',
                     defaults: {
                         hideLabel: true
                     },
@@ -232,7 +232,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_MATRIX_FAC
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.common.output.path'),
+                    fieldLabel: 'Output path',
                     defaults: {
                         hideLabel: true,
                         margin: "5 0 0 0"  // Same as CSS ordering (top, right, bottom, left)
@@ -257,7 +257,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_MATRIX_FAC
             }
         },
         {
-            title: message.msg('workflow.common.hadoop.conf'),
+            title: 'Hadoop Configuration',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -272,7 +272,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_MATRIX_FAC
                 {
                     xtype: 'displayfield',
                     height: 20,
-                    value: message.msg('workflow.common.hadoop.conf.guide')
+                    value: 'Enter a key and a value of Configuration.set () method used in Hadoop Mapreduce.'
                 },
                 {
                     xtype: '_keyValueGrid',
@@ -281,7 +281,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_MATRIX_FAC
             ]
         },
         {
-            title: message.msg('common.references'),
+            title: 'References',
             xtype: 'form',
             border: false,
             autoScroll: true,

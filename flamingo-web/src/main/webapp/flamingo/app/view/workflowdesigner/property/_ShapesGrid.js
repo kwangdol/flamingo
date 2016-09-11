@@ -33,9 +33,9 @@ Ext.define('Flamingo.view.workflowdesigner.property._ShapesGrid', {
     }),
 
     columns: [
-        {text: message.msg('common.node'), flex: 1, sortable: true, dataIndex: 'node', align: 'center'},
-        {text: message.msg('workflow.common.nodeid'), flex: 1, sortable: true, dataIndex: 'id', align: 'center'},
-        {text: message.msg('workflow.common.provider'), flex: 1, sortable: true, dataIndex: 'provider', hidden: true}
+        {text: 'Node', flex: 1, sortable: true, dataIndex: 'node', align: 'center'},
+        {text: 'Node ID', flex: 1, sortable: true, dataIndex: 'id', align: 'center'},
+        {text: 'Provider', flex: 1, sortable: true, dataIndex: 'provider', hidden: true}
     ],
 
     /*
@@ -75,7 +75,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._ShapesGrid', {
 
             var theElem = query('BASE_NODE').getEl();
             var theTip = Ext.create('Ext.tip.Tip', {
-                html: message.msg('workflow.msg_shape_grid_dblclick'),
+                html: 'Double clicking changes the node.',
                 margin: '25 0 0 150',
                 shadow: false
             });

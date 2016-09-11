@@ -41,7 +41,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._HiveBrowser', {
                 border: false,
                 collapsible: true,
                 split: true,
-                title: message.msg('workflow.common.hivedatabase'),
+                title: 'Hive Database',
                 width: 200,
                 layout: 'fit',
                 items: [
@@ -82,12 +82,12 @@ Ext.define('Flamingo.view.workflowdesigner.property._HiveBrowser', {
                                 xtype: 'toolbar',
                                 items: [
                                     {
-                                        text: message.msg('common.create'),
+                                        text: 'Create',
                                         itemId: 'createButton',
-                                        tooltip: message.msg('hive.table.create'),
+                                        tooltip: 'Create Table',
                                         handler: function () {
                                             var win = Ext.create('Ext.window.Window', {
-                                                title: message.msg('hive.table.create'),
+                                                title: 'Create Table',
                                                 width: 500,
                                                 height: 500,
                                                 layout: 'fit',
@@ -95,7 +95,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._HiveBrowser', {
                                                 closeAction: 'hide',
                                                 buttons: [
                                                     {
-                                                        text: message.msg('common.confirm'),
+                                                        text: 'Confirm',
 
                                                         handler: function () {
                                                             var tableName = Ext.ComponentQuery.query('_hiveTableCreator #tableName')[0];
@@ -135,7 +135,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._HiveBrowser', {
                                                         }
                                                     },
                                                     {
-                                                        text: message.msg('common.cancel'),
+                                                        text: 'Cancel',
 
                                                         handler: function () {
                                                             win.close();
@@ -151,7 +151,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._HiveBrowser', {
                                         }
                                     },
                                     {
-                                        text: message.msg('hive.table.drop'),
+                                        text: 'Drop Table',
                                         itemId: 'dropButton',
                                         tooltip: 'Drop a table',
                                         handler: function () {
@@ -159,10 +159,10 @@ Ext.define('Flamingo.view.workflowdesigner.property._HiveBrowser', {
                                     },
                                     '->',
                                     {
-                                        text: message.msg('common.refresh'),
+                                        text: 'Refresh',
                                         iconCls: 'common_refresh',
                                         itemId: 'refreshButton',
-                                        tooltip: message.msg('fs.hdfs.tip_file_refresh'),
+                                        tooltip: 'Refresh',
                                         handler: function () {
                                             var treeStore = Ext.ComponentQuery.query('#hiveBrowserTree')[0].getStore();
                                             treeStore.load();
@@ -197,7 +197,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._HiveBrowser', {
             },
             {
                 region: 'center',
-                title: message.msg('common.column'),
+                title: 'Column',
                 border: false,
                 layout: 'fit',
                 items: [

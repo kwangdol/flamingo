@@ -88,7 +88,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._HiveTableCreator', {
                 ]
             },
             {
-                title: message.msg('common.column'),
+                title: 'Column',
                 region: 'center',
                 border: false,
                 layout: 'fit',
@@ -100,7 +100,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._HiveTableCreator', {
                 ]
             },
             {
-                title: message.msg('common.partition'),
+                title: 'Partition',
                 region: 'south',
                 height: 150,
                 border: false,

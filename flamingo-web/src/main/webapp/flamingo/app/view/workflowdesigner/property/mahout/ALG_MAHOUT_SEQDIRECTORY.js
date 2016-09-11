@@ -33,7 +33,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_SEQDIRECTO
 
     items: [
         {
-            title: message.msg('workflow.common.parameter'),
+            title: 'Parameter',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -47,7 +47,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_SEQDIRECTO
             items: [
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.am.testnb.overwrite'),
+                    fieldLabel: 'Overwrite output directory',
                     defaultType: 'checkboxfield',
                     items: [
                         {
@@ -57,17 +57,17 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_SEQDIRECTO
                 },
                 {
                     xtype: 'radiogroup',
-                    fieldLabel: message.msg('workflow.am.seqdirectory.exe_method'),
+                    fieldLabel: 'Execution Method',
                     columns: 2,
                     items: [
                         {
-                            boxLabel: message.msg('workflow.common.mapreduce'),
+                            boxLabel: 'MapReduce',
                             name: 'method',
                             checked: true,
                             inputValue: 'mapreduce'
                         },
                         {
-                            boxLabel: message.msg('common.sequential'),
+                            boxLabel: 'Sequential',
                             name: 'method',
                             inputValue: 'sequential'
                         }
@@ -76,33 +76,33 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_SEQDIRECTO
                 {
                     xtype: 'textfield',
                     name: 'chunkSize',
-                    fieldLabel: message.msg('workflow.am.seqdirectory.chunk.size'),
+                    fieldLabel: 'Chunk Size(MB)',
                     value: '64',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'fileFilterClass',
-                    fieldLabel: message.msg('workflow.am.seqdirectory.file_filter_clss'),
+                    fieldLabel: 'File Filter Class',
                     value: 'org.apache.mahout.text.PrefixAdditionFilter',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'keyPrefix',
-                    fieldLabel: message.msg('workflow.am.seqdirectory.key_prefix'),
+                    fieldLabel: 'Key Prefix',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'charset',
-                    fieldLabel: message.msg('common.encoding'),
+                    fieldLabel: 'Encoding',
                     value: 'UTF-8',
                     allowBlank: true
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.am.testnb.tempdirectory'),
+                    fieldLabel: 'Temp. Directory',
                     defaults: {
                         hideLabel: true,
                         margin: "5 0 0 0"
@@ -121,19 +121,19 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_SEQDIRECTO
                 {
                     xtype: 'textfield',
                     name: 'startPhase',
-                    fieldLabel: message.msg('workflow.am.testnb.startphase'),
+                    fieldLabel: 'Start Phase',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'endPhase',
-                    fieldLabel: message.msg('workflow.am.testnb.endphase'),
+                    fieldLabel: 'End Phase',
                     allowBlank: true
                 }
             ]
         },
         {
-            title: message.msg('workflow.common.mapreduce'),
+            title: 'MapReduce',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -148,7 +148,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_SEQDIRECTO
                 {
                     xtype: 'textfield',
                     name: 'jar',
-                    fieldLabel: message.msg('workflow.common.mahaut.jar'),
+                    fieldLabel: 'Mahout JAR',
                     value: MAHOUT.JAR,
                     disabledCls: 'disabled-plain',
                     readOnly: true
@@ -156,20 +156,20 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_SEQDIRECTO
                 {
                     xtype: 'textfield',
                     name: 'driver',
-                    fieldLabel: message.msg('workflow.common.mapreduce.driver'),
+                    fieldLabel: 'Driver',
                     value: 'org.apache.mahout.text.SequenceFilesFromDirectory',
                     disabledCls: 'disabled-plain',
                     readOnly: true
                 },
                 {
                     xtype: '_dependencyGrid',
-                    title: message.msg('workflow.common.mapreduce.jar.title'),
+                    title: 'Dependency JAR',
                     flex: 1
                 }
             ]
         },
         {
-            title: message.msg('workflow.common.inout.path'),
+            title: 'I/O Path',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -183,7 +183,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_SEQDIRECTO
             items: [
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.common.input.path'),
+                    fieldLabel: 'Input Path',
                     defaults: {
                         hideLabel: true
                     },
@@ -200,7 +200,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_SEQDIRECTO
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.common.output.path'),
+                    fieldLabel: 'Output path',
                     defaults: {
                         hideLabel: true
                     },
@@ -224,7 +224,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_SEQDIRECTO
             }
         },
         {
-            title: message.msg('workflow.common.hadoop.conf'),
+            title: 'Hadoop Configuration',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -239,7 +239,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_SEQDIRECTO
                 {
                     xtype: 'displayfield',
                     height: 20,
-                    value: message.msg('workflow.common.hadoop.conf.guide')
+                    value: 'Enter a key and a value of Configuration.set () method used in Hadoop Mapreduce.'
                 },
                 {
                     xtype: '_keyValueGrid',
@@ -248,7 +248,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_SEQDIRECTO
             ]
         },
         {
-            title: message.msg('common.references'),
+            title: 'References',
             xtype: 'form',
             border: false,
             autoScroll: true,

@@ -38,7 +38,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_R', {
 
     items: [
         {
-            title: message.msg('workflow.common.r'),
+            title: 'R Script',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -113,7 +113,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_R', {
             ]
         },
         {
-            title: message.msg('workflow.common.script.variable'),
+            title: 'Script Variable',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -128,7 +128,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_R', {
                 {
                     xtype: 'displayfield',
                     height: 40,
-                    value: message.msg('workflow.common.script.variable.example')
+                    value: 'For variables, use the `${VAR}` format, and variables will be mapped to their own values. Variables are interpreted when scripts are executed. You cannot use a comma (,) with variables and values.'
                 },
                 {
                     xtype: '_nameValueGrid',
@@ -137,7 +137,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_R', {
             ]
         },
         {
-            title: message.msg('workflow.common.command'),
+            title: 'Command Parameter',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -152,7 +152,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_R', {
                 {
                     xtype: 'displayfield',
                     height: 50,
-                    value: message.msg('workflow.common.command.guide')
+                    value: 'Please enter command line parameters in separate lines.<br>For example, if you want to enter "hadoop jar <JAR> <DRIVER> -input /INPUT -output /OUTPUT," enter -input, /INPUT, -output, and /OUTPUT in different lines.'
                 },
                 {
                     xtype: '_commandlineGrid',
@@ -161,7 +161,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_R', {
             ]
         },
         {
-            title: message.msg('workflow.common.r.option'),
+            title: 'R Option',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -175,7 +175,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_R', {
             items: [
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.common.r.norestore'),
+                    fieldLabel: 'Not restored',
                     defaultType: 'checkboxfield',
                     items: [
                         {
@@ -185,7 +185,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_R', {
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.common.r.nosave'),
+                    fieldLabel: 'Not Saved',
                     defaultType: 'checkboxfield',
                     items: [
                         {
@@ -196,7 +196,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_R', {
             ]
         },
         {
-            title: message.msg('common.references'),
+            title: 'References',
             xtype: 'form',
             border: false,
             autoScroll: true,

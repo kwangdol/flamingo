@@ -31,7 +31,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._NameValueGrid', {
     columnLines: true,
     columns: [
         {
-            text: message.msg('workflow.common.key'),
+            text: 'Key',
             dataIndex: 'variableNames',
             width: 100,
             editor: {
@@ -45,7 +45,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._NameValueGrid', {
             }
         },
         {
-            text: message.msg('workflow.common.value'),
+            text: 'Value',
             dataIndex: 'variableValues',
             width: 100,
             editor: {
@@ -59,7 +59,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._NameValueGrid', {
             }
         },
         {
-            text: message.msg('workflow.common.desc'),
+            text: 'Description',
             dataIndex: 'variableDescriptions',
             width: 200,
             editor: {

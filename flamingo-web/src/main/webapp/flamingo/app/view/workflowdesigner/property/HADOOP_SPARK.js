@@ -43,7 +43,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SPARK', {
 
     items: [
         {
-            title: message.msg('workflow.common.spark'),
+            title: 'Spark',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -57,19 +57,19 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SPARK', {
             items: [
                 {
                     xtype: 'displayfield',
-                    value: message.msg('workflow.he.spark.display.spark'),
+                    value: 'When Spark Cluster is running on YARN, Spark Master URL must be set to a yarn-cluster. Total Executor CORE parameter is ignored. <a href\="https\://spark.apache.org/docs/latest/running-on-yarn.html" target\="_blank">Running Spark on YARN</a> <a href\="https\://spark.apache.org/docs/latest/submitting-applications.html" target\="_blank">Submitting Applications</a>',
                     height: 40
                 },
                 {
                     xtype: '_jarBrowserField',
                     name: 'jar',
-                    fieldLabel: message.msg('workflow.he.spark.jar'),
+                    fieldLabel: 'Spark JAR',
                     allowBlank: false
                 },
                 {
                     xtype: 'textfield',
                     name: 'driver',
-                    fieldLabel: message.msg('workflow.he.spark.driver'),
+                    fieldLabel: 'Spark Driver',
                     emptyText: 'org.apache.spark.examples.SparkPi',
                     allowBlank: false
                 },
@@ -78,8 +78,8 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SPARK', {
                     name: 'yarn',
                     itemId: 'yarn',
                     checked: true,
-                    fieldLabel: message.msg('workflow.he.spark.yarn'),
-                    boxLabel: message.msg('workflow.common.use'),
+                    fieldLabel: 'YARN',
+                    boxLabel: 'Use',
                     handler: function (check) {
                         var sparkMasterUrl = check.nextSibling('textfield');
 
@@ -100,7 +100,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SPARK', {
                     xtype: 'textfield',
                     name: 'sparkMasterUrl',
                     itemId: 'sparkMasterUrl',
-                    fieldLabel: message.msg('workflow.he.spark.masterurl'),
+                    fieldLabel: 'Spark Master URL',
                     emptyText: 'Standalone Mode',
                     allowBlank: false,
                     value: 'yarn-cluster'
@@ -108,49 +108,49 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SPARK', {
                 {
                     xtype: 'textfield',
                     name: 'totalExecutorCores',
-                    fieldLabel: message.msg('workflow.he.spark.totalexecores'),
+                    fieldLabel: 'Total Executor COREs',
                     emptyText: 'Standalone Mode (--total-executor-cores)',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'executorMemory',
-                    fieldLabel: message.msg('workflow.he.spark.exememory'),
+                    fieldLabel: 'Executor Memory',
                     emptyText: 'YARN & Standalone Mode (--executor-memory)',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'numExecutors',
-                    fieldLabel: message.msg('workflow.he.spark.exe'),
+                    fieldLabel: 'Executors',
                     emptyText: 'YARN & Standalone Mode (--num-executors)',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'driverMemory',
-                    fieldLabel: message.msg('workflow.he.spark.drivermemory'),
+                    fieldLabel: 'Driver Memory',
                     emptyText: 'YARN Mode (--driver-memory)',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'queue',
-                    fieldLabel: message.msg('workflow.he.spark.queue'),
+                    fieldLabel: 'Queue',
                     emptyText: 'YARN Mode (--queue)',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'executorCores',
-                    fieldLabel: message.msg('workflow.he.spark.execores'),
+                    fieldLabel: 'Executor COREs',
                     emptyText: 'YARN Mode (--executor-cores)',
                     allowBlank: true
                 }
             ]
         },
         {
-            title: message.msg('workflow.common.dependency.jar'),
+            title: 'Dependency (JAR)',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -164,18 +164,18 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SPARK', {
             items: [
                 {
                     xtype: 'displayfield',
-                    value: message.msg('workflow.he.spark.display.jar')
+                    value: 'Adds necessary dependencies for Spark jobs.'
                 },
                 {
                     xtype: '_jarGrid',
-                    title: message.msg('workflow.common.dependency.jar'),
+                    title: 'Dependency (JAR)',
                     name: 'dependencies',
                     flex: 1
                 }
             ]
         },
         {
-            title: message.msg('workflow.common.hadoop.conf'),
+            title: 'Hadoop Configuration',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -189,7 +189,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SPARK', {
             items: [
                 {
                     xtype: 'displayfield',
-                    value: message.msg('workflow.he.spark.display.conf')
+                    value: 'Set additional key\=value when executing Spark Jobs. Parameters for the --conf option.'
                 },
                 {
                     xtype: '_keyValueGrid',
@@ -198,7 +198,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SPARK', {
             ]
         },
         {
-            title: message.msg('workflow.common.command'),
+            title: 'Command Parameter',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -212,7 +212,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SPARK', {
             items: [
                 {
                     xtype: 'displayfield',
-                    value: message.msg('workflow.he.spark.display.com')
+                    value: 'Set necessary parameters for Spark jobs. i.e. HDFS input path, output path, etc.'
                 },
                 {
                     xtype: '_commandlineGrid',
@@ -221,7 +221,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SPARK', {
             ]
         },
         {
-            title: message.msg('common.references'),
+            title: 'References',
             xtype: 'form',
             border: false,
             autoScroll: true,

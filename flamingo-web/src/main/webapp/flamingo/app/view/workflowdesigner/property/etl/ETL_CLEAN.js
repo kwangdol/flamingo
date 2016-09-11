@@ -33,7 +33,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.etl.ETL_CLEAN', {
 
     items: [
         {
-            title: message.msg('workflow.common.parameter'),
+            title: 'Parameter',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -47,7 +47,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.etl.ETL_CLEAN', {
             items: [
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.common.inputDelimiter'),
+                    fieldLabel: 'Input Delimiter',
                     layout: 'hbox',
                     items: [
                         {
@@ -63,34 +63,34 @@ Ext.define('Flamingo.view.workflowdesigner.property.etl.ETL_CLEAN', {
                                 fields: ['name', 'value', 'description'],
                                 data: [
                                     {
-                                        name: message.msg('workflow.common.delimiter.double.colon'),
+                                        name: 'Double Colon',
                                         value: '::',
                                         description: '::'
                                     },
                                     {
-                                        name: message.msg('workflow.common.delimiter.comma'),
+                                        name: 'Comma',
                                         value: ',',
                                         description: ','
                                     },
                                     {
-                                        name: message.msg('workflow.common.delimiter.pipe'),
+                                        name: 'Pipe',
                                         value: '|',
                                         description: '|'
                                     },
                                     {
-                                        name: message.msg('workflow.common.delimiter.tab'),
+                                        name: 'Tab',
                                         value: '\u0009',
                                         description: '\\t'
                                     },
                                     {
-                                        name: message.msg('workflow.common.delimiter.blank'),
+                                        name: 'Blank',
                                         value: '\u0020',
                                         description: ' '
                                     },
                                     {
-                                        name: message.msg('workflow.common.delimiter.user.def'),
+                                        name: 'User Defined',
                                         value: 'CUSTOM',
-                                        description: message.msg('workflow.common.delimiter.user.def')
+                                        description: 'User Defined'
                                     }
                                 ]
                             }),
@@ -125,7 +125,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.etl.ETL_CLEAN', {
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.common.outputDelimiter'),
+                    fieldLabel: 'Output Delimiter',
                     layout: 'hbox',
                     items: [
                         {
@@ -141,34 +141,34 @@ Ext.define('Flamingo.view.workflowdesigner.property.etl.ETL_CLEAN', {
                                 fields: ['name', 'value', 'description'],
                                 data: [
                                     {
-                                        name: message.msg('workflow.common.delimiter.double.colon'),
+                                        name: 'Double Colon',
                                         value: '::',
                                         description: '::'
                                     },
                                     {
-                                        name: message.msg('workflow.common.delimiter.comma'),
+                                        name: 'Comma',
                                         value: ',',
                                         description: ','
                                     },
                                     {
-                                        name: message.msg('workflow.common.delimiter.pipe'),
+                                        name: 'Pipe',
                                         value: '|',
                                         description: '|'
                                     },
                                     {
-                                        name: message.msg('workflow.common.delimiter.tab'),
+                                        name: 'Tab',
                                         value: '\u0009',
                                         description: '\\t'
                                     },
                                     {
-                                        name: message.msg('workflow.common.delimiter.blank'),
+                                        name: 'Blank',
                                         value: '\u0020',
                                         description: ' '
                                     },
                                     {
-                                        name: message.msg('workflow.common.delimiter.user.def'),
+                                        name: 'User Defined',
                                         value: 'CUSTOM',
-                                        description: message.msg('workflow.common.delimiter.user.def')
+                                        description: 'User Defined'
                                     }
                                 ]
                             }),
@@ -203,15 +203,15 @@ Ext.define('Flamingo.view.workflowdesigner.property.etl.ETL_CLEAN', {
                 },
                 {
                     xtype: 'textfield',
-                    fieldLabel: message.msg('workflow.etl.clean.columnsToClean'),
+                    fieldLabel: 'Clean to columns',
                     name: 'columnsToClean',
-                    emptyText: message.msg('workflow.etl.clean.columnsToCleanEmpty'),
+                    emptyText: 'Starts to 0, separated by \',\'',
                     regex: /^\d+(,\d+)*$/,
                     allowBlank: false
                 },
                 {
                     xtype: 'numberfield',
-                    fieldLabel: message.msg('workflow.common.columnSize'),
+                    fieldLabel: 'Column Size',
                     name: 'columnSize',
                     minValue: 0,
                     allowBlank: false
@@ -219,7 +219,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.etl.ETL_CLEAN', {
             ]
         },
         {
-            title: message.msg('workflow.common.mapreduce'),
+            title: 'MapReduce',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -234,7 +234,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.etl.ETL_CLEAN', {
                 {
                     xtype: 'textfield',
                     name: 'jar',
-                    fieldLabel: message.msg('workflow.common.mapreduce.jar'),
+                    fieldLabel: 'JAR Path',
                     value: ETL.JAR,
                     disabledCls: 'disabled-plain',
                     readOnly: true
@@ -242,7 +242,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.etl.ETL_CLEAN', {
                 {
                     xtype: 'textfield',
                     name: 'driver',
-                    fieldLabel: message.msg('workflow.common.mapreduce.driver'),
+                    fieldLabel: 'Driver',
                     value: 'clean',
                     disabledCls: 'disabled-plain',
                     readOnly: true
@@ -250,7 +250,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.etl.ETL_CLEAN', {
             ]
         },
         {
-            title: message.msg('workflow.common.inout.path'),
+            title: 'I/O Path',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -265,13 +265,13 @@ Ext.define('Flamingo.view.workflowdesigner.property.etl.ETL_CLEAN', {
                 // MapReduce가 동작하는데 필요한 입력 경로를 지정한다.  이 경로는 N개 지정가능하다.
                 {
                     xtype: '_inputGrid',
-                    title: message.msg('workflow.common.input.path'),
+                    title: 'Input Path',
                     flex: 1
                 },
                 // MapReduce가 동작하는데 필요한 출력 경로를 지정한다. 이 경로는 오직 1개만 지정가능하다.
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.common.output.path'),
+                    fieldLabel: 'Output path',
                     defaults: {
                         hideLabel: true,
                         margin: "5 0 0 0"  // Same as CSS ordering (top, right, bottom, left)
@@ -290,7 +290,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.etl.ETL_CLEAN', {
             ]
         },
         {
-            title: message.msg('workflow.common.hadoop.conf'),
+            title: 'Hadoop Configuration',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -305,7 +305,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.etl.ETL_CLEAN', {
                 {
                     xtype: 'displayfield',
                     height: 20,
-                    value: message.msg('workflow.common.hadoop.conf.guide')
+                    value: 'Enter a key and a value of Configuration.set () method used in Hadoop Mapreduce.'
                 },
                 {
                     xtype: '_keyValueGrid',
@@ -314,7 +314,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.etl.ETL_CLEAN', {
             ]
         },
         {
-            title: message.msg('common.references'),
+            title: 'References',
             xtype: 'form',
             border: false,
             autoScroll: true,

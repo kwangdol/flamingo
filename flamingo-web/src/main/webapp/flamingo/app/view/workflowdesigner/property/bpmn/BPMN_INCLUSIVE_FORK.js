@@ -33,13 +33,13 @@ Ext.define('Flamingo.view.workflowdesigner.property.bpmn.BPMN_INCLUSIVE_FORK', {
 
     items: [
         {
-            title: message.msg('workflow.etc.inclusivefork.flows.title'),
+            title: 'Parallel Processing Options',
             xtype: '_parallelGrid',
             reference: '_parallelGrid'
         },
         {
             mainform: null,
-            title: message.msg('workflow.etc.inclusivefork.condition.title'),
+            title: 'Create conditions',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -75,7 +75,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.bpmn.BPMN_INCLUSIVE_FORK', {
                     items: [
                         {
                             xtype: '_inclusiveGrid',
-                            title: message.msg('workflow.etc.inclusivefork.condition.script.inclusive.title'),
+                            title: 'Selectable flow',
                             reference: '_inclusiveGrid',
                             flex: 1,
                             margin: '0 5 5 0',
@@ -85,7 +85,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.bpmn.BPMN_INCLUSIVE_FORK', {
                         },
                         {
                             xtype: '_nodeValueGrid',
-                            title: message.msg('workflow.common.workflow.variable'),
+                            title: 'Workflow Variable',
                             flex: 1,
                             margin: '0 0 5 0',
                             layout: {
@@ -99,7 +99,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.bpmn.BPMN_INCLUSIVE_FORK', {
                 },
                 {
                     xtype: 'panel',
-                    title: message.msg('workflow.etc.inclusivefork.condition.script.title'),
+                    title: 'Conditions scripting (Javascript)',
                     flex: 2,
                     layout: {
                         type: 'hbox',

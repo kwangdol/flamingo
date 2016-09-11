@@ -118,9 +118,9 @@ Ext.define('Flamingo.view.workflowdesigner.property._ParallelGridController', {
                     var recordId = record.data.id;
                     var sequence = record.data.sequence;
                     var parallel = record.data.parallel;
-                    var parallelText = ' (' + message.msg('workflow.etc.flows.column.parallel.async') + ')';
+                    var parallelText = ' (Sequential)';
                     if (parallel)
-                        parallelText = ' (' + message.msg('workflow.etc.flows.column.parallel.sync') + ')';
+                        parallelText = ' (Simultaneous)';
                     if (recordId == nextnodeId) {
                         canvas.graph.drawLabel(edges[e], sequence + parallelText);
                     }

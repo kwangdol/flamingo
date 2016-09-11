@@ -30,7 +30,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._ValueGrid', {
     columnLines: true,
     columns: [
         {
-            text: message.msg('common.value'),
+            text: 'Value',
             dataIndex: 'variableValues',
             width: 200,
             editor: {
@@ -44,7 +44,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._ValueGrid', {
             }
         },
         {
-            text: message.msg('common.comment'),
+            text: 'Comment',
             dataIndex: 'variableDescriptions',
             width: 200,
             editor: {

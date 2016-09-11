@@ -34,7 +34,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SQOOP_EXPORT', {
 
     items: [
         {
-            title: message.msg('workflow.he.sqoop.source.hdfs'),
+            title: 'Source (HDFS)',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -45,14 +45,14 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SQOOP_EXPORT', {
             defaultType: 'textfield',
             items: [
                 {
-                    fieldLabel: message.msg('workflow.he.sqoop.hdfs.path'),
+                    fieldLabel: 'HDFS Path',
                     name: 'output',
                     xtype: '_browserField'
                 },
                 {
                     xtype: 'fieldcontainer',
                     layout: 'hbox',
-                    fieldLabel: message.msg('workflow.he.sqoop.field.delimiter'),
+                    fieldLabel: 'Field Delimiter',
                     flex: 1,
                     items: [
                         {
@@ -74,30 +74,30 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SQOOP_EXPORT', {
                                 fields: ['name', 'value', 'description'],
                                 data: [
                                     {
-                                        name: message.msg('workflow.common.delimiter.double.colon'),
+                                        name: 'Double Colon',
                                         value: '::',
                                         description: '::'
                                     },
                                     {
-                                        name: message.msg('workflow.common.delimiter.comma'),
+                                        name: 'Comma',
                                         value: ',',
                                         description: ','
                                     },
-                                    {name: message.msg('workflow.common.delimiter.pipe'), value: '|', description: '|'},
+                                    {name: 'Pipe', value: '|', description: '|'},
                                     {
-                                        name: message.msg('workflow.common.delimiter.tab'),
+                                        name: 'Tab',
                                         value: '\'\\t\'',
                                         description: '\'\\t\''
                                     },
                                     {
-                                        name: message.msg('workflow.common.delimiter.blank'),
+                                        name: 'Blank',
                                         value: '\'\\s\'',
                                         description: '\'\\s\''
                                     },
                                     {
-                                        name: message.msg('workflow.common.delimiter.user.def'),
+                                        name: 'User Defined',
                                         value: 'CUSTOM',
-                                        description: message.msg('workflow.common.delimiter.user.def')
+                                        description: 'User Defined'
                                     }
                                 ]
                             }),
@@ -133,7 +133,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SQOOP_EXPORT', {
                 {
                     xtype: 'fieldcontainer',
                     layout: 'hbox',
-                    fieldLabel: message.msg('workflow.he.sqoop.line.delimiter'),
+                    fieldLabel: 'Line Delimiter',
                     flex: 1,
                     items: [
                         {
@@ -155,30 +155,30 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SQOOP_EXPORT', {
                                 fields: ['name', 'value', 'description'],
                                 data: [
                                     {
-                                        name: message.msg('workflow.common.delimiter.double.colon'),
+                                        name: 'Double Colon',
                                         value: '::',
                                         description: '::'
                                     },
                                     {
-                                        name: message.msg('workflow.common.delimiter.comma'),
+                                        name: 'Comma',
                                         value: ',',
                                         description: ','
                                     },
-                                    {name: message.msg('workflow.common.delimiter.pipe'), value: '|', description: '|'},
+                                    {name: 'Pipe', value: '|', description: '|'},
                                     {
-                                        name: message.msg('workflow.common.delimiter.tab'),
+                                        name: 'Tab',
                                         value: '\'\\t\'',
                                         description: '\'\\t\''
                                     },
                                     {
-                                        name: message.msg('workflow.common.delimiter.blank'),
+                                        name: 'Blank',
                                         value: '\'\\s\'',
                                         description: '\'\\s\''
                                     },
                                     {
-                                        name: message.msg('workflow.common.delimiter.user.def'),
+                                        name: 'User Defined',
                                         value: 'CUSTOM',
-                                        description: message.msg('workflow.common.delimiter.user.def')
+                                        description: 'User Defined'
                                     }
                                 ]
                             }),
@@ -215,7 +215,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SQOOP_EXPORT', {
         },
         {
             xtype: 'form',
-            title: message.msg('workflow.he.sqoop.destination.database'),
+            title: 'Destination (Database)',
             border: false,
             autoScroll: true,
             defaults: {
@@ -226,29 +226,29 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SQOOP_EXPORT', {
             items: [
                 {
                     name: 'jdbcUrl',
-                    fieldLabel: message.msg('workflow.he.sqoop.jdbc.uri')
+                    fieldLabel: 'JDBC URI'
                 },
                 {
                     name: 'jdbcDriver',
-                    fieldLabel: message.msg('workflow.he.sqoop.jdbc.driver')
+                    fieldLabel: 'JDBC Driver'
                 },
                 {
                     name: 'sqoopUsername',
-                    fieldLabel: message.msg('workflow.he.sqoop.jdbc.username')
+                    fieldLabel: 'Username'
                 },
                 {
                     name: 'sqoopPassword',
                     inputType: 'password',
-                    fieldLabel: message.msg('workflow.he.sqoop.jdbc.password')
+                    fieldLabel: 'Password'
                 },
                 {
                     name: 'sqoopTable',
-                    fieldLabel: message.msg('workflow.he.sqoop.jdbc.table')
+                    fieldLabel: 'JDBC Table'
                 }
             ]
         },
         {
-            title: message.msg('common.references'),
+            title: 'References',
             xtype: 'form',
             border: false,
             autoScroll: true,

@@ -19,7 +19,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._MetaBrowserField', {
     extend: 'Ext.form.FieldContainer',
     alias: 'widget._metaBrowserField',
 
-    fieldLabel: message.msg('workflow.type.metadata'),
+    fieldLabel: 'Metadata',
     disabled: false,
     defaults: {
         hideLabel: true
@@ -37,12 +37,12 @@ Ext.define('Flamingo.view.workflowdesigner.property._MetaBrowserField', {
             },
             {
                 xtype: 'button',
-                text: message.msg('common.hdfs.browser'),
-                tooltip: message.msg('common.hdfs.browser'),
+                text: 'File System Browser',
+                tooltip: 'File System Browser',
                 handler: function () {
                     var panel = me;
                     var popWindow = Ext.create('Ext.Window', {
-                        title: message.msg('common.hdfs.browser'),
+                        title: 'File System Browser',
                         width: 800,
                         height: 400,
                         modal: true,
@@ -55,7 +55,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._MetaBrowserField', {
                         buttonAlign: 'center',
                         buttons: [
                             {
-                                text: message.msg('common.confirm'),
+                                text: 'Confirm',
 
                                 handler: function () {
                                     var grid = popWindow.query('#hdfsBrowserListGrid')[0];
@@ -82,7 +82,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._MetaBrowserField', {
                                                     }
                                                 } else {
                                                     Ext.MessageBox.show({
-                                                        title: message.msg('workflow.title_meta_loading'),
+                                                        title: 'Loading Metadata',
                                                         message: obj.error.message,
                                                         buttons: Ext.MessageBox.OK,
                                                         icon: Ext.MessageBox.WARNING
@@ -91,8 +91,8 @@ Ext.define('Flamingo.view.workflowdesigner.property._MetaBrowserField', {
                                             },
                                             function (response) {
                                                 Ext.MessageBox.show({
-                                                    title: message.msg('common.warn'),
-                                                    message: format(message.msg('common.msg.server_error'), config['system.admin.email']),
+                                                    title: 'Warning',
+                                                    message: format('Due to a system failure or error, the request cannot be processed.<br/>Contact the system administrator({0}).', config['system.admin.email']),
                                                     buttons: Ext.MessageBox.OK,
                                                     icon: Ext.MessageBox.WARNING
                                                 });
@@ -102,8 +102,8 @@ Ext.define('Flamingo.view.workflowdesigner.property._MetaBrowserField', {
                                         popWindow.close();
                                     } else {
                                         Ext.MessageBox.show({
-                                            title: message.msg('workflow.title_meta_loading'),
-                                            message: message.msg('workflow.msg_meta_ok'),
+                                            title: 'Loading Metadata',
+                                            message: 'Please select a metadata file',
                                             buttons: Ext.MessageBox.OK,
                                             icon: Ext.MessageBox.WARNING
                                         });
@@ -111,7 +111,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._MetaBrowserField', {
                                 }
                             },
                             {
-                                text: message.msg('common.cancel'),
+                                text: 'Cancel',
 
                                 handler: function () {
                                     popWindow.close();

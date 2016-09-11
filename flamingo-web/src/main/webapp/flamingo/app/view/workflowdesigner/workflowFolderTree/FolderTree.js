@@ -58,20 +58,20 @@ Ext.define('Flamingo.view.workflowdesigner.workflowFolderTree.FolderTree', {
                     items: [
                         {
                             iconCls: 'common-expand',
-                            text: message.msg('common.tree.elapse'),
-                            tooltip: message.msg('common.tree.elapsedesc'),
+                            text: 'Elapse all',
+                            tooltip: 'Elapse the tree.',
                             handler: 'onTreeExpand'
                         },
                         {
                             iconCls: 'common-collapse',
-                            text: message.msg('common.tree.collapse'),
-                            tooltip: message.msg('common.tree.collapsedesc'),
+                            text: 'Collapse all',
+                            tooltip: 'Collapse the tree.',
                             handler: 'onTreeCollapse'
                         },
                         '->',
                         {
-                            tooltip: message.msg('common.tree.refreshdesc'),
-                            text: message.msg('common.refresh'),
+                            tooltip: 'Refresh the tree.',
+                            text: 'Refresh',
                             iconCls: 'common-refresh',
                             handler: 'onTreeRefresh'
                         }

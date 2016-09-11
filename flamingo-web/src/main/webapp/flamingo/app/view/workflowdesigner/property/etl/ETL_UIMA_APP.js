@@ -33,7 +33,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.etl.ETL_UIMA_APP', {
 
     items: [
         {
-            title: message.msg('workflow.common.mapreduce'),
+            title: 'MapReduce',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -48,7 +48,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.etl.ETL_UIMA_APP', {
                 {
                     xtype: 'textfield',
                     name: 'jar',
-                    fieldLabel: message.msg('workflow.common.mapreduce.jar'),
+                    fieldLabel: 'JAR Path',
                     value: ETL.JAR,
                     disabledCls: 'disabled-plain',
                     readOnly: true
@@ -56,7 +56,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.etl.ETL_UIMA_APP', {
                 {
                     xtype: 'textfield',
                     name: 'driver',
-                    fieldLabel: message.msg('workflow.common.mapreduce.driver'),
+                    fieldLabel: 'Driver',
                     value: 'uima',
                     disabledCls: 'disabled-plain',
                     readOnly: true
@@ -64,7 +64,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.etl.ETL_UIMA_APP', {
             ]
         },
         {
-            title: message.msg('workflow.common.inout.path'),
+            title: 'I/O Path',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -78,12 +78,12 @@ Ext.define('Flamingo.view.workflowdesigner.property.etl.ETL_UIMA_APP', {
             items: [
                 {
                     xtype: '_inputGrid',
-                    title: message.msg('workflow.common.input.path'),
+                    title: 'Input Path',
                     flex: 1
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.common.output.path'),
+                    fieldLabel: 'Output path',
                     defaults: {
                         hideLabel: true,
                         margin: "5 0 0 0"  // Same as CSS ordering (top, right, bottom, left)
@@ -101,7 +101,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.etl.ETL_UIMA_APP', {
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.dp.uimaToApp.tab.parameter.uimaPearPath.label'),
+                    fieldLabel: 'UIMA Pear Path',
                     defaults: {
                         hideLabel: true,
                         margin: "5 0 0 0"  // Same as CSS ordering (top, right, bottom, left)
@@ -120,7 +120,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.etl.ETL_UIMA_APP', {
             ]
         },
         {
-            title: message.msg('workflow.common.hadoop.conf'),
+            title: 'Hadoop Configuration',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -135,7 +135,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.etl.ETL_UIMA_APP', {
                 {
                     xtype: 'displayfield',
                     height: 20,
-                    value: message.msg('workflow.common.hadoop.conf.guide')
+                    value: 'Enter a key and a value of Configuration.set () method used in Hadoop Mapreduce.'
                 },
                 {
                     xtype: '_keyValueGrid',

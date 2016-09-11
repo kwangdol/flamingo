@@ -23,8 +23,8 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.events.onCanvasActionControlle
      */
     onCreateClick: function () {
         Ext.MessageBox.show({
-            title: message.msg('common.warn'),
-            message: message.msg('workflow.msg.new_workflow'),
+            title: 'Warning',
+            message: 'Do you want to create a new workflow?',
             buttons: Ext.MessageBox.YESNO,
             icon: Ext.MessageBox.WARNING,
             fn: function handler(btn) {
@@ -74,8 +74,8 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.events.onCanvasActionControlle
         }
 
         Ext.MessageBox.show({
-            title: message.msg('common.warn'),
-            message: message.msg('workflow.msg.save_workflow'),
+            title: 'Warning',
+            message: 'Do you want to save the workflow?',
             width: 300,
             buttons: Ext.MessageBox.YESNO,
             icon: Ext.MessageBox.WARNING,
@@ -95,7 +95,7 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.events.onCanvasActionControlle
                             parentTreeId: form.getValues()['parent_id']
                         };
 
-                        info(message.msg('workflow.msg.saving'), message.msg('workflow.msg.waiting'));
+                        info('Saving...', 'Saving workflow<br/>Please wait...');
 
                         invokePostByXML(CONSTANTS.DESIGNER.SAVE, params, makeXml(),
                             function (response) {
@@ -107,16 +107,16 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.events.onCanvasActionControlle
                                     query('canvas #wd_btn_copy').setDisabled(false);
                                     query('canvas #wd_btn_xml').setDisabled(false);
                                 } else {
-                                    error(message.msg('workflow.save_fail'), message.msg('workflow.msg.save_fail'));
+                                    error('Save failure', 'Could not save the workflow');
                                 }
                             },
                             function (response) {
-                                error(message.msg('workflow.save_fail'), message.msg('workflow.msg.save_fail'));
+                                error('Save failure', 'Could not save the workflow');
                             }
                         );
                     } else {
                         var popWindow = Ext.create('Ext.Window', {
-                            title: message.msg('workflow.msg.save_folder'),
+                            title: 'Please select a folder to save',
                             width: 450,
                             height: 300,
                             modal: true,
@@ -129,7 +129,7 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.events.onCanvasActionControlle
                             },
                             buttons: [
                                 {
-                                    text: message.msg('common.confirm'),
+                                    text: 'Confirm',
                                     handler: function () {
                                         var treePanel = popWindow.query('treepanel')[0];
                                         var selectedNode = treePanel.getSelectionModel().getLastSelected();
@@ -146,7 +146,7 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.events.onCanvasActionControlle
                                                 parentTreeId: selectedNode.data.id
                                             };
 
-                                            info(message.msg('workflow.msg.saving')), message.msg('workflow.msg.waiting');
+                                            info('Saving...', 'Saving workflow<br/>Please wait...');
 
                                             invokePostByXML(CONSTANTS.DESIGNER.SAVE, params, makeXml(),
                                                 function (response) {
@@ -162,15 +162,15 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.events.onCanvasActionControlle
                                                         query('canvas #wd_btn_copy').setDisabled(false);
                                                         query('canvas #wd_btn_xml').setDisabled(false);
                                                     } else {
-                                                        error(message.msg('workflow.save_fail'), message.msg('workflow.msg.save_fail'));
+                                                        error('Save failure', 'Could not save the workflow');
                                                     }
                                                 },
                                                 function () {
-                                                    error(message.msg('workflow.save_fail'), message.msg('workflow.msg.save_fail'));
+                                                    error('Save failure', 'Could not save the workflow');
                                                 }
                                             );
                                         } else {
-                                            error(message.msg('warn'), message.msg('workflow.msg.save_folder'));
+                                            error('Warning', 'Please select a folder to save');
                                         }
                                     }
                                 }
@@ -201,8 +201,8 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.events.onCanvasActionControlle
         };
 
         Ext.MessageBox.show({
-            title: message.msg('common.info'),
-            message: message.msg('workflow.msg_run_workflow_yesno'),
+            title: 'Information',
+            message: 'Do you want to execute the workflow?',
             width: 300,
             buttons: Ext.MessageBox.YESNO,
             icon: Ext.MessageBox.INFO,
@@ -228,11 +228,11 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.events.onCanvasActionControlle
                                 //    slideDownAnimation: 'easeIn'
                                 //}).show();
                             } else {
-                                error(message.msg('workflow.msg_fail_run'), obj.error.cause);
+                                error('Failed in executing workflow', obj.error.cause);
                             }
                         },
                         function (response) {
-                            error(message.msg('workflow.msg_fail_run'), response.statusText);
+                            error('Failed in executing workflow', response.statusText);
                         }
                     );
                 }
@@ -252,7 +252,7 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.events.onCanvasActionControlle
         }
 
         var popWindow = Ext.create('Ext.Window', {
-            title: message.msg('workflow.msg_select_to_copy_folder'),
+            title: 'Please select a folder to copy.',
             width: 450,
             height: 300,
             modal: true,
@@ -265,7 +265,7 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.events.onCanvasActionControlle
             },
             buttons: [
                 {
-                    text: message.msg('common.confirm'),
+                    text: 'Confirm',
                     handler: function () {
                         var treePanel = popWindow.query('treepanel')[0];
                         var selectedNode = treePanel.getSelectionModel().getLastSelected();
@@ -287,21 +287,21 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.events.onCanvasActionControlle
                                         win.close();
                                         query('workflowTree > treepanel').getStore().load();
 
-                                        info(message.msg('workflow.msg.copy_success'), message.msg('workflow.msg.copied'));
+                                        info('Workflow Copy Success', 'Workflow has been copied<br/>You can see the workflow on workflow list');
                                     } else {
                                         win.close();
 
-                                        error(message.msg('workflow.msg.copy_fail'), obj.error.cause);
+                                        error('Workflow Copy Failure', obj.error.cause);
                                     }
                                 },
                                 function (response) {
                                     win.close();
 
-                                    error(message.msg('workflow.msg.copy_fail'), response.statusText);
+                                    error('Workflow Copy Failure', response.statusText);
                                 }
                             );
                         } else {
-                            error(message.msg('common.warn'), message.msg('workflow.msg.save_folder'));
+                            error('Warning', 'Please select a folder to save');
                         }
                     }
                 }
@@ -325,7 +325,7 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.events.onCanvasActionControlle
             function (response) {
                 var res = Ext.decode(response.responseText);
                 var xmlWin = Ext.create('Ext.window.Window', {
-                    title: message.msg('workflow.msg.workflow_xml'),
+                    title: 'Workflow XML',
                     width: 850,
                     height: 600,
                     layout: 'fit',
@@ -334,7 +334,7 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.events.onCanvasActionControlle
                     closeAction: 'destroy',
                     buttons: [
                         {
-                            text: message.msg('common.confirm'),
+                            text: 'Confirm',
                             handler: function () {
                                 xmlWin.close();
                             }
@@ -359,7 +359,7 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.events.onCanvasActionControlle
                 }).center().show();
             },
             function (response) {
-                error(message.msg('workflow.msg.loading_fail'), workflow.msg_wf_loading_cause + response.statusText);
+                error('Loading failure', 'We were unable to load the workflow.<br/>Cause\:' + response.statusText);
             }
         );
     },
@@ -391,13 +391,13 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.events.onCanvasActionControlle
 
                 // 1. 이후 노드 최소 연결 노드 수 체크
                 if (nodeMeta.minNextNodeCounts >= 0 && nextShapes.length < nodeMeta.minNextNodeCounts) {
-                    App.UI.errormsg(message.msg('workflow.common.warn'), Ext.String.format(message.msg('workflow.msg_after_least'), nodeMeta.name, nodeMeta.minNextNodeCounts));
+                    App.UI.errormsg('Warning', Ext.String.format('There should be at least "{1}" node(s) after "{0}" node.', nodeMeta.name, nodeMeta.minNextNodeCounts));
                     return false;
                 }
 
                 // 2. 이전 노드 최소 연결 노드 수 체크
                 if (nodeMeta.minPrevNodeCounts >= 0 && prevShapes.length < nodeMeta.minPrevNodeCounts) {
-                    App.UI.errormsg(message.msg('workflow.common.warn'), Ext.String.format(message.msg('workflow.msg_after_least'), nodeMeta.name, nodeMeta.minPrevNodeCounts));
+                    App.UI.errormsg('Warning', Ext.String.format('There should be at least "{1}" node(s) after "{0}" node.', nodeMeta.name, nodeMeta.minPrevNodeCounts));
                     return false;
                 }
 
@@ -419,7 +419,7 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.events.onCanvasActionControlle
 
                             if (count < 1) {
                                 canvas.graph.getEventHandler().selectShape(nextShapes[j]);
-                                App.UI.errormsg(message.msg('workflow.common.warn'), message.msg('workflow.msg_need_start_node'));
+                                App.UI.errormsg('Warning', 'A node connected to the START node must have a connection with one or more IN nodes.');
                                 return false;
                             }
                         }
@@ -444,7 +444,7 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.events.onCanvasActionControlle
 
                             if (count < 1) {
                                 canvas.graph.getEventHandler().selectShape(prevShapes[j]);
-                                App.UI.errormsg(message.msg('workflow.common.warn'), message.msg('workflow.msg_need_end_node'));
+                                App.UI.errormsg('Warning', 'A node connected to the END node must have a connection with one or more OUT nodes.');
                                 return false;
                             }
                         }
@@ -537,7 +537,7 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.events.onCanvasActionControlle
                 buttonAlign: 'center',
                 buttons: [
                     {
-                        text: message.msg('common.confirm'),
+                        text: 'Confirm',
                         handler: function () {
                             // 노드 프라퍼티 유효성 체크한 후 Graph Element 에 커스텀 데이터로 저장
                             var node = popWindow.child(nodextype), isChanged = false;
@@ -570,7 +570,7 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.events.onCanvasActionControlle
                         }
                     },
                     {
-                        text: message.msg('common.cancel'),
+                        text: 'Cancel',
                         handler: function () {
                             popWindow.close();
                         }
@@ -645,8 +645,8 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.events.onCanvasActionControlle
                             (!this._checkColumnInfo(prevNodeProperties, nodeProperties) || !(prevNodeProperties.delimiterType === nodeProperties.prevDelimiterValue ||
                             prevNodeProperties.delimiterValue === nodeProperties.prevDelimiterValue))) {
                             if (this._disconnect(prevShapes[i], element)) {
-                                msg(message.msg('common.information'), message.msg('workflow.msg_col_change_lost_con'));
-                                this._info(message.msg('workflow.msg_col_change_lost_con'));
+                                msg('Information', 'The connection is lost because column information has been modified.');
+                                this._info('The connection is lost because column information has been modified.');
                                 break;
                             }
                         } else {
@@ -665,8 +665,8 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.events.onCanvasActionControlle
                     else {
                         if (Ext.isEmpty(prevNodeProperties.columnNames)) {
                             if (this._disconnect(prevShapes[i], element)) {
-                                msg(message.msg('common.info'), message.msg('workflow.msg_col_change_lost_con'));
-                                this._info(message.msg('workflow.msg_col_change_lost_con'));
+                                msg('Information', 'The connection is lost because column information has been modified.');
+                                this._info('The connection is lost because column information has been modified.');
                                 break;
                             }
                         }

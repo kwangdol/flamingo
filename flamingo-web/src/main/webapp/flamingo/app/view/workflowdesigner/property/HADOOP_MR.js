@@ -34,7 +34,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_MR', {
     items: [
         {
             xtype: 'form',
-            title: message.msg('workflow.common.mapreduce'),
+            title: 'MapReduce',
             defaults: {
                 labelWidth: 100
             },
@@ -45,7 +45,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_MR', {
             items: [
                 {
                     xtype: 'displayfield',
-                    value: message.msg('workflow.he.mr.mr.display')
+                    value: 'The operation is based on a MapReduce Driver.'
                 },
                 {
                     xtype: '_jarBrowserField'
@@ -53,19 +53,19 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_MR', {
                 {
                     xtype: 'textfield',
                     name: 'driver',
-                    fieldLabel: message.msg('workflow.common.mapreduce.driver'),
-                    emptyText: message.msg('workflow.common.mapreduce.driver.empty.text'),
+                    fieldLabel: 'Driver',
+                    emptyText: 'Please specify the driver class.',
                     allowBlank: false
                 },
                 {
                     xtype: '_jarGrid',
-                    title: message.msg('workflow.common.mapreduce.jar.title'),
+                    title: 'Dependency JAR',
                     flex: 1
                 }
             ]
         },
         {
-            title: message.msg('workflow.common.inout.path'),
+            title: 'I/O Path',
             xtype: 'form',
             defaults: {
                 labelWidth: 100
@@ -77,12 +77,12 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_MR', {
             items: [
                 {
                     xtype: '_inputGrid',
-                    title: message.msg('workflow.common.input.path'),
+                    title: 'Input Path',
                     flex: 1
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.common.output.path'),
+                    fieldLabel: 'Output path',
                     defaults: {
                         hideLabel: true,
                         margin: "5 0 0 0"  // Same as CSS ordering (top, right, bottom, left)
@@ -101,7 +101,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_MR', {
             ]
         },
         {
-            title: message.msg('workflow.common.hadoop.conf'),
+            title: 'Hadoop Configuration',
             xtype: 'form',
             defaults: {
                 labelWidth: 100
@@ -114,7 +114,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_MR', {
                 {
                     xtype: 'displayfield',
                     height: 20,
-                    value: message.msg('workflow.common.hadoop.conf.guide')
+                    value: 'Enter a key and a value of Configuration.set () method used in Hadoop Mapreduce.'
                 },
                 {
                     xtype: '_keyValueGrid',
@@ -123,7 +123,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_MR', {
             ]
         },
         {
-            title: message.msg('workflow.common.command'),
+            title: 'Command Parameter',
             xtype: 'form',
             defaults: {
                 labelWidth: 100
@@ -136,7 +136,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_MR', {
                 {
                     xtype: 'displayfield',
                     height: 50,
-                    value: message.msg('workflow.common.command.guide')
+                    value: 'Please enter command line parameters in separate lines.<br>For example, if you want to enter "hadoop jar <JAR> <DRIVER> -input /INPUT -output /OUTPUT," enter -input, /INPUT, -output, and /OUTPUT in different lines.'
                 },
                 {
                     xtype: '_commandlineGrid',
@@ -145,7 +145,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_MR', {
             ]
         },
         {
-            title: message.msg('common.references'),
+            title: 'References',
             xtype: 'form',
             border: false,
             autoScroll: true,

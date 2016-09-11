@@ -29,7 +29,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_PIG', {
 
     items: [
         {
-            title: message.msg('workflow.common.pig'),
+            title: 'Pig Latin Script',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -78,7 +78,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_PIG', {
             ]
         },
         {
-            title: message.msg('workflow.common.script.variable'),
+            title: 'Script Variable',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -93,7 +93,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_PIG', {
                 {
                     xtype: 'displayfield',
                     height: 40,
-                    value: message.msg('workflow.common.script.variable.example')
+                    value: 'For variables, use the `${VAR}` format, and variables will be mapped to their own values. Variables are interpreted when scripts are executed. You cannot use a comma (,) with variables and values.'
                 },
                 {
                     xtype: '_nameValueGrid',
@@ -102,7 +102,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_PIG', {
             ]
         },
         {
-            title: message.msg('workflow.common.hadoop.conf'),
+            title: 'Hadoop Configuration',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -117,7 +117,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_PIG', {
                 {
                     xtype: 'displayfield',
                     height: 20,
-                    value: message.msg('workflow.common.hadoop.conf.guide')
+                    value: 'Enter a key and a value of Configuration.set () method used in Hadoop Mapreduce.'
                 },
                 {
                     xtype: '_keyValueGrid',
@@ -126,7 +126,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_PIG', {
             ]
         },
         {
-            title: message.msg('common.references'),
+            title: 'References',
             xtype: 'form',
             border: false,
             autoScroll: true,

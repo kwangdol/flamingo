@@ -30,7 +30,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.bpmn.BPMN_PARALLEL', {
 
     items: [
         {
-            title: message.msg('workflow.etc.pararelljoin.flows.title'),
+            title: 'Parallel Processing Options',
             xtype: '_parallelGrid',
             reference: '_parallelGrid'
         },

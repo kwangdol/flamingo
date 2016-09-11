@@ -26,7 +26,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.bpmn.BPMN_JOIN', {
 
     items: [
         {
-            title: message.msg('workflow.etc.pararellfork.flows.title'),
+            title: 'Parallel termination option',
             xtype: 'form',
             border: false,
             autoScroll: true,

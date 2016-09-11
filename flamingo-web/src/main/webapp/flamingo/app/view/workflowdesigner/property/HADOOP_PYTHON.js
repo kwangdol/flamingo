@@ -38,7 +38,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_PYTHON', {
 
     items: [
         {
-            title: message.msg('workflow.common.python'),
+            title: 'Python Script',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -52,7 +52,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_PYTHON', {
             items: [
                 {
                     xtype: 'textfield',
-                    fieldLabel: message.msg('common.path'),
+                    fieldLabel: 'Path',
                     name: 'path',
                     value: '/usr/bin/python',
                     editable: false,
@@ -62,7 +62,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_PYTHON', {
                         render: function (p) {
                             var theElem = p.getEl();
                             var theTip = Ext.create('Ext.tip.Tip', {
-                                html: message.msg('common.path'),
+                                html: 'Path',
                                 margin: '25 0 0 150',
                                 shadow: false
                             });
@@ -138,7 +138,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_PYTHON', {
             ]
         },
         {
-            title: message.msg('workflow.common.script.variable'),
+            title: 'Script Variable',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -153,7 +153,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_PYTHON', {
                 {
                     xtype: 'displayfield',
                     height: 40,
-                    value: message.msg('workflow.common.script.variable.example')
+                    value: 'For variables, use the `${VAR}` format, and variables will be mapped to their own values. Variables are interpreted when scripts are executed. You cannot use a comma (,) with variables and values.'
                 },
                 {
                     xtype: '_nameValueGrid',
@@ -162,7 +162,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_PYTHON', {
             ]
         },
         {
-            title: message.msg('workflow.common.command'),
+            title: 'Command Parameter',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -177,7 +177,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_PYTHON', {
                 {
                     xtype: 'displayfield',
                     height: 50,
-                    value: message.msg('workflow.common.command.guide')
+                    value: 'Please enter command line parameters in separate lines.<br>For example, if you want to enter "hadoop jar <JAR> <DRIVER> -input /INPUT -output /OUTPUT," enter -input, /INPUT, -output, and /OUTPUT in different lines.'
                 },
                 {
                     xtype: '_commandlineGrid',
@@ -186,7 +186,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_PYTHON', {
             ]
         },
         {
-            title: message.msg('common.references'),
+            title: 'References',
             xtype: 'form',
             border: false,
             autoScroll: true,

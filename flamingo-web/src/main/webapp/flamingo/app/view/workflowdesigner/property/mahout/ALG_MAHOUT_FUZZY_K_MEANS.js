@@ -35,7 +35,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_FUZZY_K_ME
 
     items: [
         {
-            title: message.msg('workflow.common.parameter'),
+            title: 'Parameter',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -50,40 +50,40 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_FUZZY_K_ME
                 {
                     xtype: 'textfield',
                     name: 'distanceMeasure',
-                    fieldLabel: message.msg('workflow.am.fuzzy.distanse_measure'),
+                    fieldLabel: 'Distance Measure',
                     value: 'org.apache.mahout.common.distance.SquaredEuclidean',
                     allowBlank: true
                 },
                 {
                     xtype: '_browserField',
                     name: 'clusters',
-                    fieldLabel: message.msg('workflow.am.fuzzy.clusters'),
+                    fieldLabel: 'Clusters',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'numClusters',
-                    fieldLabel: message.msg('workflow.am.fuzzy.num_cluster'),
+                    fieldLabel: 'Num of Clusters',
                     vtype: 'numeric',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'convergenceDelta',
-                    fieldLabel: message.msg('workflow.am.kmeans.convergence.delta'),
+                    fieldLabel: 'Convergence Delta',
                     value: '0.5',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'maxIter',
-                    fieldLabel: message.msg('workflow.am.spectral.max_iteration'),
+                    fieldLabel: 'Max. Number of Iteration',
                     vtype: 'numeric',
                     allowBlank: true
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.am.testnb.overwrite'),
+                    fieldLabel: 'Overwrite output directory',
                     defaultType: 'checkboxfield',
                     items: [
                         {
@@ -94,13 +94,13 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_FUZZY_K_ME
                 {
                     xtype: 'textfield',
                     name: 'm',
-                    fieldLabel: message.msg('workflow.am.fuzzy.coefficient.normalization'),
+                    fieldLabel: 'Coefficient normalization',
                     vtype: 'decimalpoint',
                     allowBlank: true
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.am.fuzzy.clustering'),
+                    fieldLabel: 'Clustering',
                     defaultType: 'checkboxfield',
                     items: [
                         {
@@ -110,7 +110,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_FUZZY_K_ME
                 },
                 {
                     xtype: 'radiogroup',
-                    fieldLabel: message.msg('workflow.am.fuzzy.emit.most.likely'),
+                    fieldLabel: 'Best potential extraction',
                     columns: 2,
                     items: [
                         {
@@ -130,14 +130,14 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_FUZZY_K_ME
                 {
                     xtype: 'textfield',
                     name: 'threshold',
-                    fieldLabel: message.msg('workflow.am.kmeans.outlier.threshold'),
+                    fieldLabel: 'Outlier Threshold',
                     vtype: 'numeric',
                     value: '0',
                     allowBlank: true
                 },
                 {
                     xtype: 'radiogroup',
-                    fieldLabel: message.msg('workflow.am.kmeans.execution.method'),
+                    fieldLabel: 'Execution Method',
                     columns: 2,
                     itemId: 'kxecutionMethod',
                     items: [
@@ -158,25 +158,25 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_FUZZY_K_ME
                 {
                     xtype: '_browserField',
                     name: 'tempDir',
-                    fieldLabel: message.msg('workflow.am.testnb.tempdirectory'),
+                    fieldLabel: 'Temp. Directory',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'startPhase',
-                    fieldLabel: message.msg('workflow.am.testnb.startphase'),
+                    fieldLabel: 'Start Phase',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'endPhase',
-                    fieldLabel: message.msg('workflow.am.testnb.endphase'),
+                    fieldLabel: 'End Phase',
                     allowBlank: true
                 }
             ]
         },
         {
-            title: message.msg('workflow.common.mapreduce'),
+            title: 'MapReduce',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -191,7 +191,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_FUZZY_K_ME
                 {
                     xtype: 'textfield',
                     name: 'jar',
-                    fieldLabel: message.msg('workflow.common.mahaut.jar'),
+                    fieldLabel: 'Mahout JAR',
                     value: MAHOUT.JAR,
                     disabledCls: 'disabled-plain',
                     readOnly: true
@@ -199,20 +199,20 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_FUZZY_K_ME
                 {
                     xtype: 'textfield',
                     name: 'driver',
-                    fieldLabel: message.msg('workflow.common.mapreduce.driver'),
+                    fieldLabel: 'Driver',
                     value: 'org.apache.mahout.clustering.fuzzykmeans.FuzzyKMeansDriver',
                     disabledCls: 'disabled-plain',
                     readOnly: true
                 },
                 {
                     xtype: '_dependencyGrid',
-                    title: message.msg('workflow.common.mapreduce.jar.title'),
+                    title: 'Dependency JAR',
                     flex: 1
                 }
             ]
         },
         {
-            title: message.msg('workflow.common.inout.path'),
+            title: 'I/O Path',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -226,7 +226,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_FUZZY_K_ME
             items: [
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.common.input.path'),
+                    fieldLabel: 'Input Path',
                     defaults: {
                         hideLabel: true
                     },
@@ -243,7 +243,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_FUZZY_K_ME
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.common.output.path'),
+                    fieldLabel: 'Output path',
                     defaults: {
                         hideLabel: true
                     },
@@ -261,7 +261,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_FUZZY_K_ME
             ]
         },
         {
-            title: message.msg('workflow.common.hadoop.conf'),
+            title: 'Hadoop Configuration',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -276,7 +276,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_FUZZY_K_ME
                 {
                     xtype: 'displayfield',
                     height: 20,
-                    value: message.msg('workflow.common.hadoop.conf.guide')
+                    value: 'Enter a key and a value of Configuration.set () method used in Hadoop Mapreduce.'
                 },
                 {
                     xtype: '_keyValueGrid',
@@ -285,7 +285,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_FUZZY_K_ME
             ]
         },
         {
-            title: message.msg('common.references'),
+            title: 'References',
             xtype: 'form',
             border: false,
             autoScroll: true,

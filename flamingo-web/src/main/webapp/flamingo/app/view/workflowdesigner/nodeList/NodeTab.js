@@ -26,56 +26,56 @@ Ext.define('Flamingo.view.workflowdesigner.nodeList.NodeTab', {
 
     items: [
         {
-            title: message.msg('workflow.common.all'),
+            title: 'All',
             xtype: 'nodeList'
         },
         {
-            title: message.msg('workflow.common.hadoop.eco'),
+            title: 'Hadoop Ecosystem',
             xtype: 'nodeList',
             type: 'HADOOP'
         },
         {
-            title: message.msg('workflow.common.stat'),
+            title: 'Statistics',
             xtype: 'nodeList',
             type: 'STATISTICS'
         },
         {
-            title: message.msg('workflow.common.data.process'),
+            title: 'Data Process',
             xtype: 'nodeList',
             type: 'ETL'
         },
         {
-            title: message.msg('workflow.common.data.mining'),
+            title: 'Ankus',
             xtype: 'nodeList',
             type: 'MINING'
         },
         {
-            title: message.msg('workflow.common.mahaut'),
+            title: 'Mahout',
             xtype: 'nodeList',
             type: 'MAHOUT'
         },
         {
-            title: message.msg('workflow.common.inmemory'),
+            title: 'In-Memory',
             xtype: 'nodeList',
             type: 'INMEMORY'
         },
         {
-            title: message.msg('workflow.common.integration'),
+            title: 'Integration',
             xtype: 'nodeList',
             type: 'INT'
         },
         {
-            title: message.msg('workflow.common.rules'),
+            title: 'RULES',
             xtype: 'nodeList',
             type: 'RULES'
         },
         {
-            title: message.msg('workflow.common.etc'),
+            title: 'ETC',
             xtype: 'nodeList',
             type: 'OTHERS'
         },
         {
-            title: message.msg('workflow.common.gis'),
+            title: 'GIS',
             xtype: 'nodeList',
             type: 'GIS'
         }

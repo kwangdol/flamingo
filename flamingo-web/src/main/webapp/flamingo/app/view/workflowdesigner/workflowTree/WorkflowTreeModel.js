@@ -35,7 +35,7 @@ Ext.define('Flamingo.view.workflowdesigner.workflowTree.WorkflowTreeModel', {
                 }
             },
             root: {
-                text: message.msg('common.workflow'),
+                text: 'Workflow',
                 iconCls: 'repository-roles',
                 id: '/',
                 expanded: true

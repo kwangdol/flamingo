@@ -254,10 +254,10 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.Canvas', {
                     width: 400,
                     labelWidth: 100,
                     maxLength: 100,
-                    fieldLabel: message.msg('common.workflowName'),
+                    fieldLabel: 'Workflow name',
                     id: 'wd_fld_name',
                     name: 'name',
-                    emptyText: message.msg('designer.emptyText.name'),
+                    emptyText: 'Enter a Workflow name.',
                     allowBlank: false
                 },
                 {
@@ -310,7 +310,7 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.Canvas', {
             items: [
                 {
                     id: 'wd_btn_create',
-                    text: message.msg('common.new'),
+                    text: 'New',
                     iconCls: 'common-new',
                     listeners: {
                         click: 'onCreateClick'
@@ -318,7 +318,7 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.Canvas', {
                 },
                 {
                     id: 'wd_btn_save',
-                    text: message.msg('common.save'),
+                    text: 'Save',
                     iconCls: 'common-save',
                     listeners: {
                         click: 'onSaveClick'
@@ -326,7 +326,7 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.Canvas', {
                 },
                 {
                     id: 'wd_btn_run',
-                    text: message.msg('common.run'),
+                    text: 'Run',
                     iconCls: 'common-execute',
                     disabled: true,
                     listeners: {
@@ -336,7 +336,7 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.Canvas', {
 //                '-',
                 {
                     id: 'wd_btn_xml',
-                    text: message.msg('common.view'),
+                    text: 'View',
                     iconCls: 'hdfs-directory-info',
                     disabled: true,
                     hidden: true,
@@ -347,26 +347,11 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.Canvas', {
 //                '-',
                 {
                     id: 'wd_btn_copy',
-                    text: message.msg('common.copy'),
+                    text: 'Copy',
                     iconCls: 'common-file-copy',
                     disabled: true,
                     listeners: {
                         click: 'onWorkflowCopyClick'
-                    }
-                },
-                '->',
-                {
-                    text: message.msg('fs.hdfs.common.browser'),
-                    iconCls: 'designer-filesystem',
-                    listeners: {
-                        click: 'onHdfsBrowserClick'
-                    }
-                },
-                {
-                    text: message.msg('hive.title'),
-                    iconCls: 'designer-hive',
-                    listeners: {
-                        click: 'onHiveClick'
                     }
                 }
             ]

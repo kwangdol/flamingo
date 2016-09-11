@@ -18,7 +18,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._ConfigurationBrowserField',
     extend: 'Ext.form.FieldContainer',
     alias: 'widget._configurationBrowserField',
 
-    fieldLabel: message.msg('workflow.common.configbrowser'),
+    fieldLabel: 'Configuration File',
     disabled: false,
     defaults: {
         hideLabel: true
@@ -36,12 +36,12 @@ Ext.define('Flamingo.view.workflowdesigner.property._ConfigurationBrowserField',
             },
             {
                 xtype: 'button',
-                text: message.msg('common.browse'),
-                tooltip: message.msg('workflow.msg_configbrowser'),
+                text: 'Browse',
+                tooltip: 'View HDFS browser.',
                 handler: function () {
                     var panel = me;
                     var popWindow = Ext.create('Ext.Window', {
-                        title: message.msg('common.hdfs.browser'),
+                        title: 'File System Browser',
                         width: 800,
                         height: 400,
                         modal: true,
@@ -54,7 +54,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._ConfigurationBrowserField',
                         buttonAlign: 'center',
                         buttons: [
                             {
-                                text: message.msg('common.confirm'),
+                                text: 'Confirm',
                                 handler: function () {
                                     var grid = popWindow.query('#hdfsBrowserListGrid')[0];
                                     var columnGrid = panel.up().query('_keyValueGrid')[0];
@@ -80,8 +80,8 @@ Ext.define('Flamingo.view.workflowdesigner.property._ConfigurationBrowserField',
                                                     }
                                                 } else {
                                                     Ext.MessageBox.show({
-                                                        title: message.msg('common.warn'),
-                                                        message: message.msg('workflow.msg_not_load_config') + obj.error.message,
+                                                        title: 'Warning',
+                                                        message: 'We were unable to load the Hadoop configuration file. Cause\:' + obj.error.message,
                                                         buttons: Ext.MessageBox.OK,
                                                         icon: Ext.MessageBox.ERROR
                                                     });
@@ -89,8 +89,8 @@ Ext.define('Flamingo.view.workflowdesigner.property._ConfigurationBrowserField',
                                             },
                                             function () {
                                                 Ext.MessageBox.show({
-                                                    title: message.msg('common.warn'),
-                                                    message: message.msg('workflow.msg_not_load_config'),
+                                                    title: 'Warning',
+                                                    message: 'We were unable to load the Hadoop configuration file. Cause\:',
                                                     buttons: Ext.MessageBox.OK,
                                                     icon: Ext.MessageBox.ERROR
                                                 });
@@ -101,8 +101,8 @@ Ext.define('Flamingo.view.workflowdesigner.property._ConfigurationBrowserField',
                                         popWindow.close();
                                     } else {
                                         Ext.MessageBox.show({
-                                            title: message.msg('common.warn'),
-                                            message: message.msg('workflow.msg_hadoop_config_ok'),
+                                            title: 'Warning',
+                                            message: 'Please select a Hadoop configuration file.',
                                             buttons: Ext.MessageBox.OK,
                                             icon: Ext.MessageBox.ERROR
                                         });
@@ -110,7 +110,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._ConfigurationBrowserField',
                                 }
                             },
                             {
-                                text: message.msg('common.cancel'),
+                                text: 'Cancel',
                                 handler: function () {
                                     popWindow.close();
                                 }

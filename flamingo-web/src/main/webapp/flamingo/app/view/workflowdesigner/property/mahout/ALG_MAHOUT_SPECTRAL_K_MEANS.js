@@ -35,7 +35,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_SPECTRAL_K
 
     items: [
         {
-            title: message.msg('workflow.common.parameter'),
+            title: 'Parameter',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -51,14 +51,14 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_SPECTRAL_K
                 {
                     xtype: 'textfield',
                     name: 'dimensions',
-                    fieldLabel: message.msg('workflow.am.spectralkmeans.dimension'),
+                    fieldLabel: 'Dimension',
                     tooltip: '',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'clusters',
-                    fieldLabel: message.msg('workflow.am.spectralkmeans.num.clusters.eigenvectors'),
+                    fieldLabel: 'clusters',
                     tooltip: '',
                     vtype: 'numeric',
                     allowBlank: true
@@ -66,7 +66,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_SPECTRAL_K
                 {
                     xtype: 'textfield',
                     name: 'distanceMeasure',
-                    fieldLabel: message.msg('workflow.am.spectralkmeans.distance.measure'),
+                    fieldLabel: 'Distance Measure Class',
                     tooltip: '',
                     allowBlank: false,
                     value: 'SquaredEuclidean'
@@ -74,7 +74,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_SPECTRAL_K
                 {
                     xtype: 'textfield',
                     name: 'convergenceDelta',
-                    fieldLabel: message.msg('workflow.am.spectralkmeans.convergence.delta'),
+                    fieldLabel: 'Convergence Delta',
                     tooltip: '',
                     vtype: 'numeric',
                     allowBlank: true
@@ -82,13 +82,13 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_SPECTRAL_K
                 {
                     xtype: 'textfield',
                     name: 'maxIter',
-                    fieldLabel: message.msg('workflow.am.spectral.max_iteration'),
+                    fieldLabel: 'Max. Number of Iteration',
                     vtype: 'numeric',
                     allowBlank: true
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.am.testnb.overwrite'),
+                    fieldLabel: 'Overwrite output directory',
                     defaultType: 'checkboxfield',
                     items: [
                         {
@@ -98,7 +98,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_SPECTRAL_K
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.am.spectralkmeans.uses.ssvd'),
+                    fieldLabel: 'Uses SSVD',
                     defaultType: 'checkboxfield',
                     items: [
                         {
@@ -109,52 +109,52 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_SPECTRAL_K
                 {
                     xtype: 'textfield',
                     name: 'reduceTasks',
-                    fieldLabel: message.msg('workflow.am.spectralkmeans.num.reducer.ssvd'),
+                    fieldLabel: 'Number of reducers for SSVD',
                     vtype: 'numeric',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'outerProdBlockHeight',
-                    fieldLabel: message.msg('workflow.am.spectralkmeans.outer.prod.block.height'),
+                    fieldLabel: 'Block height outer SSVD',
                     vtype: 'numeric',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'oversampling',
-                    fieldLabel: message.msg('workflow.am.spectralkmeans.over.sampling'),
+                    fieldLabel: 'Oversampling SSVD',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'powerIter',
-                    fieldLabel: message.msg('workflow.am.spectralkmeans.power.iter'),
+                    fieldLabel: 'Additional power iteration SSVD',
                     vtype: 'numeric',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'tempDir',
-                    fieldLabel: message.msg('workflow.am.temp.dir'),
+                    fieldLabel: 'Temp Directory',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'startPhase',
-                    fieldLabel: message.msg('workflow.am.testnb.startphase'),
+                    fieldLabel: 'Start Phase',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'endPhase',
-                    fieldLabel: message.msg('workflow.am.testnb.endphase'),
+                    fieldLabel: 'End Phase',
                     allowBlank: true
                 }
             ]
         },
         {
-            title: message.msg('workflow.common.mapreduce'),
+            title: 'MapReduce',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -169,7 +169,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_SPECTRAL_K
                 {
                     xtype: 'textfield',
                     name: 'jar',
-                    fieldLabel: message.msg('workflow.common.mahaut.jar'),
+                    fieldLabel: 'Mahout JAR',
                     value: MAHOUT.JAR,
                     disabledCls: 'disabled-plain',
                     readOnly: true
@@ -177,20 +177,20 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_SPECTRAL_K
                 {
                     xtype: 'textfield',
                     name: 'driver',
-                    fieldLabel: message.msg('workflow.common.mapreduce.driver'),
+                    fieldLabel: 'Driver',
                     value: 'org.apache.mahout.clustering.spectral.kmeans.SpectralKMeansDriver',
                     disabledCls: 'disabled-plain',
                     readOnly: true
                 },
                 {
                     xtype: '_dependencyGrid',
-                    title: message.msg('workflow.common.mapreduce.jar.title'),
+                    title: 'Dependency JAR',
                     flex: 1
                 }
             ]
         },
         {
-            title: message.msg('workflow.common.inout.path'),
+            title: 'I/O Path',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -204,12 +204,12 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_SPECTRAL_K
             items: [
                 {
                     xtype: '_inputGrid',
-                    title: message.msg('workflow.common.input.path'),
+                    title: 'Input Path',
                     flex: 1
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.common.output.path'),
+                    fieldLabel: 'Output path',
                     defaults: {
                         hideLabel: true
                     },
@@ -233,7 +233,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_SPECTRAL_K
             }
         },
         {
-            title: message.msg('workflow.common.hadoop.conf'),
+            title: 'Hadoop Configuration',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -248,7 +248,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_SPECTRAL_K
                 {
                     xtype: 'displayfield',
                     height: 20,
-                    value: message.msg('workflow.common.hadoop.conf.guide')
+                    value: 'Enter a key and a value of Configuration.set () method used in Hadoop Mapreduce.'
                 },
                 {
                     xtype: '_keyValueGrid',
@@ -257,7 +257,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_SPECTRAL_K
             ]
         },
         {
-            title: message.msg('common.references'),
+            title: 'References',
             xtype: 'form',
             border: false,
             autoScroll: true,

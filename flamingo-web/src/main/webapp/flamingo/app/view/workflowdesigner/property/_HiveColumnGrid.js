@@ -33,7 +33,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._HiveColumnGrid', {
     columnLines: true,
     columns: [
         {
-            text: message.msg('common.name'),
+            text: 'Name',
             dataIndex: 'name',
             width: 100,
             sortable: false,
@@ -48,7 +48,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._HiveColumnGrid', {
             }
         },
         {
-            text: message.msg('hive.column.type'),
+            text: 'Data type',
             dataIndex: 'type',
             width: 80,
             sortable: false,
@@ -102,7 +102,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._HiveColumnGrid', {
             ]
         },
         {
-            text: message.msg('hawq.label.exttable.comment'),
+            text: 'Comment',
             dataIndex: 'comment',
             width: 150,
             sortable: false,

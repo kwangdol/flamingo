@@ -25,7 +25,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.bpmn.BPMN_INCLUSIVE_JOIN', {
 
     items: [
         {
-            title: message.msg('workflow.etc.inclusivejoin.flows.title'),
+            title: 'Conditions shutdown options',
             xtype: 'form',
             border: false,
             autoScroll: true,

@@ -35,7 +35,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_CLUSTER_DU
 
     items: [
         {
-            title: message.msg('workflow.common.parameter'),
+            title: 'Parameter',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -49,7 +49,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_CLUSTER_DU
             items: [
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.am.clusterdump.outputformat'),
+                    fieldLabel: 'Output Format',
                     layout: 'hbox',
                     items: [
                         {
@@ -81,39 +81,39 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_CLUSTER_DU
                 {
                     xtype: 'textfield',
                     name: 'substring',
-                    fieldLabel: message.msg('workflow.am.clusterdump.num.characters.format.string'),
+                    fieldLabel: 'Sub-string',
                     vtype: 'numeric',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'numWords',
-                    fieldLabel: message.msg('workflow.am.clusterdump.num.top.term'),
+                    fieldLabel: 'The number of top terms',
                     vtype: 'numeric',
                     allowBlank: true
                 },
                 {
                     xtype: '_browserField',
                     name: 'pointsDir',
-                    fieldLabel: message.msg('workflow.am.clusterdump.sequence.file.directory'),
+                    fieldLabel: 'Sequential file, Directory',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'samplePoints',
-                    fieldLabel: message.msg('workflow.am.clusterdump.max.num.points'),
+                    fieldLabel: 'substring',
                     vtype: 'numeric',
                     allowBlank: true
                 },
                 {
                     xtype: '_browserField',
                     name: 'dictionary',
-                    fieldLabel: message.msg('workflow.am.clusterdump.dictionary'),
+                    fieldLabel: 'Dictionary',
                     allowBlank: true
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.am.clusterdump.dictionary_type'),
+                    fieldLabel: 'Dictionary Type',
                     layout: 'hbox',
                     items: [
                         {
@@ -142,7 +142,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_CLUSTER_DU
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.am.clusterdump.evaluate'),
+                    fieldLabel: 'Evaluate',
                     defaultType: 'checkboxfield',
                     items: [
                         {
@@ -153,32 +153,32 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_CLUSTER_DU
                 {
                     xtype: 'textfield',
                     name: 'distanceMeasure',
-                    fieldLabel: message.msg('workflow.am.clusterdump.distance.measure'),
+                    fieldLabel: 'Distance Measure',
                     value: 'org.apache.mahout.common.distance.SquaredEuclidean',
                     allowBlank: true
                 },
                 {
                     xtype: '_browserField',
                     name: 'tempDir',
-                    fieldLabel: message.msg('workflow.am.testnb.tempdirectory'),
+                    fieldLabel: 'Temp. Directory',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'startPhase',
-                    fieldLabel: message.msg('workflow.am.testnb.startphase'),
+                    fieldLabel: 'Start Phase',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'endPhase',
-                    fieldLabel: message.msg('workflow.am.testnb.endphase'),
+                    fieldLabel: 'End Phase',
                     allowBlank: true
                 }
             ]
         },
         {
-            title: message.msg('workflow.common.mapreduce'),
+            title: 'MapReduce',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -193,7 +193,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_CLUSTER_DU
                 {
                     xtype: 'textfield',
                     name: 'jar',
-                    fieldLabel: message.msg('workflow.common.mahaut.jar'),
+                    fieldLabel: 'Mahout JAR',
                     value: MAHOUT.JAR,
                     disabledCls: 'disabled-plain',
                     readOnly: true
@@ -201,20 +201,20 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_CLUSTER_DU
                 {
                     xtype: 'textfield',
                     name: 'driver',
-                    fieldLabel: message.msg('workflow.common.mapreduce.driver'),
+                    fieldLabel: 'Driver',
                     value: 'org.apache.mahout.utils.clustering.ClusterDumper',
                     disabledCls: 'disabled-plain',
                     readOnly: true
                 },
                 {
                     xtype: '_dependencyGrid',
-                    title: message.msg('workflow.common.mapreduce.jar.title'),
+                    title: 'Dependency JAR',
                     flex: 1
                 }
             ]
         },
         {
-            title: message.msg('workflow.common.inout.path'),
+            title: 'I/O Path',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -228,7 +228,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_CLUSTER_DU
             items: [
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.common.input.path'),
+                    fieldLabel: 'Input Path',
                     defaults: {
                         hideLabel: true
                     },
@@ -245,7 +245,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_CLUSTER_DU
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.common.output.path'),
+                    fieldLabel: 'Output path',
                     defaults: {
                         hideLabel: true
                     },
@@ -269,7 +269,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_CLUSTER_DU
             }
         },
         {
-            title: message.msg('workflow.common.hadoop.conf'),
+            title: 'Hadoop Configuration',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -284,7 +284,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_CLUSTER_DU
                 {
                     xtype: 'displayfield',
                     height: 20,
-                    value: message.msg('workflow.common.hadoop.conf.guide')
+                    value: 'Enter a key and a value of Configuration.set () method used in Hadoop Mapreduce.'
                 },
                 {
                     xtype: '_keyValueGrid',
@@ -293,7 +293,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_CLUSTER_DU
             ]
         },
         {
-            title: message.msg('common.references'),
+            title: 'References',
             xtype: 'form',
             border: false,
             autoScroll: true,

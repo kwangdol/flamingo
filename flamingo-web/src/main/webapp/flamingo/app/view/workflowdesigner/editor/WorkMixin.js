@@ -153,14 +153,14 @@ Ext.define('Flamingo.view.workflowdesigner.editor.WorkMixin', {
 
             Ext.MessageBox.show({
                 title: 'Status',
-                message: format(message.msg('workflow.msg_editorwork'), saveId),
+                message: format('Saved conditional script for node {0}.', saveId),
                 buttons: Ext.MessageBox.OK,
                 icon: Ext.MessageBox.INFO
             });
         } else {
             Ext.MessageBox.show({
                 title: 'Status',
-                message: format(message.msg('workflow.msg_toast_fail'), saveId),
+                message: format('Fail.', saveId),
                 buttons: Ext.MessageBox.OK,
                 icon: Ext.MessageBox.INFO
             });

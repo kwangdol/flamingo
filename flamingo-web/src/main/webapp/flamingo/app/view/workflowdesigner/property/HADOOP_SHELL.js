@@ -37,7 +37,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SHELL', {
 
     items: [
         {
-            title: message.msg('workflow.common.shell'),
+            title: 'Shell Script',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -51,7 +51,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SHELL', {
             items: [
                 {
                     xtype: 'textfield',
-                    fieldLabel: message.msg('workflow.common.shell.path'),
+                    fieldLabel: 'Interpreter Path',
                     name: 'path',
                     value: '/bin/bash',
                     editable: false,
@@ -61,7 +61,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SHELL', {
                         render: function (p) {
                             var theElem = p.getEl();
                             var theTip = Ext.create('Ext.tip.Tip', {
-                                html: message.msg('workflow.common.shell.message'),
+                                html: 'Specify path to the interpreter to execute the script. e.g. /bin/bash',
                                 margin: '25 0 0 150',
                                 shadow: false
                             });
@@ -76,7 +76,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SHELL', {
                 },
                 {
                     xtype: 'textfield',
-                    fieldLabel: message.msg('workflow.common.shell.workingpath'),
+                    fieldLabel: 'Working Path',
                     name: 'workingDir',
                     value: '',
                     padding: '2 5 0 5',   // Same as CSS ordering (top, right, bottom, left)
@@ -85,7 +85,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SHELL', {
                         render: function (p) {
                             var theElem = p.getEl();
                             var theTip = Ext.create('Ext.tip.Tip', {
-                                html: message.msg('workflow.common.shell.workingpath'),
+                                html: 'Working Path',
                                 margin: '25 0 0 150',
                                 shadow: false
                             });
@@ -135,7 +135,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SHELL', {
             ]
         },
         {
-            title: message.msg('workflow.common.script.variable'),
+            title: 'Script Variable',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -150,7 +150,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SHELL', {
                 {
                     xtype: 'displayfield',
                     height: 40,
-                    value: message.msg('workflow.common.script.variable.example')
+                    value: 'For variables, use the `${VAR}` format, and variables will be mapped to their own values. Variables are interpreted when scripts are executed. You cannot use a comma (,) with variables and values.'
                 },
                 {
                     xtype: '_nameValueGrid',
@@ -159,7 +159,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SHELL', {
             ]
         },
         {
-            title: message.msg('workflow.common.command'),
+            title: 'Command Parameter',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -174,7 +174,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SHELL', {
                 {
                     xtype: 'displayfield',
                     height: 50,
-                    value: message.msg('workflow.common.command.guide')
+                    value: 'Please enter command line parameters in separate lines.<br>For example, if you want to enter "hadoop jar <JAR> <DRIVER> -input /INPUT -output /OUTPUT," enter -input, /INPUT, -output, and /OUTPUT in different lines.'
                 },
                 {
                     xtype: '_commandlineGrid',
@@ -183,7 +183,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SHELL', {
             ]
         },
         {
-            title: message.msg('common.references'),
+            title: 'References',
             xtype: 'form',
             border: false,
             autoScroll: true,

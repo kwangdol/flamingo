@@ -32,7 +32,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._ColumnGrid', {
     columnLines: true,
     columns: [
         {
-            text: message.msg('workflow.common.column_names'),
+            text: 'Column name (English)',
             dataIndex: 'columnNames',
             width: 100,
             sortable: false,
@@ -47,7 +47,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._ColumnGrid', {
             }
         },
         {
-            text: message.msg('workflow.common.column_kor_names'),
+            text: 'Column name (Korea)',
             dataIndex: 'columnKorNames',
             width: 100,
             sortable: false,
@@ -57,7 +57,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._ColumnGrid', {
             }
         },
         {
-            text: message.msg('workflow.common.datatype'),
+            text: 'Data type',
             dataIndex: 'columnTypes',
             width: 80,
             sortable: false,
@@ -82,7 +82,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._ColumnGrid', {
             }
         },
         {
-            text: message.msg('common.comment'),
+            text: 'Comment',
             dataIndex: 'columnDescriptions',
             width: 150,
             sortable: false,

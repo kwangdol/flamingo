@@ -60,10 +60,10 @@ Ext.define('Flamingo.view.workflowdesigner.property._Grid', {
             if (this.fileBrowser) {
                 var plus = {
                     type: 'plus',
-                    tooltip: message.msg('workflow.common.add'),
+                    tooltip: 'Add',
                     handler: function (event, toolEl, panel) {
                         var popWindow = Ext.create('Ext.Window', {
-                            title: message.msg('workflow.common.hdfsbrowser'),
+                            title: 'HDFS Browser',
                             width: 800,
                             height: 400,
                             modal: true,
@@ -78,7 +78,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._Grid', {
                             buttonAlign: 'center',
                             buttons: [
                                 {
-                                    text: message.msg('workflow.common.confirm'),
+                                    text: 'Confirm',
                                     handler: function () {
                                         var selection = Ext.ComponentQuery.query('hdfsFilePanelForDesigner')[0].getSelectionModel().getSelection();
                                         var selectionDirectory = Ext.ComponentQuery.query('hdfsDirectoryPanelForDesigner')[0].getSelectionModel().getSelection();
@@ -101,12 +101,12 @@ Ext.define('Flamingo.view.workflowdesigner.property._Grid', {
                                             dirRowEditor.startEdit(dirStore.getCount() - 1, 0);
                                             popWindow.close();
                                         } else {
-                                            error(message.msg('workflow.common.warn'), message.msg('workflow.common.hdfsbrowser.filedir.warn'));
+                                            error('Warning', 'Select a file or directory.');
                                         }
                                     }
                                 },
                                 {
-                                    text: message.msg('workflow.common.cancel'),
+                                    text: 'Cancel',
                                     handler: function () {
                                         popWindow.close();
                                     }
@@ -118,7 +118,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._Grid', {
             } else {
                 plus = {
                     type: 'plus',
-                    tooltip: message.msg('workflow.common.add'),
+                    tooltip: 'Add',
                     handler: function (event, toolEl, panel) {
                         // 그리드의 row 를 추가한다.
                         var grid = panel.up('_grid'),
@@ -135,7 +135,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._Grid', {
                 plus,
                 {
                     type: 'minus',
-                    tooltip: message.msg('workflow.common.remove'),
+                    tooltip: 'Remove',
                     handler: function (event, toolEl, panel) {
                         // 그리드의 row 를 삭제한다.
                         var grid = panel.up('_grid'),
@@ -146,7 +146,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._Grid', {
                 },
                 {
                     type: 'close',
-                    tooltip: message.msg('workflow.common.remove.all'),
+                    tooltip: 'Remove All',
                     handler: function (event, toolEl, panel) {
                         // 그리드의 모든 row 를 삭제한다.
                         var grid = panel.up('_grid'),

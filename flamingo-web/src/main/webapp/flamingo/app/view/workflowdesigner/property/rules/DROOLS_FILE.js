@@ -34,7 +34,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.rules.DROOLS_FILE', {
 
     items: [
         {
-            title: message.msg('workflow.common.parameter'),
+            title: 'Parameter',
             xtype: 'form',
             border: false,
             layout: {
@@ -47,7 +47,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.rules.DROOLS_FILE', {
             items: [
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.common.logDelimiter'),
+                    fieldLabel: 'Log Delimiter',
                     layout: 'hbox',
                     items: [
                         {
@@ -64,34 +64,34 @@ Ext.define('Flamingo.view.workflowdesigner.property.rules.DROOLS_FILE', {
                                 fields: ['name', 'value', 'description'],
                                 data: [
                                     {
-                                        name: message.msg('workflow.common.delimiter.double.colon'),
+                                        name: 'Double Colon',
                                         value: '::',
                                         description: '::'
                                     },
                                     {
-                                        name: message.msg('workflow.common.delimiter.comma'),
+                                        name: 'Comma',
                                         value: ',',
                                         description: ','
                                     },
                                     {
-                                        name: message.msg('workflow.common.delimiter.pipe'),
+                                        name: 'Pipe',
                                         value: '|',
                                         description: '|'
                                     },
                                     {
-                                        name: message.msg('workflow.common.delimiter.tab'),
+                                        name: 'Tab',
                                         value: '\u0009',
                                         description: '\\t'
                                     },
                                     {
-                                        name: message.msg('workflow.common.delimiter.blank'),
+                                        name: 'Blank',
                                         value: '\u0020',
                                         description: ' '
                                     },
                                     {
-                                        name: message.msg('workflow.common.delimiter.user.def'),
+                                        name: 'User Defined',
                                         value: 'CUSTOM',
-                                        description: message.msg('workflow.common.delimiter.user.def')
+                                        description: 'User Defined'
                                     }
                                 ]
                             }),
@@ -126,14 +126,14 @@ Ext.define('Flamingo.view.workflowdesigner.property.rules.DROOLS_FILE', {
                 },
                 {
                     xtype: 'textfield',
-                    fieldLabel: message.msg('workflow.common.logColumnNames'),
+                    fieldLabel: 'Log Column Names',
                     name: 'columnNames',
-                    emptyText: message.msg('workflow.common.logColumnNamesEmpty'),
+                    emptyText: 'Separated by \',\'',
                     allowBlank: false
                 },
                 {
                     xtype: '_browserField',
-                    fieldLabel: message.msg('workflow.rules.drools.rulePath'),
+                    fieldLabel: 'Drools File Path in HDFS',
                     name: 'rulePath',
                     allowBlank: false,
                     readOnly: false,
@@ -142,7 +142,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.rules.DROOLS_FILE', {
             ]
         },
         {
-            title: message.msg('workflow.common.mapreduce'),
+            title: 'MapReduce',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -157,7 +157,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.rules.DROOLS_FILE', {
                 {
                     xtype: 'textfield',
                     name: 'jar',
-                    fieldLabel: message.msg('workflow.common.mapreduce.jar'),
+                    fieldLabel: 'JAR Path',
                     value: ETL.JAR,
                     disabledCls: 'disabled-plain',
                     readOnly: true
@@ -165,7 +165,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.rules.DROOLS_FILE', {
                 {
                     xtype: 'textfield',
                     name: 'driver',
-                    fieldLabel: message.msg('workflow.common.mapreduce.driver'),
+                    fieldLabel: 'Driver',
                     value: 'drools',
                     disabledCls: 'disabled-plain',
                     readOnly: true
@@ -173,7 +173,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.rules.DROOLS_FILE', {
             ]
         },
         {
-            title: message.msg('workflow.common.inout.path'),
+            title: 'I/O Path',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -187,12 +187,12 @@ Ext.define('Flamingo.view.workflowdesigner.property.rules.DROOLS_FILE', {
             items: [
                 {
                     xtype: '_inputGrid',
-                    title: message.msg('workflow.common.input.path'),
+                    title: 'Input Path',
                     flex: 1
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.common.output.path'),
+                    fieldLabel: 'Output path',
                     defaults: {
                         hideLabel: true,
                         margin: "5 0 0 0"  // Same as CSS ordering (top, right, bottom, left)
@@ -211,7 +211,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.rules.DROOLS_FILE', {
             ]
         },
         {
-            title: message.msg('workflow.common.hadoop.conf'),
+            title: 'Hadoop Configuration',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -226,7 +226,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.rules.DROOLS_FILE', {
                 {
                     xtype: 'displayfield',
                     height: 20,
-                    value: message.msg('workflow.common.hadoop.conf.guide')
+                    value: 'Enter a key and a value of Configuration.set () method used in Hadoop Mapreduce.'
                 },
                 {
                     xtype: '_keyValueGrid',
@@ -235,7 +235,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.rules.DROOLS_FILE', {
             ]
         },
         {
-            title: message.msg('common.references'),
+            title: 'References',
             xtype: 'form',
             border: false,
             autoScroll: true,

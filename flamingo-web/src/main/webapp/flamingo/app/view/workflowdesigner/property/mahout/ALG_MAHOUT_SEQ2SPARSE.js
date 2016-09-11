@@ -38,7 +38,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_SEQ2SPARSE
 
     items: [
         {
-            title: message.msg('workflow.common.parameter'),
+            title: 'Parameter',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -53,48 +53,48 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_SEQ2SPARSE
                 {
                     xtype: 'textfield',
                     name: 'minSupport',
-                    fieldLabel: message.msg('workflow.am.seq2sparse.min.support'),
+                    fieldLabel: 'Minimum Support',
                     value: '2',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'analyzerName',
-                    fieldLabel: message.msg('workflow.am.seq2sparse.min.support'),
+                    fieldLabel: 'Minimum Support',
                     value: '2',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'chunkSize',
-                    fieldLabel: message.msg('workflow.am.seq2sparse.chunk.size'),
+                    fieldLabel: 'Chunk Size(MB)',
                     value: '100',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'minDF',
-                    fieldLabel: message.msg('workflow.am.seq2sparse.min.document.frequency'),
+                    fieldLabel: 'Min frequency within the document',
                     value: '1',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'maxDFSigma',
-                    fieldLabel: message.msg('workflow.am.seq2sparse.max.document.frequency.sigma'),
+                    fieldLabel: 'Max frequency within the document',
                     value: '-1.0',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'maxDFPercent',
-                    fieldLabel: message.msg('workflow.am.seq2sparse.max.document.frequency.percent'),
+                    fieldLabel: 'Max Document frequency percent',
                     value: '99',
                     allowBlank: true
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.am.seq2sparse.weight'),
+                    fieldLabel: 'Weight',
                     layout: 'hbox',
                     items: [
                         {
@@ -125,33 +125,33 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_SEQ2SPARSE
                     xtype: 'textfield',
                     name: 'norm',
                     itemId: 'normVal',
-                    fieldLabel: message.msg('workflow.am.seq2sparse.normalization')
+                    fieldLabel: 'Normalization'
                 },
                 {
                     xtype: 'textfield',
                     name: 'minLLR',
-                    fieldLabel: message.msg('workflow.am.seq2sparse.min.log.ratio'),
+                    fieldLabel: 'Minimum log Likelihood Ratio',
                     value: '1.0',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'numReducers',
-                    fieldLabel: message.msg('workflow.am.seq2sparse.num_reducer'),
+                    fieldLabel: 'Num. of Reducers',
                     value: '1',
                     allowBlank: true
                 },
                 {
                     xtype: 'textfield',
                     name: 'maxNGramSize',
-                    fieldLabel: message.msg('workflow.am.seq2sparse.max.ngrams.size'),
+                    fieldLabel: 'Maximum Ngram Size',
                     tooltip: '2=bigrams, 3=trigrams, etc.',
                     value: '1',
                     allowBlank: true
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.am.testnb.overwrite'),
+                    fieldLabel: 'Overwrite output directory',
                     defaultType: 'checkboxfield',
                     items: [
                         {
@@ -161,7 +161,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_SEQ2SPARSE
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.am.seq2sparse.sequential.access.vector'),
+                    fieldLabel: 'Sequential Access Vector',
                     defaultType: 'checkboxfield',
                     items: [
                         {
@@ -171,7 +171,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_SEQ2SPARSE
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.am.seq2sparse.named.vector'),
+                    fieldLabel: 'Named Vector',
                     defaultType: 'checkboxfield',
                     items: [
                         {
@@ -181,7 +181,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_SEQ2SPARSE
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.am.seq2sparse.log_normal'),
+                    fieldLabel: 'Log Normalization',
                     defaultType: 'checkboxfield',
                     items: [
                         {
@@ -192,7 +192,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_SEQ2SPARSE
             ]
         },
         {
-            title: message.msg('workflow.common.mapreduce'),
+            title: 'MapReduce',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -207,7 +207,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_SEQ2SPARSE
                 {
                     xtype: 'textfield',
                     name: 'jar',
-                    fieldLabel: message.msg('workflow.common.mahaut.jar'),
+                    fieldLabel: 'Mahout JAR',
                     value: MAHOUT.JAR,
                     disabledCls: 'disabled-plain',
                     readOnly: true
@@ -215,20 +215,20 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_SEQ2SPARSE
                 {
                     xtype: 'textfield',
                     name: 'driver',
-                    fieldLabel: message.msg('workflow.common.mapreduce.driver'),
+                    fieldLabel: 'Driver',
                     value: 'org.apache.mahout.vectorizer.SparseVectorsFromSequenceFiles',
                     disabledCls: 'disabled-plain',
                     readOnly: true
                 },
                 {
                     xtype: '_dependencyGrid',
-                    title: message.msg('workflow.common.mapreduce.jar.title'),
+                    title: 'Dependency JAR',
                     flex: 1
                 }
             ]
         },
         {
-            title: message.msg('workflow.common.inout.path'),
+            title: 'I/O Path',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -242,7 +242,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_SEQ2SPARSE
             items: [
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.common.input.path'),
+                    fieldLabel: 'Input Path',
                     defaults: {
                         hideLabel: true
                     },
@@ -259,7 +259,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_SEQ2SPARSE
                 },
                 {
                     xtype: 'fieldcontainer',
-                    fieldLabel: message.msg('workflow.common.output.path'),
+                    fieldLabel: 'Output path',
                     defaults: {
                         hideLabel: true
                     },
@@ -283,7 +283,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_SEQ2SPARSE
             }
         },
         {
-            title: message.msg('workflow.common.hadoop.conf'),
+            title: 'Hadoop Configuration',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -298,7 +298,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_SEQ2SPARSE
                 {
                     xtype: 'displayfield',
                     height: 20,
-                    value: message.msg('workflow.common.hadoop.conf.guide')
+                    value: 'Enter a key and a value of Configuration.set () method used in Hadoop Mapreduce.'
                 },
                 {
                     xtype: '_keyValueGrid',
@@ -307,7 +307,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.mahout.ALG_MAHOUT_SEQ2SPARSE
             ]
         },
         {
-            title: message.msg('common.references'),
+            title: 'References',
             xtype: 'form',
             border: false,
             autoScroll: true,

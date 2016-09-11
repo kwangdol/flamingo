@@ -30,7 +30,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._EnvironmentGrid', {
     columnLines: true,
     columns: [
         {
-            text: message.msg('workflow.common.key'),
+            text: 'Key',
             dataIndex: 'environmentKeys',
             width: 100,
             editor: {
@@ -44,7 +44,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._EnvironmentGrid', {
             }
         },
         {
-            text: message.msg('workflow.common.value'),
+            text: 'Value',
             dataIndex: 'environmentValues',
             width: 100,
             editor: {

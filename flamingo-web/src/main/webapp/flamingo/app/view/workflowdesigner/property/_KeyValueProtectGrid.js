@@ -31,7 +31,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._KeyValueProtectGrid', {
     columnLines: true,
     columns: [
         {
-            text: message.msg('workflow.common.key'),
+            text: 'Key',
             dataIndex: 'keys',
             flex: 1,
             editor: {
@@ -45,7 +45,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._KeyValueProtectGrid', {
             }
         },
         {
-            text: message.msg('workflow.common.value'),
+            text: 'Value',
             dataIndex: 'values',
             flex: 1,
             editor: {
@@ -59,7 +59,7 @@ Ext.define('Flamingo.view.workflowdesigner.property._KeyValueProtectGrid', {
         },
         {
             xtype: 'checkcolumn',
-            text: message.msg('workflow.common.fix.value'),
+            text: 'Fix Value',
             dataIndex: 'protected',
             width: 50,
             editor: {}

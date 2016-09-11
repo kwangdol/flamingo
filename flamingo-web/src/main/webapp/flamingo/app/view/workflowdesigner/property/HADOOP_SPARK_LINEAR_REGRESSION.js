@@ -45,13 +45,13 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SPARK_LINEAR_REGRESSI
             items: [
                 {
                     xtype: 'displayfield',
-                    value: message.msg('workflow.he.spark.display.spark'),
+                    value: 'When Spark Cluster is running on YARN, Spark Master URL must be set to a yarn-cluster. Total Executor CORE parameter is ignored. <a href\="https\://spark.apache.org/docs/latest/running-on-yarn.html" target\="_blank">Running Spark on YARN</a> <a href\="https\://spark.apache.org/docs/latest/submitting-applications.html" target\="_blank">Submitting Applications</a>',
                     height: 40
                 },
                 {
                     xtype: '_jarBrowserField',
                     name: 'jar',
-                    fieldLabel: message.msg('workflow.he.spark.jar'),
+                    fieldLabel: 'Spark JAR',
                     allowBlank: false,
                     listeners: {
                         beforerender: function (comp, eOpts) {
@@ -64,7 +64,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SPARK_LINEAR_REGRESSI
                 {
                     xtype: 'textfield',
                     name: 'driver',
-                    fieldLabel: message.msg('workflow.he.spark.driver'),
+                    fieldLabel: 'Spark Driver',
                     value: 'org.opencloudengine.flamingo2.spark.mlib.linear.regression.SparkLinearRegression',
                     allowBlank: false
                 },
@@ -76,8 +76,8 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SPARK_LINEAR_REGRESSI
                     inputValue: "0",
                     uncheckedValue: "0",
                     value: 0,
-                    fieldLabel: message.msg('workflow.he.spark.yarn'),
-                    boxLabel: message.msg('workflow.common.use'),
+                    fieldLabel: 'YARN',
+                    boxLabel: 'Use',
                     listeners: {
                         beforerender: function (comp, eOpts) {
                             comp.setValue(false);
@@ -104,7 +104,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SPARK_LINEAR_REGRESSI
                     xtype: 'textfield',
                     name: 'sparkMasterUrl',
                     itemId: 'sparkMasterUrl',
-                    fieldLabel: message.msg('workflow.he.spark.masterurl'),
+                    fieldLabel: 'Spark Master URL',
                     emptyText: 'Standalone Mode',
                     value: 'local[1]',
                     allowBlank: false
@@ -112,7 +112,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SPARK_LINEAR_REGRESSI
                 {
                     xtype: 'textfield',
                     name: 'totalExecutorCores',
-                    fieldLabel: message.msg('workflow.he.spark.totalexecores'),
+                    fieldLabel: 'Total Executor COREs',
                     emptyText: 'Standalone Mode (--total-executor-cores)',
                     value : 2,
                     allowBlank: true
@@ -120,7 +120,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SPARK_LINEAR_REGRESSI
                 {
                     xtype: 'textfield',
                     name: 'executorMemory',
-                    fieldLabel: message.msg('workflow.he.spark.exememory'),
+                    fieldLabel: 'Executor Memory',
                     emptyText: 'YARN & Standalone Mode (--executor-memory)',
                     value : '2g',
                     allowBlank: true
@@ -128,7 +128,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SPARK_LINEAR_REGRESSI
                 {
                     xtype: 'textfield',
                     name: 'numExecutors',
-                    fieldLabel: message.msg('workflow.he.spark.exe'),
+                    fieldLabel: 'Executors',
                     emptyText: 'YARN & Standalone Mode (--num-executors)',
                     value: 2,
                     allowBlank: true
@@ -136,7 +136,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SPARK_LINEAR_REGRESSI
                 {
                     xtype: 'textfield',
                     name: 'driverMemory',
-                    fieldLabel: message.msg('workflow.he.spark.drivermemory'),
+                    fieldLabel: 'Driver Memory',
                     emptyText: 'YARN Mode (--driver-memory)',
                     value: '2g',
                     allowBlank: true
@@ -144,7 +144,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SPARK_LINEAR_REGRESSI
                 {
                     xtype: 'textfield',
                     name: 'queue',
-                    fieldLabel: message.msg('workflow.he.spark.queue'),
+                    fieldLabel: 'Queue',
                     emptyText: 'YARN Mode (--queue)',
                     value: 'default',
                     allowBlank: true
@@ -152,7 +152,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SPARK_LINEAR_REGRESSI
                 {
                     xtype: 'textfield',
                     name: 'executorCores',
-                    fieldLabel: message.msg('workflow.he.spark.execores'),
+                    fieldLabel: 'Executor COREs',
                     emptyText: 'YARN Mode (--executor-cores)',
                     value: 2,
                     allowBlank: true
@@ -451,7 +451,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SPARK_LINEAR_REGRESSI
             ]
         },
         {
-            title: message.msg('workflow.common.dependency.jar'),
+            title: 'Dependency (JAR)',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -465,18 +465,18 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SPARK_LINEAR_REGRESSI
             items: [
                 {
                     xtype: 'displayfield',
-                    value: message.msg('workflow.he.spark.display.jar')
+                    value: 'Adds necessary dependencies for Spark jobs.'
                 },
                 {
                     xtype: '_jarGrid',
-                    title: message.msg('workflow.common.dependency.jar'),
+                    title: 'Dependency (JAR)',
                     name: 'dependencies',
                     flex: 1
                 }
             ]
         },
         {
-            title: message.msg('workflow.common.hadoop.conf'),
+            title: 'Hadoop Configuration',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -490,7 +490,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SPARK_LINEAR_REGRESSI
             items: [
                 {
                     xtype: 'displayfield',
-                    value: message.msg('workflow.he.spark.display.conf')
+                    value: 'Set additional key\=value when executing Spark Jobs. Parameters for the --conf option.'
                 },
                 {
                     xtype: '_keyValueGrid',
@@ -499,7 +499,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SPARK_LINEAR_REGRESSI
             ]
         },
         {
-            title: message.msg('workflow.common.command'),
+            title: 'Command Parameter',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -513,7 +513,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SPARK_LINEAR_REGRESSI
             items: [
                 {
                     xtype: 'displayfield',
-                    value: message.msg('workflow.he.spark.display.com')
+                    value: 'Set necessary parameters for Spark jobs. i.e. HDFS input path, output path, etc.'
                 },
                 {
                     xtype: '_commandlineGrid',
@@ -522,7 +522,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SPARK_LINEAR_REGRESSI
             ]
         },
         {
-            title: message.msg('common.references'),
+            title: 'References',
             xtype: 'form',
             border: false,
             autoScroll: true,

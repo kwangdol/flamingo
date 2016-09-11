@@ -76,8 +76,8 @@ Ext.define('Flamingo.view.workflowdesigner.workflowTree.WorkflowTreeController',
 
         if (record.data.iconCls == 'designer_not_load') {
             Ext.MessageBox.show({
-                title: message.msg('designer.title.wf.loading'),
-                message: message.msg('designer.msg.wf.loading.warn'),
+                title: 'Load workflow',
+                message: 'The selected workflow does not contain drawing information.',
                 buttons: Ext.MessageBox.OK,
                 icon: Ext.MessageBox.WARNING
             });
@@ -87,8 +87,8 @@ Ext.define('Flamingo.view.workflowdesigner.workflowTree.WorkflowTreeController',
         if (record.data.cls != 'folder' && record.data.id != '/') {
             var canvas = query('canvas');
             Ext.MessageBox.show({
-                title: message.msg('designer.title.wf.loading'),
-                message: Ext.String.format(message.msg('designer.msg.wf.loading.yesno'), record.data.text),
+                title: 'Load workflow',
+                message: Ext.String.format('Do you want to load "{0}"?', record.data.text),
                 buttons: Ext.MessageBox.YESNO,
                 icon: Ext.MessageBox.INFO,
                 fn: function handler(btn) {
@@ -99,7 +99,7 @@ Ext.define('Flamingo.view.workflowdesigner.workflowTree.WorkflowTreeController',
                         // 폴더인 경우에는 경로 메시지를 띄우고 노드의 경우에는 정상 처리한다.
                         if (node.leaf) {
                             var mask = new Ext.LoadMask(query('canvas'), {
-                                msg: message.msg('fs.hdfs.msg.please.wait')
+                                msg: 'Please Wait.'
                             });
                             mask.show();
 
@@ -149,8 +149,8 @@ Ext.define('Flamingo.view.workflowdesigner.workflowTree.WorkflowTreeController',
                                     mask.hide();
 
                                     Ext.MessageBox.show({
-                                        title: message.msg('designer.title.wf.loading'),
-                                        message: message.msg('designer.msg.wf.loading.cause') + response.responseText,
+                                        title: 'Load workflow',
+                                        message: 'We were unable to load the workflow. Cause\:' + response.responseText,
                                         buttons: Ext.MessageBox.OK,
                                         icon: Ext.MessageBox.WARNING
                                     });
@@ -160,8 +160,8 @@ Ext.define('Flamingo.view.workflowdesigner.workflowTree.WorkflowTreeController',
                             mask.hide();
 
                             Ext.MessageBox.show({
-                                title: message.msg('designer.title.wf.loading'),
-                                message: message.msg('designer.msg.wf.loading.choice'),
+                                title: 'Load workflow',
+                                message: 'Please select a workflow.',
                                 buttons: Ext.MessageBox.OK,
                                 icon: Ext.MessageBox.WARNING
                             });
@@ -179,24 +179,24 @@ Ext.define('Flamingo.view.workflowdesigner.workflowTree.WorkflowTreeController',
         var contextMenu = new Ext.menu.Menu({
             items: [
                 {
-                    text: message.msg('designer.title.create.folder'),
+                    text: 'Create Folder',
                     iconCls: 'common-directory-add',
-                    tooltip: message.msg('designer.tooltip.create'),
+                    tooltip: 'Create folder',
                     itemId: 'createFolderMenu',
                     handler: this.onCreateFolderMenuClick
                 }, '-',
                 {
-                    text: message.msg('designer.label.wf.and.folder.delete'),
+                    text: 'Delete a workflow and a folder',
                     iconCls: 'common-directory-remove',
-                    tooltip: message.msg('designer.tooltip.delete'),
+                    tooltip: 'Delete folder',
                     itemId: 'deleteFolderMenu',
                     handler: this.onDeleteWorkflowMenuClick
                 }, '-',
                 {
-                    text: message.msg('designer.label.wf.and.folder.rename'),
+                    text: 'Rename a workflow and a folder name',
                     iconCls: 'common-directory-rename',
                     itemId: 'renameMenu',
-                    tooltip: message.msg('designer.tooltip.msg.rename'),
+                    tooltip: 'Change name',
                     handler: this.onRenameFolderMenuClick
                 }
             ]
@@ -225,8 +225,8 @@ Ext.define('Flamingo.view.workflowdesigner.workflowTree.WorkflowTreeController',
 
         if (isLeaf) {
             Ext.MessageBox.show({
-                title: message.msg('designer.title.create.folder'),
-                message: message.msg('designer.msg.select.folder'),
+                title: 'Create Folder',
+                message: 'Please select a folder',
                 buttons: Ext.MessageBox.OK,
                 icon: Ext.MessageBox.WARNING
             });
@@ -234,8 +234,8 @@ Ext.define('Flamingo.view.workflowdesigner.workflowTree.WorkflowTreeController',
         }
 
         Ext.MessageBox.show({
-            title: message.msg('designer.title.create.folder'),
-            message: message.msg('designer.msg.enter.to.create.folder.name'),
+            title: 'Create Folder',
+            message: 'Please enter a folder name to create.',
             width: 300,
             prompt: true,
             buttons: Ext.MessageBox.YESNO,
@@ -265,7 +265,7 @@ Ext.define('Flamingo.view.workflowdesigner.workflowTree.WorkflowTreeController',
                                 updateNode(query('#workflowTreePanel'));
                             } else {
                                 Ext.MessageBox.show({
-                                    title: message.msg('designer.title.create.folder'),
+                                    title: 'Create Folder',
                                     message: obj.error.cause,
                                     buttons: Ext.MessageBox.OK,
                                     icon: Ext.MessageBox.WARNING
@@ -274,8 +274,8 @@ Ext.define('Flamingo.view.workflowdesigner.workflowTree.WorkflowTreeController',
                         },
                         function (response) {
                             Ext.MessageBox.show({
-                                title: message.msg('designer.title.create.folder'),
-                                message: format(message.msg('designer.msg.cannot.create.folder'), response.statusText, response.status),
+                                title: 'Create Folder',
+                                message: format('The folder couldn`t be created. Cause\: {0}({1})', response.statusText, response.status),
                                 buttons: Ext.MessageBox.OK,
                                 icon: Ext.MessageBox.WARNING
                             });
@@ -295,8 +295,8 @@ Ext.define('Flamingo.view.workflowdesigner.workflowTree.WorkflowTreeController',
 
         if (!node) {
             Ext.MessageBox.show({
-                title: message.msg('designer.label.wf.and.folder.delete'),
-                message: message.msg('designer.label.select.folder.or.workflow.for.delete'),
+                title: 'Delete a workflow and a folder',
+                message: 'Select a folder or workflow to remove.',
                 buttons: Ext.MessageBox.OK,
                 icon: Ext.MessageBox.WARNING
             });
@@ -305,8 +305,8 @@ Ext.define('Flamingo.view.workflowdesigner.workflowTree.WorkflowTreeController',
 
         if (node.get('id') == '/') {
             Ext.MessageBox.show({
-                title: message.msg('designer.label.wf.and.folder.delete'),
-                message: message.msg('designer.label.cant.delete.root.folder'),
+                title: 'Delete a workflow and a folder',
+                message: 'You cannot delete the ROOT directory.',
                 buttons: Ext.MessageBox.OK,
                 icon: Ext.MessageBox.WARNING
             });
@@ -315,8 +315,8 @@ Ext.define('Flamingo.view.workflowdesigner.workflowTree.WorkflowTreeController',
 
         var selectedNode = node;
         Ext.MessageBox.show({
-            title: message.msg('designer.label.wf.and.folder.delete'),
-            message: Ext.String.format(message.msg('designer.msg.delete.yn'), node.get('text')),
+            title: 'Delete a workflow and a folder',
+            message: Ext.String.format('Are you sure you want to delete "{0}"?', node.get('text')),
             buttons: Ext.MessageBox.YESNO,
             icon: Ext.MessageBox.WARNING,
             fn: function handler(btn) {
@@ -356,14 +356,14 @@ Ext.define('Flamingo.view.workflowdesigner.workflowTree.WorkflowTreeController',
                                     canvas.graph.clear();
 
                                     if (canvas.graph) {
-                                        startNode = canvas.graph.drawShape([100, 100], new OG.E_Start(message.msg('common.start')), [30, 30]);
-                                        endNode = canvas.graph.drawShape([700, 100], new OG.E_End(message.msg('common.end')), [30, 30]);
+                                        startNode = canvas.graph.drawShape([100, 100], new OG.E_Start('Start'), [30, 30]);
+                                        endNode = canvas.graph.drawShape([700, 100], new OG.E_End('End'), [30, 30]);
 
                                         canvas.graph.setCustomData(startNode, {
                                             metadata: {
                                                 "type": "START",
                                                 "identifier": "START",
-                                                "name": message.msg('common.start'),
+                                                "name": 'Start',
                                                 "minPrevNodeCounts": "0",
                                                 "maxPrevNodeCounts": "0",
                                                 "minNextNodeCounts": "1",
@@ -378,7 +378,7 @@ Ext.define('Flamingo.view.workflowdesigner.workflowTree.WorkflowTreeController',
                                             metadata: {
                                                 "type": "END",
                                                 "identifier": "END",
-                                                "name": message.msg('common.end'),
+                                                "name": 'End',
                                                 "minPrevNodeCounts": "1",
                                                 "maxPrevNodeCounts": "N",
                                                 "minNextNodeCounts": "0",
@@ -393,8 +393,8 @@ Ext.define('Flamingo.view.workflowdesigner.workflowTree.WorkflowTreeController',
                                 }
                             } else {
                                 Ext.MessageBox.show({
-                                    title: message.msg('designer.label.wf.and.folder.delete'),
-                                    message: message.msg('designer.cannot.delete.selection') + obj.error.message,
+                                    title: 'Delete a workflow and a folder',
+                                    message: 'You cannot delete the selected row.<br/><br/>Cause\:' + obj.error.message,
                                     buttons: Ext.MessageBox.OK,
                                     icon: Ext.MessageBox.WARNING
                                 });
@@ -402,8 +402,8 @@ Ext.define('Flamingo.view.workflowdesigner.workflowTree.WorkflowTreeController',
                         },
                         function (response) {
                             Ext.MessageBox.show({
-                                title: message.msg('designer.label.wf.and.folder.delete'),
-                                message: message.msg('designer.cannot.delete.selection2'),
+                                title: 'Delete a workflow and a folder',
+                                message: 'You cannot delete the selected row.',
                                 buttons: Ext.MessageBox.OK,
                                 icon: Ext.MessageBox.WARNING
                             });
@@ -422,8 +422,8 @@ Ext.define('Flamingo.view.workflowdesigner.workflowTree.WorkflowTreeController',
         var selected = treepanel.getSelectionModel().getLastSelected();
 
         Ext.MessageBox.show({
-            title: message.msg('designer.title.change.folder.or.workflow.name'),
-            message: message.msg('designer.msg.enter.folder.or.workflow.name'),
+            title: 'Change Folder or Workflow Name',
+            message: 'Please enter a name of folder or workflow to change.',
             width: 300,
             prompt: true,
             buttons: Ext.MessageBox.YESNO,
@@ -453,7 +453,7 @@ Ext.define('Flamingo.view.workflowdesigner.workflowTree.WorkflowTreeController',
 //                                query('#workflowTreePanel').getStore().load();
                             } else {
                                 Ext.MessageBox.show({
-                                    title: message.msg('designer.title.change.folder.or.workflow.name'),
+                                    title: 'Change Folder or Workflow Name',
                                     message: obj.error.cause,
                                     buttons: Ext.MessageBox.OK,
                                     icon: Ext.MessageBox.WARNING
@@ -462,8 +462,8 @@ Ext.define('Flamingo.view.workflowdesigner.workflowTree.WorkflowTreeController',
                         },
                         function (response) {
                             Ext.MessageBox.show({
-                                title: message.msg('designer.title.change.folder.or.workflow.name'),
-                                message: format(message.msg('designer.msg.cannot.change.name'), response.statusText, response.status),
+                                title: 'Change Folder or Workflow Name',
+                                message: format('The name couldn`t be changed. Cause\: {0}({1})', response.statusText, response.status),
                                 buttons: Ext.MessageBox.OK,
                                 icon: Ext.MessageBox.WARNING
                             });

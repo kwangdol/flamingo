@@ -38,7 +38,7 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.events.onCanvasNode', {
                 var _nextShapes = canvas.graph.getNextShapes(_shapeEle);
                 for (var i = 0; i < _nextShapes.length; i++) {
                     if (_nextShapes[i].id === fromElement.id) {
-                        App.UI.errormsg(message.msg('workflow.common.warn'), message.msg('workflow.common.not.connect.recursive'));
+                        App.UI.errormsg('Warning', 'Recursive connection is not available.');
                         return false;
                     }
 
@@ -52,7 +52,7 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.events.onCanvasNode', {
         // 0. 이미 연결된 노드가 있는 경우 체크
         for (var i = 0; i < prevShapes.length; i++) {
             if (prevShapes[i].id === fromElement.id) {
-                App.UI.errormsg(message.msg('workflow.common.warn'), message.msg('workflow.common.already.connected'));
+                App.UI.errormsg('Warning', 'This node is already connected.');
                 return false;
             }
         }
@@ -64,33 +64,33 @@ Ext.define('Flamingo.view.workflowdesigner.canvas.events.onCanvasNode', {
 
         // 2. 상호 연결 불가 노드 체크
         if (fromNodeMeta.notAllowedNextTypes.indexOf(toNodeMeta.type) >= 0) {
-            App.UI.errormsg(message.msg('workflow.common.warn'), message.msg('workflow.common.not.connect'));
+            App.UI.errormsg('Warning', 'You cannot connect.');
             return false;
         }
         if (toNodeMeta.notAllowedPrevTypes.indexOf(fromNodeMeta.type) >= 0) {
-            App.UI.errormsg(message.msg('workflow.common.warn'), message.msg('workflow.common.not.connect'));
+            App.UI.errormsg('Warning', 'You cannot connect.');
             return false;
         }
         if (fromNodeMeta.notAllowedNextNodes.indexOf(toNodeMeta.identifier) >= 0) {
-            App.UI.errormsg(message.msg('workflow.common.warn'), message.msg('workflow.common.not.connect'));
+            App.UI.errormsg('Warning', 'You cannot connect.');
             return false;
         }
         if (toNodeMeta.notAllowedPrevNodes.indexOf(fromNodeMeta.identifier) >= 0) {
-            App.UI.errormsg(message.msg('workflow.common.warn'), message.msg('workflow.common.not.connect'));
+            App.UI.errormsg('Warning', 'You cannot connect.');
             return false;
         }
 
         // 3. 이전 노드 연결 갯수 체크
         if (toNodeMeta.maxPrevNodeCounts >= 0 &&
             canvas.graph.getPrevShapes(toElement).length >= toNodeMeta.maxPrevNodeCounts) {
-            App.UI.errormsg(message.msg('workflow.common.warn'), message.msg('workflow.common.not.connect.more'));
+            App.UI.errormsg('Warning', 'You cannot connect anymore.');
             return false;
         }
 
         // 4. 이후 노드 연결 갯수 체크
         if (fromNodeMeta.maxNextNodeCounts >= 0 &&
             canvas.graph.getNextShapes(fromElement).length >= fromNodeMeta.maxNextNodeCounts) {
-            App.UI.errormsg(message.msg('workflow.common.warn'), message.msg('workflow.common.not.connect.more'));
+            App.UI.errormsg('Warning', 'You cannot connect anymore.');
             return false;
         }
 

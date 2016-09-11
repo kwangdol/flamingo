@@ -39,7 +39,7 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SQOOP_IMPORT', {
 
     items: [
         {
-            title: message.msg('workflow.he.sqoop.source.database'),
+            title: 'Source (Database)',
             xtype: 'form',
             border: false,
             autoScroll: true,
@@ -51,30 +51,30 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SQOOP_IMPORT', {
             items: [
                 {
                     name: 'jdbcUrl',
-                    fieldLabel: message.msg('workflow.he.sqoop.jdbc.uri')
+                    fieldLabel: 'JDBC URI'
                 },
                 {
                     name: 'jdbcDriver',
-                    fieldLabel: message.msg('workflow.he.sqoop.jdbc.driver')
+                    fieldLabel: 'JDBC Driver'
                 },
                 {
                     name: 'sqoopUsername',
-                    fieldLabel: message.msg('workflow.he.sqoop.jdbc.username')
+                    fieldLabel: 'Username'
                 },
                 {
                     name: 'sqoopPassword',
                     inputType: 'password',
-                    fieldLabel: message.msg('workflow.he.sqoop.jdbc.password')
+                    fieldLabel: 'Password'
                 },
                 {
                     name: 'sqoopTable',
-                    fieldLabel: message.msg('workflow.he.sqoop.jdbc.table')
+                    fieldLabel: 'JDBC Table'
                 }
             ]
         },
         {
             xtype: 'form',
-            title: message.msg('workflow.he.sqoop.destination.hdfs'),
+            title: 'Destination (HDFS)',
             border: false,
             autoScroll: true,
             defaults: {
@@ -85,13 +85,13 @@ Ext.define('Flamingo.view.workflowdesigner.property.HADOOP_SQOOP_IMPORT', {
             items: [
                 {
                     name: 'output',
-                    fieldLabel: message.msg('workflow.he.sqoop.hdfs.path'),
+                    fieldLabel: 'HDFS Path',
                     xtype: '_browserField'
                 }
             ]
         },
         {
-            title: message.msg('common.references'),
+            title: 'References',
             xtype: 'form',
             border: false,
             autoScroll: true,
