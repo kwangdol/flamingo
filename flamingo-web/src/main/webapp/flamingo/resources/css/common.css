@@ -4,7 +4,8 @@
 @import 'https://fonts.googleapis.com/css?family=Montserrat';
 
 @import url("style.css");
-
+@import url("icons.css");
+@import url("node-list.css");
 
 /*hidden*/
 #accessibility,.skipnavi { position: absolute ; width: 0px; height: 0px; font-size: 0px; line-height: 0px; overflow: hidden; visibility: hidden; text-indent: -1000px; }
