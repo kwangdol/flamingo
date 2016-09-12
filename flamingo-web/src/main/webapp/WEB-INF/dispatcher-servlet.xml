@@ -37,7 +37,7 @@
         </mvc:message-converters>
     </mvc:annotation-driven>
 
-        <mvc:resources mapping="/**" location="/resources/"/>
+    <mvc:resources mapping="/**" location="/flamingo/"/>
 
     <context:component-scan base-package="org.exem.flamingo"/>
 
