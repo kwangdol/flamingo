@@ -7,80 +7,85 @@
  */
 OG.common.Util = {
 
-	isEmpty    : function (v, allowBlank) {
+	isEmpty: function (v, allowBlank) {
 		return v === null || v === undefined || ((OG.Util.isArray(v) && !v.length)) || (!allowBlank ? v === '' : false);
 	},
-	isArray    : function (v) {
+	isArray: function (v) {
 		return Object.prototype.toString.apply(v) === '[object Array]';
 	},
-	isDate     : function (v) {
+	isDate: function (v) {
 		return Object.prototype.toString.apply(v) === '[object Date]';
 	},
-	isObject   : function (v) {
+	isObject: function (v) {
 		return !!v && Object.prototype.toString.call(v) === '[object Object]';
 	},
 	isPrimitive: function (v) {
 		return OG.Util.isString(v) || OG.Util.isNumber(v) || OG.Util.isBoolean(v);
 	},
-	isFunction : function (v) {
+	isFunction: function (v) {
 		return Object.prototype.toString.apply(v) === '[object Function]';
 	},
-	isNumber   : function (v) {
+	isNumber: function (v) {
 		return typeof v === 'number' && isFinite(v);
 	},
-	isString   : function (v) {
+	isString: function (v) {
 		return typeof v === 'string';
 	},
-	isBoolean  : function (v) {
+	isBoolean: function (v) {
 		return typeof v === 'boolean';
 	},
-	isElement  : function (v) {
+	isElement: function (v) {
 		return !!v && v.tagName ? true : false;
 	},
-	isDefined  : function (v) {
+	isDefined: function (v) {
 		return typeof v !== 'undefined';
 	},
 
-	isWebKit : function () {
+	isWebKit: function () {
 		return (/webkit/).test(navigator.userAgent.toLowerCase());
 	},
-	isGecko  : function () {
+	isGecko: function () {
 		return !OG.Util.isWebKit() && (/gecko/).test(navigator.userAgent.toLowerCase());
 	},
-	isOpera  : function () {
+	isOpera: function () {
 		return (/opera/).test(navigator.userAgent.toLowerCase());
 	},
-	isChrome : function () {
+	isChrome: function () {
 		return (/\bchrome\b/).test(navigator.userAgent.toLowerCase());
 	},
-	isSafari : function () {
+	isSafari: function () {
 		return !OG.Util.isChrome() && (/safari/).test(navigator.userAgent.toLowerCase());
 	},
 	isFirefox: function () {
 		return (/firefox/).test(navigator.userAgent.toLowerCase());
 	},
-	isIE     : function () {
-		return !OG.Util.isOpera() && (/msie/).test(navigator.userAgent.toLowerCase());
+	isIE: function () {
+		if (navigator.appName == 'Microsoft Internet Explorer' || !!(navigator.userAgent.match(/Trident/) || navigator.userAgent.match(/rv 11/))) {
+			return true;
+
+		} else {
+			return false;
+		}
 	},
-	isIE6    : function () {
+	isIE6: function () {
 		return OG.Util.isIE() && (/msie 6/).test(navigator.userAgent.toLowerCase());
 	},
-	isIE7    : function () {
+	isIE7: function () {
 		return OG.Util.isIE() && ((/msie 7/).test(navigator.userAgent.toLowerCase()) || document.documentMode === 7);
 	},
-	isIE8    : function () {
+	isIE8: function () {
 		return OG.Util.isIE() && ((/msie 8/).test(navigator.userAgent.toLowerCase()) || document.documentMode === 8);
 	},
-	isIE9    : function () {
+	isIE9: function () {
 		return OG.Util.isIE() && ((/msie 9/).test(navigator.userAgent.toLowerCase()) || document.documentMode === 9);
 	},
 	isWindows: function () {
 		return (/windows|win32/).test(navigator.userAgent.toLowerCase());
 	},
-	isMac    : function () {
+	isMac: function () {
 		return (/macintosh|mac os x/).test(navigator.userAgent.toLowerCase());
 	},
-	isLinux  : function () {
+	isLinux: function () {
 		return (/linux/).test(navigator.userAgent.toLowerCase());
 	},
 
