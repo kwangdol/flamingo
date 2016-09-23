@@ -35,32 +35,48 @@ oozie.wf.application.path=${exampleDir}/app
 </workflow-app>
 ```
 - **fork and join**
+**syntax**
 ```xml
-<workflow-app xmlns="uri:oozie:workflow:0.5" name="forkJoinNodeWF">
-<global>
-...
-</global>
-<start to="forkActions"/>
-<fork name="forkActions">
-<path name="echoA"/>
-<path name="echoB"/>
-</fork>
-<action name="echoA">
-<shell xmlns="uri:oozie:shell-action:0.2">
-...
-</shell>
-<ok to="joinActions"/>
-<error to="joinActions"/>
-</action>
-<action name="echoB">
-<shell xmlns="uri:oozie:shell-action:0.2">
-...
-</shell>
-<ok to="joinActions"/>
-<error to="joinActions"/>
-</action>
-<join name="joinActions" to="done"/>
-<end name="done"/>
+<workflow-app name="[WF-DEF-NAME]" xmlns="uri:oozie:workflow:0.1">
+    ...
+    <fork name="[FORK-NODE-NAME]">
+        <path start="[NODE-NAME]" />
+        ...
+        <path start="[NODE-NAME]" />
+    </fork>
+    ...
+    <join name="[JOIN-NODE-NAME]" to="[NODE-NAME]" />
+    ...
+</workflow-app>
+```
+**Example
+```xml
+<workflow-app name="sample-wf" xmlns="uri:oozie:workflow:0.1">
+    ...
+    <fork name="forking">
+        <path start="firstparalleljob"/>
+        <path start="secondparalleljob"/>
+    </fork>
+    <action name="firstparallejob">
+        <map-reduce>
+            <job-tracker>foo:8021</job-tracker>
+            <name-node>bar:8020</name-node>
+            <job-xml>job1.xml</job-xml>
+        </map-reduce>
+        <ok to="joining"/>
+        <error to="kill"/>
+    </action>
+    <action name="secondparalleljob">
+        <map-reduce>
+            <job-tracker>foo:8021</job-tracker>
+            <name-node>bar:8020</name-node>
+            <job-xml>job2.xml</job-xml>
+        </map-reduce>
+        <ok to="joining"/>
+        <error to="kill"/>
+    </action>
+    <join name="joining" to="nextaction"/>
+    ...
 </workflow-app>
 ```
 - **decision**
