@@ -19,26 +19,17 @@ oozie.wf.application.path=${exampleDir}/app
 ###Control node
 - **start and end**
 ```xml
-<workflow-app xmlns="uri:oozie:workflow:0.5" name="simpleWF">
-<global>
-...
-</global>
-<start to="echoA"/>
-<action name="echoA">
-<shell xmlns="uri:oozie:shell-action:0.2">
-...
-</shell>
-<ok to="echoB"/>
-<error to="done"/>
-</action>
-<action name="echoB">
-<shell xmlns="uri:oozie:shell-action:0.2">
-...
-</shell>
-<ok to="done"/>
-<error to="done"/>
-</action>
-<end name="done"/>
+<workflow-app name="[WF-DEF-NAME]" xmlns="uri:oozie:workflow:0.1">
+  ...
+  <start to="[NODE-NAME]"/>
+  ...
+</workflow-app>
+```
+```xml
+<workflow-app name="[WF-DEF-NAME]" xmlns="uri:oozie:workflow:0.1">
+    ...
+    <end name="[NODE-NAME]"/>
+    ...
 </workflow-app>
 ```
 - **fork and join**
