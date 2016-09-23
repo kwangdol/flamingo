@@ -1,9 +1,9 @@
 # Flamingo FEM
 ## Oozie study
 ###1. Workflow
--overview
--using
--example
+  -overview
+  -using
+  -example
   
 ###2. Workflow Actions
 ###3. Coordinator
