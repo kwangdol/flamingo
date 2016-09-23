@@ -10,9 +10,60 @@ Multistage Hadoop job with collection of action and control nodes arranged in a 
 - job.properties
 - script(optional)
 
-###Using
-
-
+###Control node
+- **start and end**
+```xml
+<workflow-app xmlns="uri:oozie:workflow:0.5" name="simpleWF">
+<global>
+...
+</global>
+<start to="echoA"/>
+<action name="echoA">
+<shell xmlns="uri:oozie:shell-action:0.2">
+...
+</shell>
+<ok to="echoB"/>
+<error to="done"/>
+</action>
+<action name="echoB">
+<shell xmlns="uri:oozie:shell-action:0.2">
+...
+</shell>
+<ok to="done"/>
+<error to="done"/>
+</action>
+<end name="done"/>
+</workflow-app>
+```
+- **fork and join**
+```xml
+<workflow-app xmlns="uri:oozie:workflow:0.5" name="forkJoinNodeWF">
+<global>
+...
+</global>
+<start to="forkActions"/>
+<fork name="forkActions">
+<path name="echoA"/>
+<path name="echoB"/>
+</fork>
+<action name="echoA">
+<shell xmlns="uri:oozie:shell-action:0.2">
+...
+</shell>
+<ok to="joinActions"/>
+<error to="joinActions"/>
+</action>
+<action name="echoB">
+<shell xmlns="uri:oozie:shell-action:0.2">
+...
+</shell>
+<ok to="joinActions"/>
+<error to="joinActions"/>
+</action>
+<join name="joinActions" to="done"/>
+<end name="done"/>
+</workflow-app>
+```
   
 
   
