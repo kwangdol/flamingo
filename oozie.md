@@ -62,6 +62,20 @@ oozie.wf.application.path=${exampleDir}/app
 </workflow-app>
 ```
 - **decision**
+```xml
+<workflow-app name="[WF-DEF-NAME]" xmlns="uri:oozie:workflow:0.1">
+    ...
+    <decision name="[NODE-NAME]">
+        <switch>
+            <case to="[NODE_NAME]">[PREDICATE]</case>
+            ...
+            <case to="[NODE_NAME]">[PREDICATE]</case>
+            <default to="[NODE_NAME]"/>
+        </switch>
+    </decision>
+    ...
+</workflow-app>
+```
 - **kill**
 ```xml
 <workflow-app xmlns="uri:oozie:workflow:0.4" name="killNodeWF">
