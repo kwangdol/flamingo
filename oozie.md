@@ -311,4 +311,10 @@ STORE final_data INTO '$output' USING PigStorage();
 </workflow-app>
 ```
 ## Coordinator
+An Oozie coordinator **schedules workflow executions** based on a **start-time** and a **frequency**
+parameter, and it starts the workflow when all the necessary input data
+becomes available.
 ## Bunddle
+An Oozie bundle is a **collection of coordinator jobs** that can be started, stopped, suspended,
+and modified as a single job. Typically, coordinator jobs in a bundle **depend
+on each other**.
