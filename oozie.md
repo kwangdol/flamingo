@@ -85,17 +85,66 @@ oozie.wf.application.path=${exampleDir}/app
 <end name="done"/>
 </workflow-app>
 ```
-
-
-
-
-
-
-
-  
 ## Workflow Actions
 ###MapReduce
+**syntax**
 
+```xml
+<workflow-app name="[WF-DEF-NAME]" xmlns="uri:oozie:workflow:0.5">
+    ...
+    <action name="[NODE-NAME]">
+        <map-reduce>
+            <job-tracker>[JOB-TRACKER]</job-tracker>
+            <name-node>[NAME-NODE]</name-node>
+            
+            <prepare>
+                <delete path="[PATH]"/>
+                ...
+                <mkdir path="[PATH]"/>
+                ...
+            </prepare>
+            
+            <streaming>
+                <mapper>[MAPPER-PROCESS]</mapper>
+                <reducer>[REDUCER-PROCESS]</reducer>
+                <record-reader>[RECORD-READER-CLASS]</record-reader>
+                <record-reader-mapping>[NAME=VALUE]</record-reader-mapping>
+                ...
+                <env>[NAME=VALUE]</env>
+                ...
+            </streaming>
+			<!-- Either streaming or pipes can be specified for an action, not both -->
+            <pipes>
+                <map>[MAPPER]</map>
+                <reduce>[REDUCER]</reducer>
+                <inputformat>[INPUTFORMAT]</inputformat>
+                <partitioner>[PARTITIONER]</partitioner>
+                <writer>[OUTPUTFORMAT]</writer>
+                <program>[EXECUTABLE]</program>
+            </pipes>
+            <job-xml>[JOB-XML-FILE]</job-xml>
+            
+            
+            <configuration>
+                <property>
+                    <name>[PROPERTY-NAME]</name>
+                    <value>[PROPERTY-VALUE]</value>
+                </property>
+                ...
+            </configuration>
+            <config-class>com.example.MyConfigClass</config-class>
+            <file>[FILE-PATH]</file>
+            ...
+            <archive>[FILE-PATH]</archive>
+            ...
+        </map-reduce>        <ok to="[NODE-NAME]"/>
+        <error to="[NODE-NAME]"/>
+    </action>
+    ...
+</workflow-app>
+```
+
+**Example**
 ```xml
 <action name="identity-MR">
 <map-reduce>
@@ -132,10 +181,83 @@ oozie.wf.application.path=${exampleDir}/app
 ```
 
 ###Java
+**main-class.jar**
+
+```xml
+<workflow-app name="[WF-DEF-NAME]" xmlns="uri:oozie:workflow:0.1">
+    ...
+    <action name="[NODE-NAME]">
+        <java>
+            <job-tracker>[JOB-TRACKER]</job-tracker>
+            <name-node>[NAME-NODE]</name-node>
+            <prepare>
+               <delete path="[PATH]"/>
+               ...
+               <mkdir path="[PATH]"/>
+               ...
+            </prepare>
+            <job-xml>[JOB-XML]</job-xml>
+            <configuration>
+                <property>
+                    <name>[PROPERTY-NAME]</name>
+                    <value>[PROPERTY-VALUE]</value>
+                </property>
+                ...
+            </configuration>
+            <main-class>[MAIN-CLASS]</main-class>
+			<java-opts>[JAVA-STARTUP-OPTS]</java-opts>
+			<arg>ARGUMENT</arg>
+            ...
+            <file>[FILE-PATH]</file>
+            ...
+            <archive>[FILE-PATH]</archive>
+            ...
+            <capture-output />
+        </java>
+        <ok to="[NODE-NAME]"/>
+        <error to="[NODE-NAME]"/>
+    </action>
+    ...
+```
 ###Hive 
 **Hivescript.hpl**
-
-
+**syntax**
+```xml
+<workflow-app name="[WF-DEF-NAME]" xmlns="uri:oozie:workflow:0.1">
+    ...
+    <action name="[NODE-NAME]">
+        <hive xmlns="uri:oozie:hive-action:0.2">
+            <job-tracker>[JOB-TRACKER]</job-tracker>
+            <name-node>[NAME-NODE]</name-node>
+            <prepare>
+               <delete path="[PATH]"/>
+               ...
+               <mkdir path="[PATH]"/>
+               ...
+            </prepare>
+            <job-xml>[HIVE SETTINGS FILE]</job-xml>
+            <configuration>
+                <property>
+                    <name>[PROPERTY-NAME]</name>
+                    <value>[PROPERTY-VALUE]</value>
+                </property>
+                ...
+            </configuration>
+            <script>[HIVE-SCRIPT]</script>
+            <param>[PARAM-VALUE]</param>
+                ...
+            <param>[PARAM-VALUE]</param>
+            <file>[FILE-PATH]</file>
+            ...
+            <archive>[FILE-PATH]</archive>
+            ...
+        </hive>
+        <ok to="[NODE-NAME]"/>
+        <error to="[NODE-NAME]"/>
+    </action>
+    ...
+</workflow-app>
+```
 ###Pig
 **Pigscript.pig**
 ```
@@ -148,34 +270,45 @@ final_data = FOREACH ordered_data GENERATE (user, age,
 myudfs.multiply_salary(salary));
 STORE final_data INTO '$output' USING PigStorage();
 ```
-**Action node**
+**syntax**
 ```xml
-<action name="myPigAction">
-<pig>
-<job-tracker>jt.mycompany.com:8032</job-tracker>
-<name-node>hdfs://nn.mycompany.com:8020</name-node>
-<prepare>
-<delete path="hdfs://nn.mycompany.com:8020/hdfs/user/
-joe/pig/output"/>
-</prepare>
-<configuration>
-<property>
-<name>mapred.job.queue.name</name>
-<value>research</value>
-</property>
-</configuration>
-
-<script>pig.script</script>
-<argument>-param</argument>
-<argument>age=30</argument>
-<argument>-param</argument>
-<argument>output=hdfs://nn.mycompany.com:8020/hdfs/user/
-joe/pig/output</argument>
-</pig>
-
-<ok to="end"/>
-<error to="fail"/>
-</action>
+<workflow-app name="[WF-DEF-NAME]" xmlns="uri:oozie:workflow:0.2">
+    ...
+    <action name="[NODE-NAME]">
+        <pig>
+            <job-tracker>[JOB-TRACKER]</job-tracker>
+            <name-node>[NAME-NODE]</name-node>
+            <prepare>
+               <delete path="[PATH]"/>
+               ...
+               <mkdir path="[PATH]"/>
+               ...
+            </prepare>
+            <job-xml>[JOB-XML-FILE]</job-xml>
+            <configuration>
+                <property>
+                    <name>[PROPERTY-NAME]</name>
+                    <value>[PROPERTY-VALUE]</value>
+                </property>
+                ...
+            </configuration>
+            <script>[PIG-SCRIPT]</script>
+            <param>[PARAM-VALUE]</param>
+                ...
+            <param>[PARAM-VALUE]</param>
+            <argument>[ARGUMENT-VALUE]</argument>
+                ...
+            <argument>[ARGUMENT-VALUE]</argument>
+            <file>[FILE-PATH]</file>
+            ...
+            <archive>[FILE-PATH]</archive>
+            ...
+        </pig>
+        <ok to="[NODE-NAME]"/>
+        <error to="[NODE-NAME]"/>
+    </action>
+    ...
+</workflow-app>
 ```
 ## Coordinator
 ## Bunddle
