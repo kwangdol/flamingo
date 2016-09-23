@@ -357,6 +357,12 @@ STORE final_data INTO '$output' USING PigStorage();
     ...
 </workflow-app>
 ```
+###Subworkflow
+###DistCp
+###Email
+###Shell
+###SSH
+###sqoop
 
 ## Coordinator
 An Oozie coordinator **schedules workflow executions** based on a **start-time** and a **frequency**
