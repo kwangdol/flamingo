@@ -2,9 +2,12 @@
 ## Oozie study
 ###1. Workflow
   - overview
-    ![workflow.jpg](file:///C:/Users/EXEM/Documents/test/)
+    multistage Hadoop job
+  
   - using
-  - example
+  - 
+  
+
   
 ###2. Workflow Actions
 ###3. Coordinator
