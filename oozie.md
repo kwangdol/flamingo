@@ -332,6 +332,32 @@ STORE final_data INTO '$output' USING PigStorage();
     ...
 </workflow-app>
 ```
+### FS
+**syntax**
+```xml
+<workflow-app name="[WF-DEF-NAME]" xmlns="uri:oozie:workflow:0.5">
+    ...
+    <action name="[NODE-NAME]">
+        <fs>
+            <delete path='[PATH]'/>
+            ...
+            <mkdir path='[PATH]'/>
+            ...
+            <move source='[SOURCE-PATH]' target='[TARGET-PATH]'/>
+            ...
+            <chmod path='[PATH]' permissions='[PERMISSIONS]' dir-files='false' />
+            ...
+            <touchz path='[PATH]' />
+            ...
+            <chgrp path='[PATH]' group='[GROUP]' dir-files='false' />
+        </fs>
+        <ok to="[NODE-NAME]"/>
+        <error to="[NODE-NAME]"/>
+    </action>
+    ...
+</workflow-app>
+```
+
 ## Coordinator
 An Oozie coordinator **schedules workflow executions** based on a **start-time** and a **frequency**
 parameter, and it starts the workflow when all the necessary input data
