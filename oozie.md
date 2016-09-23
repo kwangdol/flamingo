@@ -181,7 +181,7 @@ oozie.wf.application.path=${exampleDir}/app
 ```
 
 ###Java
-**main-class.jar**
+**Main-class.jar**
 
 ```xml
 <workflow-app name="[WF-DEF-NAME]" xmlns="uri:oozie:workflow:0.1">
