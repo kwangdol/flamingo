@@ -237,6 +237,12 @@ oozie.wf.application.path=${exampleDir}/app
 ```
 ###Hive 
 **Hivescript.hpl**
+```
+ADD JAR /tmp/HiveSwarm-1.0-SNAPSHOT.jar;
+create temporary function dayofweek as 'com.livingsocial.hive.udf.DayOfWeek';
+select *, dayofweek(to_date('2014-05-02')) from test_table
+where age>${age} order by name;
+```
 **syntax**
 ```xml
 <workflow-app name="[WF-DEF-NAME]" xmlns="uri:oozie:workflow:0.1">
