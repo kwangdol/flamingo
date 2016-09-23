@@ -2,7 +2,7 @@
 ## Oozie study
 ###1. Workflow
   - overview
-    ![workflow.jpg](http://127.0.0.1/file:///C:/Users/EXEM/Documents/test/)
+    ![workflow.jpg](file:///C:/Users/EXEM/Documents/test/)
   - using
   - example
   
