@@ -8,6 +8,12 @@ Multistage Hadoop job with collection of action and control nodes arranged in a 
 
   >Jobtracker
 - job.properties
+```
+nameNode=hdfs://localhost:8020
+jobTracker=localhost:8032
+exampleDir=${nameNode}/user/${user.name}/ch01-identity
+oozie.wf.application.path=${exampleDir}/app
+```
 - script(optional)
 
 ###Control node
@@ -64,7 +70,27 @@ Multistage Hadoop job with collection of action and control nodes arranged in a 
 <end name="done"/>
 </workflow-app>
 ```
-  
+- decision
+- kill
+```xml
+<workflow-app xmlns="uri:oozie:workflow:0.4" name="killNodeWF">
+<start to="mapReduce"/>
+<action name="mapReduce">
+...
+<ok to="done"/>
+<error to="error"/>
+</action>
+<kill name="error">
+<message>The 'mapReduce' action failed!</message>
+<end name="done"/>
+</workflow-app>
+```
+
+
+
+
+
+
 
   
 ## Workflow Actions
