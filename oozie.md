@@ -78,6 +78,17 @@ oozie.wf.application.path=${exampleDir}/app
 ```
 - **kill**
 ```xml
+<workflow-app name="[WF-DEF-NAME]" xmlns="uri:oozie:workflow:0.1">
+    ...
+    <kill name="[NODE-NAME]">
+        <message>[MESSAGE-TO-LOG]</message>
+    </kill>
+    ...
+</workflow-app>
+```
+
+**Example**
+```xml
 <workflow-app xmlns="uri:oozie:workflow:0.4" name="killNodeWF">
 <start to="mapReduce"/>
 <action name="mapReduce">
