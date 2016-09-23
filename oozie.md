@@ -1,10 +1,10 @@
 # Flamingo FEM
 ## Oozie study
 1. Workflow
-   a. overview
-      structure
-      Workflow.xml / job.properties / scritp(optional)
-   b. using
+*overview
+structure
+Workflow.xml / job.properties / scritp(optional)
+*using
   
 2. Workflow Actions
 3. Coordinator
