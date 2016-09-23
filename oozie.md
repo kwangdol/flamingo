@@ -11,12 +11,16 @@ multistage Hadoop job with collection of action and control nodes arranged in a 
 - job.properties
 - script(optional)
 
-{tap}####Using
+###Using
 
 
   
 
   
 ## Workflow Actions
+###MapReduce
+###Jave
+###Hive
+###Pig
 ## Coordinator
 ## Bunddle
