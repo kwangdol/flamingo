@@ -4,9 +4,9 @@
 multistage Hadoop job with collection of action and control nodes arranged in a directed acyclic graph (DAG)
 - workflow.xml
 
-{tap} > Namenode
+  >Namenode
 
-{tap} > Jobtracker
+  >Jobtracker
 
 - job.properties
 - script(optional)
