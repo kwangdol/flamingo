@@ -70,8 +70,8 @@ oozie.wf.application.path=${exampleDir}/app
 <end name="done"/>
 </workflow-app>
 ```
-- decision
-- kill
+- **decision**
+- **kill**
 ```xml
 <workflow-app xmlns="uri:oozie:workflow:0.4" name="killNodeWF">
 <start to="mapReduce"/>
@@ -95,8 +95,87 @@ oozie.wf.application.path=${exampleDir}/app
   
 ## Workflow Actions
 ###MapReduce
-###Jave
-###Hive
+
+```xml
+<action name="identity-MR">
+<map-reduce>
+<job-tracker>localhost:8032</job-tracker>
+<name-node>hdfs://localhost:8020</name-node>
+
+<prepare>
+<delete path="/user/joe/data/output"/>
+</prepare>
+
+<configuration>
+<property>
+<name>mapred.mapper.class</name>
+<value>org.apache.hadoop.mapred.lib.IdentityMapper</value>
+</property>
+<property>
+<name>mapred.reducer.class</name>
+<value>org.apache.hadoop.mapred.lib.IdentityReducer</value>
+</property>
+<property>
+<name>mapred.input.dir</name>
+<value>/user/joe/data/input</value>
+</property>
+<property>
+<name>mapred.output.dir</name>
+<value>/user/joe/data/input</value>
+</property>
+</configuration>
+
+</map-reduce>
+<ok to="success"/>
+<error to="fail"/>
+</action>
+```
+
+###Java
+###Hive 
+**Hivescript.hpl**
+
+
 ###Pig
+**Pigscript.pig**
+```
+REGISTER myudfs.jar;
+data = LOAD '/user/joe/pig/input/data.txt' USING PigStorage(',') AS
+(user, age, salary);
+filtered_data = FILTER data BY age > $age;
+ordered_data = ORDER filtered_data BY salary;
+final_data = FOREACH ordered_data GENERATE (user, age,
+myudfs.multiply_salary(salary));
+STORE final_data INTO '$output' USING PigStorage();
+```
+**Action node**
+```xml
+<action name="myPigAction">
+<pig>
+<job-tracker>jt.mycompany.com:8032</job-tracker>
+<name-node>hdfs://nn.mycompany.com:8020</name-node>
+<prepare>
+<delete path="hdfs://nn.mycompany.com:8020/hdfs/user/
+joe/pig/output"/>
+</prepare>
+<configuration>
+<property>
+<name>mapred.job.queue.name</name>
+<value>research</value>
+</property>
+</configuration>
+
+<script>pig.script</script>
+<argument>-param</argument>
+<argument>age=30</argument>
+<argument>-param</argument>
+<argument>output=hdfs://nn.mycompany.com:8020/hdfs/user/
+joe/pig/output</argument>
+</pig>
+
+<ok to="end"/>
+<error to="fail"/>
+</action>
+```
 ## Coordinator
 ## Bunddle
