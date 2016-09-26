@@ -760,6 +760,21 @@ Workflow의  **schedule**을 설정해주는 역할 **start-time** 과 **frequen
 </coordinator-app>
 ```
 
+###controls
+- timeout:실현된 action 이 다른 조건을 기다릴 때까지의 최대 시간(분). Default -1 (no timeout) 
+- concurrency: 최대 동시 실행 action 개수 (default 1) 
+- execution: 동시에 여러 개가 실행될 때 실행 순서 ( FIFO, LIFO, LAST_ONLY, default FIFO ) 
+- throttle: waiting 단계에서 기다릴 최대 action 개수(default 12) 
+
+**syntax**
+```xml
+ <controls>
+        <timeout>${Max_waitingtime}</timeout>
+        <concurrency>${concurrency_level}</concurrency>
+        <execution>${execution_order}</execution>
+        <throttle>${materialization_throttle}</throttle>
+      </controls>
+```
 ## Bunddle
 An Oozie bundle is a **collection of coordinator jobs** that can be started, stopped, suspended,
 and modified as a single job. Typically, coordinator jobs in a bundle **depend
