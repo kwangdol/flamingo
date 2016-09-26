@@ -1,7 +1,8 @@
 # Oozie study
 ##Workflow
 ###Overview
-Multistage Hadoop job with collection of action and control nodes arranged in a directed acyclic graph (DAG)
+Multistaged의 Hadoop job을 관리하는 워크플로우 및 코디네이션 시스템이다.  
+Oozie 워크플로우는 하둡의 다양한 작업을 실행할 수 있는 액션(action)으로 구성되며, 방향성이 있는 비순환 그래프(DAG: Directed Acyclic Graph)를 형성한다.)
 
 - workflow.xml
 
@@ -722,8 +723,43 @@ queueName=default
 </workflow-app>
 ```
 ## Coordinator
-workflow의  schedule을 설정해주는 역할 **start-time** 과 **frequency**를 parameter로 가지며, 
+Workflow의  **schedule**을 설정해주는 역할 **start-time** 과 **frequency**를 parameter로 가지며, 
 반드시 모든 input data가 available 할 경우에만 workflow를 진행시킨다.
+
+###Simple coordinator job
+```xml
+<coordinator-app name="${cdName}" start="2016-09-26T07:00Z" 
+  end="2016-09-26T07:15Z" frequency="5" timezone="UTC" xmlns="uri:oozie:coordinator:0.4">
+  <action>
+    <workflow>
+      <app-path>${exampleDir}</app-path>
+    </workflow>
+  </action>
+</coordinator-app>
+```
+
+###Data directory is available
+```xml
+<coordinator-app name="MY_APP" frequency="1440" start="2009-02-01T00:00Z" end="2009-02-07T00:00Z" timezone="UTC" xmlns="uri:oozie:coordinator:0.1">
+   <datasets>
+      <dataset name="input1" frequency="60" initial-instance="2009-01-01T00:00Z" timezone="UTC">
+         <uri-template>hdfs://localhost:9000/tmp/revenue_feed/${YEAR}/${MONTH}/${DAY}/${HOUR}</uri-template>
+      </dataset>
+   </datasets>
+   <input-events>
+      <data-in name="coordInput1" dataset="input1">
+          <start-instance>${coord:current(-23)}</start-instance>
+          <end-instance>${coord:current(0)}</end-instance>
+      </data-in>
+   </input-events>
+   <action>
+      <workflow>
+         <app-path>hdfs://localhost:9000/tmp/workflows</app-path>
+      </workflow>
+   </action>     
+</coordinator-app>
+```
+
 ## Bunddle
 An Oozie bundle is a **collection of coordinator jobs** that can be started, stopped, suspended,
 and modified as a single job. Typically, coordinator jobs in a bundle **depend
