@@ -19,6 +19,7 @@ oozie.wf.application.path=${exampleDir}/app
 
 ###Control node
 - **start and end**
+
 **syntax**
 ```xml
 <workflow-app name="[WF-DEF-NAME]" xmlns="uri:oozie:workflow:0.1">
@@ -36,6 +37,7 @@ oozie.wf.application.path=${exampleDir}/app
 ```
 
 - **fork and join**
+
 **syntax**
 ```xml
 <workflow-app name="[WF-DEF-NAME]" xmlns="uri:oozie:workflow:0.1">
@@ -82,6 +84,7 @@ oozie.wf.application.path=${exampleDir}/app
 </workflow-app>
 ```
 - **decision**
+
 **syntax**
 ```xml
 <workflow-app name="[WF-DEF-NAME]" xmlns="uri:oozie:workflow:0.1">
@@ -120,6 +123,7 @@ oozie.wf.application.path=${exampleDir}/app
 ```
 
 - **kill**
+
 **syntax**
 ```xml
 <workflow-app name="[WF-DEF-NAME]" xmlns="uri:oozie:workflow:0.1">
