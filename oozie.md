@@ -776,11 +776,9 @@ Workflow의  **schedule**을 설정해주는 역할 **start-time** 과 **frequen
       </controls>
 ```
 ## Bunddle
-Bundle 은 coordinator jobs의 묶음인,  high level oozie job이다. 속해있는 coordinator job의 시작 시간, 조건등을 설정할 수 있다.
-이러한 coordinator job들은 대부분 서로 dependent하며,  Bundle은 user가 data pipeline을 따라 상호의존적인 coordinator job을 설계하고 실행할 수 있게 해준다.
-An Oozie bundle is a **collection of coordinator jobs** that can be started, stopped, suspended,
-and modified as a single job. Typically, coordinator jobs in a bundle **depend
-on each other**.
+Bundle 은 coordinator jobs의 묶음으로, 속해있는 coordinator job의 시작 시간, 조건등을 설정할 수 있다.
+이러한 coordinator job들은 대부분 서로 **dependent**하며,  Bundle은 user가 **data pipeline**을 따라 상호의존적인 coordinator job을 설계하고 실행할 수 있게 해준다.
+
 
 **syntax**
 ```xml
