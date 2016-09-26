@@ -7,8 +7,8 @@ Oozie 워크플로우는 하둡의 다양한 작업을 실행할 수 있는 액�
 - workflow.xml
 
   >Namenode
-
   >Jobtracker
+  
 - job.properties
 ```
 nameNode=hdfs://localhost:8020
@@ -779,3 +779,58 @@ Workflow의  **schedule**을 설정해주는 역할 **start-time** 과 **frequen
 An Oozie bundle is a **collection of coordinator jobs** that can be started, stopped, suspended,
 and modified as a single job. Typically, coordinator jobs in a bundle **depend
 on each other**.
+
+**syntax**
+```xml
+    <bundle-app name=[NAME]  xmlns='uri:oozie:bundle:0.1'> 
+  <controls>
+       <kick-off-time>[DATETIME]</kick-off-time>
+  </controls>
+   <coordinator name=[NAME] >
+       <app-path>[COORD-APPLICATION-PATH]</app-path>
+          <configuration>
+            <property>
+              <name>[PROPERTY-NAME]</name>
+              <value>[PROPERTY-VALUE]</value>
+            </property>
+            ...
+         </configuration>
+   </coordinator>
+   ...
+</bundle-app> 
+```
+
+**example (two coordinator)**
+```xml
+<bundle-app name='APPNAME' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns='uri:oozie:bundle:0.1'> 
+  <controls>
+       <kick-off-time>${kickOffTime}</kick-off-time>
+  </controls>
+   <coordinator name='coordJobFromBundle1' >
+       <app-path>${appPath}</app-path>
+       <configuration>
+         <property>
+              <name>startTime1</name>
+              <value>${START_TIME}</value>
+          </property>
+         <property>
+              <name>endTime1</name>
+              <value>${END_TIME}</value>
+          </property>
+      </configuration>
+   </coordinator>
+   <coordinator name='coordJobFromBundle2' >
+       <app-path>${appPath2}</app-path>
+       <configuration>
+         <property>
+              <name>startTime2</name>
+              <value>${START_TIME2}</value>
+          </property>
+         <property>
+              <name>endTime2</name>
+              <value>${END_TIME2}</value>
+          </property>
+      </configuration>
+   </coordinator>
+</bundle-app>
+```
