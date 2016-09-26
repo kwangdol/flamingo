@@ -722,9 +722,8 @@ queueName=default
 </workflow-app>
 ```
 ## Coordinator
-An Oozie coordinator **schedules workflow executions** based on a **start-time** and a **frequency**
-parameter, and it starts the workflow when all the necessary input data
-becomes available.
+workflow의  schedule을 설정해주는 역할 **start-time** 과 **frequency**를 parameter로 가지며, 
+반드시 모든 input data가 available 할 경우에만 workflow를 진행시킨다.
 ## Bunddle
 An Oozie bundle is a **collection of coordinator jobs** that can be started, stopped, suspended,
 and modified as a single job. Typically, coordinator jobs in a bundle **depend
